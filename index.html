@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>
+			Budgy - Your Financial Coach, Ready When You
+			Are
+		</title>
+		<link
+			rel="stylesheet"
+			href="styles.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<!-- Navigation -->
+		<nav class="navbar">
+			<div class="nav-container">
+				<div class="logo">
+					<span class="logo-text">budgy</span>
+				</div>
+				<div class="nav-links">
+					<a
+						href="#features"
+						class="nav-link"
+						>Features</a
+					>
+					<a
+						href="#testimonials"
+						class="nav-link"
+						>Success Stories</a
+					>
+					<a
+						href="#resources"
+						class="nav-link"
+						>Resources</a
+					>
+					<a
+						href="#contact"
+						class="nav-link"
+						>Contact</a
+					>
+				</div>
+				<button class="nav-cta">
+					Start Free
+				</button>
+				<!-- Mobile Menu Button -->
+				<button
+					class="mobile-menu-button"
+					id="mobileMenuButton"
+					aria-label="Toggle mobile menu"
+				>
+					<span class="hamburger"></span>
+					<span class="hamburger"></span>
+					<span class="hamburger"></span>
+				</button>
+			</div>
+			<!-- Mobile Menu -->
+			<div
+				class="mobile-menu"
+				id="mobileMenu"
+			>
+				<a
+					href="#features"
+					class="mobile-nav-link"
+					>Features</a
+				>
+				<a
+					href="#testimonials"
+					class="mobile-nav-link"
+					>Success Stories</a
+				>
+				<a
+					href="#resources"
+					class="mobile-nav-link"
+					>Resources</a
+				>
+				<a
+					href="#contact"
+					class="mobile-nav-link"
+					>Contact</a
+				>
+				<button class="mobile-nav-cta">
+					Start Free
+				</button>
+			</div>
+		</nav>
+
+		<!-- Hero Section -->
+		<section class="hero">
+			<div class="hero-content">
+				<h1 class="hero-headline">
+					Your Financial Coach, Ready When You
+					Are.
+				</h1>
+				<p class="hero-subheadline">
+					AI-powered personalization that
+					understands your unique financial
+					journey and grows with your life's
+					changing needs.
+				</p>
+				<button class="cta-button primary">
+					Start Your Journey Today
+				</button>
+				<p class="hero-trust-badge">
+					✓ Join 50,000+ users finding financial
+					clarity
+				</p>
+			</div>
+			<div class="hero-visual">
+				<div class="gradient-blob blob-1"></div>
+				<div class="gradient-blob blob-2"></div>
+				<div class="hero-image-placeholder">
+					<svg
+						viewBox="0 0 400 400"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<defs>
+							<linearGradient
+								id="heroGrad"
+								x1="0%"
+								y1="0%"
+								x2="100%"
+								y2="100%"
+							>
+								<stop
+									offset="0%"
+									style="
+										stop-color: #e8f4f8;
+										stop-opacity: 1;
+									"
+								/>
+								<stop
+									offset="100%"
+									style="
+										stop-color: #fff5f0;
+										stop-opacity: 1;
+									"
+								/>
+							</linearGradient>
+						</defs>
+						<circle
+							cx="200"
+							cy="200"
+							r="180"
+							fill="url(#heroGrad)"
+						/>
+						<circle
+							cx="150"
+							cy="150"
+							r="60"
+							fill="#5BA3A8"
+							opacity="0.3"
+						/>
+						<circle
+							cx="280"
+							cy="220"
+							r="50"
+							fill="#FF8C69"
+							opacity="0.2"
+						/>
+					</svg>
+				</div>
+			</div>
+		</section>
+
+		<!-- Trust Section -->
+		<section class="trust-section">
+			<div class="container">
+				<h2>Why Budgy?</h2>
+				<div class="trust-grid">
+					<div class="trust-card">
+						<div class="trust-icon">🎯</div>
+						<h3>Personalized Guidance</h3>
+						<p>
+							Our AI learns your financial habits,
+							goals, and challenges to provide
+							guidance tailored to your unique
+							situation.
+						</p>
+					</div>
+					<div class="trust-card">
+						<div class="trust-icon">🤖</div>
+						<h3>AI That Grows With You</h3>
+						<p>
+							As your life changes—new job, home,
+							family—your financial coach adapts
+							to meet you where you are.
+						</p>
+					</div>
+					<div class="trust-card">
+						<div class="trust-icon">🔒</div>
+						<h3>Your Privacy Matters</h3>
+						<p>
+							Bank-level security protects your
+							financial data. We'll never share
+							your information without your
+							consent.
+						</p>
+					</div>
+					<div class="trust-card">
+						<div class="trust-icon">💡</div>
+						<h3>Actionable Insights</h3>
+						<p>
+							No jargon, no fluff—just clear,
+							practical advice you can implement
+							immediately.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features Section -->
+		<section
+			id="features"
+			class="features-section"
+		>
+			<div class="container">
+				<h2>Designed for Your Financial Life</h2>
+				<div class="features-grid">
+					<div class="feature-block">
+						<div class="feature-number">01</div>
+						<h3>Understand Your Money</h3>
+						<p>
+							Get a clear picture of where your
+							money goes. Our intelligent tracking
+							reveals spending patterns and
+							opportunities you might have missed.
+						</p>
+					</div>
+					<div class="feature-block">
+						<div class="feature-number">02</div>
+						<h3>Smart Budgeting</h3>
+						<p>
+							Create budgets that work with your
+							life, not against it. Flexible
+							categories and real-time alerts keep
+							you on track.
+						</p>
+					</div>
+					<div class="feature-block">
+						<div class="feature-number">03</div>
+						<h3>Goals Worth Celebrating</h3>
+						<p>
+							Whether it's your dream vacation or
+							financial security, we help you set,
+							track, and celebrate your wins.
+						</p>
+					</div>
+					<div class="feature-block">
+						<div class="feature-number">04</div>
+						<h3>Debt-Free Strategies</h3>
+						<p>
+							Personalized payoff plans adapted to
+							your situation. Watch your debt
+							shrink with guidance every step of
+							the way.
+						</p>
+					</div>
+					<div class="feature-block">
+						<div class="feature-number">05</div>
+						<h3>Investment Foundations</h3>
+						<p>
+							Learn investing basics without the
+							intimidation. Our coach helps you
+							make confident decisions for your
+							future.
+						</p>
+					</div>
+					<div class="feature-block">
+						<div class="feature-number">06</div>
+						<h3>Emergency Preparedness</h3>
+						<p>
+							Build financial confidence through
+							smart emergency fund planning. Sleep
+							better knowing you're prepared.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Video Testimonial CTA -->
+		<section class="video-section">
+			<div class="container">
+				<h2>Real Stories, Real Results</h2>
+				<p class="section-subtitle">
+					See how Budgy has transformed financial
+					lives
+				</p>
+				<div class="video-grid">
+					<div class="video-card">
+						<div class="video-placeholder">
+							<div class="play-button">▶</div>
+							<p class="video-title">
+								From Overwhelmed to Empowered
+							</p>
+							<p class="video-subtitle">
+								Sarah's journey to financial
+								clarity
+							</p>
+						</div>
+					</div>
+					<div class="video-card">
+						<div class="video-placeholder">
+							<div class="play-button">▶</div>
+							<p class="video-title">
+								Paying Off $50K in Debt
+							</p>
+							<p class="video-subtitle">
+								Marcus shares his breakthrough
+							</p>
+						</div>
+					</div>
+					<div class="video-card">
+						<div class="video-placeholder">
+							<div class="play-button">▶</div>
+							<p class="video-title">
+								Building Wealth Together
+							</p>
+							<p class="video-subtitle">
+								The Chen family's success story
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Testimonials Section -->
+		<section
+			id="testimonials"
+			class="testimonials-section"
+		>
+			<div class="container">
+				<h2>What Our Users Say</h2>
+				<div class="testimonials-grid">
+					<div class="testimonial-card">
+						<div class="stars">★★★★★</div>
+						<p class="testimonial-quote">
+							"For the first time in my life, I
+							feel like I have a plan. Budgy made
+							finances feel less scary and more
+							manageable."
+						</p>
+						<div class="testimonial-author">
+							<div class="author-avatar">JR</div>
+							<div>
+								<p class="author-name">
+									Jessica Reynolds
+								</p>
+								<p class="author-title">
+									First-time saver, San Francisco
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-card">
+						<div class="stars">★★★★★</div>
+						<p class="testimonial-quote">
+							"I paid off $15,000 in credit card
+							debt in 18 months thanks to Budgy's
+							guidance. I actually look forward to
+							checking my finances now."
+						</p>
+						<div class="testimonial-author">
+							<div class="author-avatar">MJ</div>
+							<div>
+								<p class="author-name">
+									Marcus Johnson
+								</p>
+								<p class="author-title">
+									Debt-free achiever, Austin
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-card">
+						<div class="stars">★★★★★</div>
+						<p class="testimonial-quote">
+							"The AI coaching feels like having a
+							friend who actually knows finance.
+							It's personalized, not judgmental,
+							and genuinely helpful."
+						</p>
+						<div class="testimonial-author">
+							<div class="author-avatar">PC</div>
+							<div>
+								<p class="author-name">
+									Priya Chatterjee
+								</p>
+								<p class="author-title">
+									Young professional, New York
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Emotional Connection Section -->
+		<section class="connection-section">
+			<div class="container">
+				<div class="connection-content">
+					<h2>
+						Financial Wellness Isn't Just About
+						Numbers
+					</h2>
+					<p>
+						It's about peace of mind. It's about
+						knowing you can handle life's
+						surprises. It's about building the
+						future you want without constant
+						stress.
+					</p>
+					<p class="connection-quote">
+						<span class="quote-mark">"</span>Your
+						financial health directly impacts your
+						overall well-being.<span
+							class="quote-mark"
+							>"</span
+						>
+					</p>
+					<p>
+						That's why Budgy was designed with
+						empathy—by people who understand that
+						managing money is deeply personal.
+					</p>
+					<button
+						class="cta-button primary large"
+					>
+						Start Your Journey Today
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Resources Section -->
+		<section
+			id="resources"
+			class="resources-section"
+		>
+			<div class="container">
+				<h2>Learn & Grow</h2>
+				<p class="section-subtitle">
+					Free resources to accelerate your
+					financial journey
+				</p>
+				<div class="resources-grid">
+					<div class="resource-card">
+						<h3>📚 Knowledge Base</h3>
+						<p>
+							Clear, jargon-free articles covering
+							budgeting, debt, investing, and
+							life-changing financial decisions.
+						</p>
+						<a
+							href="#"
+							class="resource-link"
+							>Explore Articles →</a
+						>
+					</div>
+					<div class="resource-card">
+						<h3>🎓 Financial Coaching</h3>
+						<p>
+							Interactive guides and challenges
+							designed to build financial
+							confidence step by step.
+						</p>
+						<a
+							href="#"
+							class="resource-link"
+							>Start Learning →</a
+						>
+					</div>
+					<div class="resource-card">
+						<h3>💬 Community Forum</h3>
+						<p>
+							Connect with others on similar
+							journeys, share wins, and get
+							support from a caring community.
+						</p>
+						<a
+							href="#"
+							class="resource-link"
+							>Join Community →</a
+						>
+					</div>
+					<div class="resource-card">
+						<h3>📊 Financial Tools</h3>
+						<p>
+							Free calculators for savings goals,
+							debt payoff, budgeting, and net
+							worth tracking.
+						</p>
+						<a
+							href="#"
+							class="resource-link"
+							>Access Tools →</a
+						>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="final-cta-section">
+			<div class="container">
+				<h2>Ready to Take Control?</h2>
+				<p>
+					No credit card needed. No hidden fees.
+					Just honest financial guidance.
+				</p>
+				<button class="cta-button primary large">
+					Start Your Journey Today
+				</button>
+				<p class="cta-subtext">
+					14-day free trial • Cancel anytime • $0
+					if you cancel within 14 days
+				</p>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section
+			id="contact"
+			class="contact-section"
+		>
+			<div class="container">
+				<div class="contact-content">
+					<div class="contact-info">
+						<h3>Questions? We're Here to Help</h3>
+						<p>
+							Our financial coaching team is ready
+							to answer your questions and help
+							you get started.
+						</p>
+						<div class="contact-methods">
+							<div class="contact-method">
+								<span class="contact-icon"
+									>💬</span
+								>
+								<div>
+									<p class="contact-label">
+										Live Chat Support
+									</p>
+									<p class="contact-detail">
+										Available Monday-Friday,
+										9am-6pm EST
+									</p>
+								</div>
+							</div>
+							<div class="contact-method">
+								<span class="contact-icon"
+									>📧</span
+								>
+								<div>
+									<p class="contact-label">
+										Email
+									</p>
+									<p class="contact-detail">
+										hello@budgy.app
+									</p>
+								</div>
+							</div>
+							<div class="contact-method">
+								<span class="contact-icon"
+									>📚</span
+								>
+								<div>
+									<p class="contact-label">
+										Resource Center
+									</p>
+									<p class="contact-detail">
+										Visit our knowledge base for
+										instant answers
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<form
+						class="signup-form"
+						id="signupForm"
+					>
+						<h3>Start Your Free Trial</h3>
+						<div class="form-group">
+							<input
+								type="text"
+								placeholder="Your Name"
+								required
+							/>
+						</div>
+						<div class="form-group">
+							<input
+								type="email"
+								placeholder="Your Email"
+								required
+							/>
+						</div>
+						<div class="form-group">
+							<select required>
+								<option value="">
+									What's your primary financial
+									goal?
+								</option>
+								<option value="budget">
+									Budgeting & Tracking
+								</option>
+								<option value="debt">
+									Paying Off Debt
+								</option>
+								<option value="save">
+									Building Savings
+								</option>
+								<option value="invest">
+									Starting to Invest
+								</option>
+								<option value="general">
+									General Financial Health
+								</option>
+							</select>
+						</div>
+						<button
+							type="submit"
+							class="cta-button primary full-width"
+						>
+							Create Free Account
+						</button>
+						<p class="form-notice">
+							No credit card required. We'll never
+							spam you.
+						</p>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container">
+				<div class="footer-grid">
+					<div class="footer-section">
+						<h4>Budgy</h4>
+						<p>
+							Your AI-powered financial coach,
+							ready when you are.
+						</p>
+					</div>
+					<div class="footer-section">
+						<h4>Product</h4>
+						<ul>
+							<li><a href="#">Features</a></li>
+							<li><a href="#">Pricing</a></li>
+							<li><a href="#">Security</a></li>
+							<li><a href="#">FAQ</a></li>
+						</ul>
+					</div>
+					<div class="footer-section">
+						<h4>Company</h4>
+						<ul>
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">Careers</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</div>
+					<div class="footer-section">
+						<h4>Legal</h4>
+						<ul>
+							<li>
+								<a href="#">Privacy Policy</a>
+							</li>
+							<li>
+								<a href="#">Terms of Service</a>
+							</li>
+							<li>
+								<a href="#">Security Policy</a>
+							</li>
+							<li>
+								<a href="#">Accessibility</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<p>
+						&copy; 2025 Budgy, Inc. All rights
+						reserved.
+					</p>
+					<div class="social-links">
+						<a
+							href="#"
+							class="social-link"
+							>Twitter</a
+						>
+						<a
+							href="#"
+							class="social-link"
+							>LinkedIn</a
+						>
+						<a
+							href="#"
+							class="social-link"
+							>Instagram</a
+						>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>

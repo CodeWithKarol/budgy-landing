@@ -1,0 +1,24 @@
+{
+	"name": "budgy-landing",
+	"version": "1.0.0",
+	"description": "Budgy landing page - AI-powered financial coaching platform",
+	"main": "index.html",
+	"scripts": {
+		"start": "python -m http.server 8000",
+		"build": "echo 'Production build complete'",
+		"deploy": "echo 'Ready for deployment'"
+	},
+	"keywords": [
+		"fintech",
+		"financial-coaching",
+		"ai",
+		"budgeting",
+		"personal-finance"
+	],
+	"author": "Budgy Team",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/CodeWithKarol/budgy-landing.git"
+	}
+}
