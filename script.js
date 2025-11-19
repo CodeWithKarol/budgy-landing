@@ -218,29 +218,14 @@ function initMobileMenu() {
 		".mobile-nav-link"
 	);
 
-	console.log("Mobile Menu Debug:", {
-		menuButton,
-		mobileMenu,
-		linkCount: mobileLinks.length,
-	});
-
 	if (menuButton && mobileMenu) {
-		console.log(
-			"Mobile menu initialized successfully"
-		);
-
 		// Toggle menu on button click
 		menuButton.addEventListener(
 			"click",
 			function (e) {
-				console.log("Hamburger clicked");
 				e.stopPropagation();
 				menuButton.classList.toggle("active");
 				mobileMenu.classList.toggle("active");
-				console.log(
-					"Menu active:",
-					mobileMenu.classList.contains("active")
-				);
 			}
 		);
 
@@ -281,6 +266,25 @@ function initMobileMenu() {
 				}
 			}
 		);
+
+		// Close menu on window resize (when transitioning to desktop)
+		window.addEventListener("resize", () => {
+			if (window.innerWidth > 768) {
+				menuButton.classList.remove("active");
+				mobileMenu.classList.remove("active");
+			}
+		});
+
+		// Close menu on Escape key press
+		document.addEventListener("keydown", (e) => {
+			if (
+				e.key === "Escape" &&
+				mobileMenu.classList.contains("active")
+			) {
+				menuButton.classList.remove("active");
+				mobileMenu.classList.remove("active");
+			}
+		});
 	}
 }
 
