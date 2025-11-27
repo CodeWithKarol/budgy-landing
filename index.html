@@ -1,723 +1,1641 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
-		<title>
-			Budgy - Your Financial Coach, Ready When You
-			Are
-		</title>
-		<link
-			rel="stylesheet"
-			href="styles.css"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
-	<body>
-		<!-- Navigation -->
-		<nav class="navbar">
-			<div class="nav-container">
-				<div class="logo">
-					<span class="logo-text">budgy</span>
-				</div>
-				<div class="nav-links">
-					<a
-						href="#features"
-						class="nav-link"
-						>Features</a
-					>
-					<a
-						href="#testimonials"
-						class="nav-link"
-						>Success Stories</a
-					>
-					<a
-						href="#resources"
-						class="nav-link"
-						>Resources</a
-					>
-					<a
-						href="#contact"
-						class="nav-link"
-						>Contact</a
-					>
-				</div>
-				<button class="nav-cta">
-					Start Free
-				</button>
-				<!-- Mobile Menu Button -->
-				<button
-					class="mobile-menu-button"
-					id="mobileMenuButton"
-					aria-label="Toggle mobile menu"
-				>
-					<span class="hamburger"></span>
-					<span class="hamburger"></span>
-					<span class="hamburger"></span>
-				</button>
-			</div>
-			<!-- Mobile Menu -->
-			<div
-				class="mobile-menu"
-				id="mobileMenu"
-			>
-				<a
-					href="#features"
-					class="mobile-nav-link"
-					>Features</a
-				>
-				<a
-					href="#testimonials"
-					class="mobile-nav-link"
-					>Success Stories</a
-				>
-				<a
-					href="#resources"
-					class="mobile-nav-link"
-					>Resources</a
-				>
-				<a
-					href="#contact"
-					class="mobile-nav-link"
-					>Contact</a
-				>
-				<button class="mobile-nav-cta">
-					Start Free
-				</button>
-			</div>
-		</nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budgy - Your Financial Coach, Ready When You Are</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="top">
+    <!-- Navigation -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <!-- Logo -->
+          <a href="#top" class="logo-link">
+            <div class="logo">
+              <div class="logo-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <circle
+                    cx="14"
+                    cy="14"
+                    r="12"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  />
+                  <path
+                    d="M14 7V14L18 16"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <span class="logo-text">budgy</span>
+            </div>
+          </a>
 
-		<!-- Hero Section -->
-		<section class="hero">
-			<div class="hero-content">
-				<h1 class="hero-headline">
-					Your Financial Coach, Ready When You
-					Are.
-				</h1>
-				<p class="hero-subheadline">
-					AI-powered personalization that
-					understands your unique financial
-					journey and grows with your life's
-					changing needs.
-				</p>
-				<button class="cta-button primary">
-					Start Your Journey Today
-				</button>
-				<p class="hero-trust-badge">
-					✓ Join 50,000+ users finding financial
-					clarity
-				</p>
-			</div>
-			<div class="hero-visual">
-				<div class="gradient-blob blob-1"></div>
-				<div class="gradient-blob blob-2"></div>
-				<div class="hero-image-placeholder">
-					<svg
-						viewBox="0 0 400 400"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<defs>
-							<linearGradient
-								id="heroGrad"
-								x1="0%"
-								y1="0%"
-								x2="100%"
-								y2="100%"
-							>
-								<stop
-									offset="0%"
-									style="
-										stop-color: #e8f4f8;
-										stop-opacity: 1;
-									"
-								/>
-								<stop
-									offset="100%"
-									style="
-										stop-color: #fff5f0;
-										stop-opacity: 1;
-									"
-								/>
-							</linearGradient>
-						</defs>
-						<circle
-							cx="200"
-							cy="200"
-							r="180"
-							fill="url(#heroGrad)"
-						/>
-						<circle
-							cx="150"
-							cy="150"
-							r="60"
-							fill="#5BA3A8"
-							opacity="0.3"
-						/>
-						<circle
-							cx="280"
-							cy="220"
-							r="50"
-							fill="#FF8C69"
-							opacity="0.2"
-						/>
-					</svg>
-				</div>
-			</div>
-		</section>
+          <!-- Desktop Navigation -->
+          <div class="nav-center">
+            <a href="#features" class="nav-link">
+              <span>Features</span>
+            </a>
+            <a href="#testimonials" class="nav-link">
+              <span>Testimonials</span>
+            </a>
+            <a href="#resources" class="nav-link">
+              <span>Resources</span>
+            </a>
+            <a href="#contact" class="nav-link">
+              <span>Contact</span>
+            </a>
+          </div>
 
-		<!-- Trust Section -->
-		<section class="trust-section">
-			<div class="container">
-				<h2>Why Budgy?</h2>
-				<div class="trust-grid">
-					<div class="trust-card">
-						<div class="trust-icon">🎯</div>
-						<h3>Personalized Guidance</h3>
-						<p>
-							Our AI learns your financial habits,
-							goals, and challenges to provide
-							guidance tailored to your unique
-							situation.
-						</p>
-					</div>
-					<div class="trust-card">
-						<div class="trust-icon">🤖</div>
-						<h3>AI That Grows With You</h3>
-						<p>
-							As your life changes—new job, home,
-							family—your financial coach adapts
-							to meet you where you are.
-						</p>
-					</div>
-					<div class="trust-card">
-						<div class="trust-icon">🔒</div>
-						<h3>Your Privacy Matters</h3>
-						<p>
-							Bank-level security protects your
-							financial data. We'll never share
-							your information without your
-							consent.
-						</p>
-					</div>
-					<div class="trust-card">
-						<div class="trust-icon">💡</div>
-						<h3>Actionable Insights</h3>
-						<p>
-							No jargon, no fluff—just clear,
-							practical advice you can implement
-							immediately.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
+          <!-- Right Actions -->
+          <div class="nav-actions">
+            <a href="#" class="nav-link-secondary">Sign In</a>
+            <button class="nav-cta">
+              <span>Get Started</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 8H13M13 8L9 4M13 8L9 12"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
 
-		<!-- Features Section -->
-		<section
-			id="features"
-			class="features-section"
-		>
-			<div class="container">
-				<h2>Designed for Your Financial Life</h2>
-				<div class="features-grid">
-					<div class="feature-block">
-						<div class="feature-number">01</div>
-						<h3>Understand Your Money</h3>
-						<p>
-							Get a clear picture of where your
-							money goes. Our intelligent tracking
-							reveals spending patterns and
-							opportunities you might have missed.
-						</p>
-					</div>
-					<div class="feature-block">
-						<div class="feature-number">02</div>
-						<h3>Smart Budgeting</h3>
-						<p>
-							Create budgets that work with your
-							life, not against it. Flexible
-							categories and real-time alerts keep
-							you on track.
-						</p>
-					</div>
-					<div class="feature-block">
-						<div class="feature-number">03</div>
-						<h3>Goals Worth Celebrating</h3>
-						<p>
-							Whether it's your dream vacation or
-							financial security, we help you set,
-							track, and celebrate your wins.
-						</p>
-					</div>
-					<div class="feature-block">
-						<div class="feature-number">04</div>
-						<h3>Debt-Free Strategies</h3>
-						<p>
-							Personalized payoff plans adapted to
-							your situation. Watch your debt
-							shrink with guidance every step of
-							the way.
-						</p>
-					</div>
-					<div class="feature-block">
-						<div class="feature-number">05</div>
-						<h3>Investment Foundations</h3>
-						<p>
-							Learn investing basics without the
-							intimidation. Our coach helps you
-							make confident decisions for your
-							future.
-						</p>
-					</div>
-					<div class="feature-block">
-						<div class="feature-number">06</div>
-						<h3>Emergency Preparedness</h3>
-						<p>
-							Build financial confidence through
-							smart emergency fund planning. Sleep
-							better knowing you're prepared.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
+          <!-- Mobile Menu Toggle -->
+          <button
+            class="mobile-menu-toggle"
+            id="mobileMenuButton"
+            aria-label="Toggle menu"
+          >
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+          </button>
+        </div>
+      </nav>
 
-		<!-- Video Testimonial CTA -->
-		<section class="video-section">
-			<div class="container">
-				<h2>Real Stories, Real Results</h2>
-				<p class="section-subtitle">
-					See how Budgy has transformed financial
-					lives
-				</p>
-				<div class="video-grid">
-					<div class="video-card">
-						<div class="video-placeholder">
-							<div class="play-button">▶</div>
-							<p class="video-title">
-								From Overwhelmed to Empowered
-							</p>
-							<p class="video-subtitle">
-								Sarah's journey to financial
-								clarity
-							</p>
-						</div>
-					</div>
-					<div class="video-card">
-						<div class="video-placeholder">
-							<div class="play-button">▶</div>
-							<p class="video-title">
-								Paying Off $50K in Debt
-							</p>
-							<p class="video-subtitle">
-								Marcus shares his breakthrough
-							</p>
-						</div>
-					</div>
-					<div class="video-card">
-						<div class="video-placeholder">
-							<div class="play-button">▶</div>
-							<p class="video-title">
-								Building Wealth Together
-							</p>
-							<p class="video-subtitle">
-								The Chen family's success story
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+          <div class="mobile-menu-header">
+            <span class="mobile-menu-title">Menu</span>
+          </div>
 
-		<!-- Testimonials Section -->
-		<section
-			id="testimonials"
-			class="testimonials-section"
-		>
-			<div class="container">
-				<h2>What Our Users Say</h2>
-				<div class="testimonials-grid">
-					<div class="testimonial-card">
-						<div class="stars">★★★★★</div>
-						<p class="testimonial-quote">
-							"For the first time in my life, I
-							feel like I have a plan. Budgy made
-							finances feel less scary and more
-							manageable."
-						</p>
-						<div class="testimonial-author">
-							<div class="author-avatar">JR</div>
-							<div>
-								<p class="author-name">
-									Jessica Reynolds
-								</p>
-								<p class="author-title">
-									First-time saver, San Francisco
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="testimonial-card">
-						<div class="stars">★★★★★</div>
-						<p class="testimonial-quote">
-							"I paid off $15,000 in credit card
-							debt in 18 months thanks to Budgy's
-							guidance. I actually look forward to
-							checking my finances now."
-						</p>
-						<div class="testimonial-author">
-							<div class="author-avatar">MJ</div>
-							<div>
-								<p class="author-name">
-									Marcus Johnson
-								</p>
-								<p class="author-title">
-									Debt-free achiever, Austin
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="testimonial-card">
-						<div class="stars">★★★★★</div>
-						<p class="testimonial-quote">
-							"The AI coaching feels like having a
-							friend who actually knows finance.
-							It's personalized, not judgmental,
-							and genuinely helpful."
-						</p>
-						<div class="testimonial-author">
-							<div class="author-avatar">PC</div>
-							<div>
-								<p class="author-name">
-									Priya Chatterjee
-								</p>
-								<p class="author-title">
-									Young professional, New York
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+          <div class="mobile-menu-links">
+            <a href="#features" class="mobile-nav-link">
+              <svg
+                class="mobile-link-icon"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span>Features</span>
+            </a>
+            <a href="#testimonials" class="mobile-nav-link">
+              <svg
+                class="mobile-link-icon"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M10 12C12.2091 12 14 10.2091 14 8C14 5.79086 12.2091 4 10 4C7.79086 4 6 5.79086 6 8C6 10.2091 7.79086 12 10 12Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M3 18C3 14 6 12 10 12C14 12 17 14 17 18"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <span>Testimonials</span>
+            </a>
+            <a href="#resources" class="mobile-nav-link">
+              <svg
+                class="mobile-link-icon"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M3 5C3 3.89543 3.89543 3 5 3H15C16.1046 3 17 3.89543 17 5V17L10 13L3 17V5Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Resources</span>
+            </a>
+            <a href="#contact" class="mobile-nav-link">
+              <svg
+                class="mobile-link-icon"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <rect
+                  x="2"
+                  y="4"
+                  width="16"
+                  height="12"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M2 7L10 11L18 7"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Contact</span>
+            </a>
+          </div>
 
-		<!-- Emotional Connection Section -->
-		<section class="connection-section">
-			<div class="container">
-				<div class="connection-content">
-					<h2>
-						Financial Wellness Isn't Just About
-						Numbers
-					</h2>
-					<p>
-						It's about peace of mind. It's about
-						knowing you can handle life's
-						surprises. It's about building the
-						future you want without constant
-						stress.
-					</p>
-					<p class="connection-quote">
-						<span class="quote-mark">"</span>Your
-						financial health directly impacts your
-						overall well-being.<span
-							class="quote-mark"
-							>"</span
-						>
-					</p>
-					<p>
-						That's why Budgy was designed with
-						empathy—by people who understand that
-						managing money is deeply personal.
-					</p>
-					<button
-						class="cta-button primary large"
-					>
-						Start Your Journey Today
-					</button>
-				</div>
-			</div>
-		</section>
+          <div class="mobile-menu-footer">
+            <a href="#" class="mobile-menu-signin">Sign In</a>
+            <button class="mobile-menu-cta">
+              <span>Get Started Free</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 8H13M13 8L9 4M13 8L9 12"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-background">
+        <div class="hero-grid-pattern"></div>
+        <div class="hero-gradient-orb hero-gradient-orb-1"></div>
+        <div class="hero-gradient-orb hero-gradient-orb-2"></div>
+      </div>
 
-		<!-- Resources Section -->
-		<section
-			id="resources"
-			class="resources-section"
-		>
-			<div class="container">
-				<h2>Learn & Grow</h2>
-				<p class="section-subtitle">
-					Free resources to accelerate your
-					financial journey
-				</p>
-				<div class="resources-grid">
-					<div class="resource-card">
-						<h3>📚 Knowledge Base</h3>
-						<p>
-							Clear, jargon-free articles covering
-							budgeting, debt, investing, and
-							life-changing financial decisions.
-						</p>
-						<a
-							href="#"
-							class="resource-link"
-							>Explore Articles →</a
-						>
-					</div>
-					<div class="resource-card">
-						<h3>🎓 Financial Coaching</h3>
-						<p>
-							Interactive guides and challenges
-							designed to build financial
-							confidence step by step.
-						</p>
-						<a
-							href="#"
-							class="resource-link"
-							>Start Learning →</a
-						>
-					</div>
-					<div class="resource-card">
-						<h3>💬 Community Forum</h3>
-						<p>
-							Connect with others on similar
-							journeys, share wins, and get
-							support from a caring community.
-						</p>
-						<a
-							href="#"
-							class="resource-link"
-							>Join Community →</a
-						>
-					</div>
-					<div class="resource-card">
-						<h3>📊 Financial Tools</h3>
-						<p>
-							Free calculators for savings goals,
-							debt payoff, budgeting, and net
-							worth tracking.
-						</p>
-						<a
-							href="#"
-							class="resource-link"
-							>Access Tools →</a
-						>
-					</div>
-				</div>
-			</div>
-		</section>
+      <div class="hero-container">
+        <div class="hero-content">
+          <!-- Badge -->
+          <div class="hero-badge">
+            <svg
+              class="badge-sparkle"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M8 0L9.5 6.5L16 8L9.5 9.5L8 16L6.5 9.5L0 8L6.5 6.5L8 0Z"
+                fill="currentColor"
+              />
+            </svg>
+            <span>Trusted by 50,000+ users worldwide</span>
+          </div>
 
-		<!-- CTA Section -->
-		<section class="final-cta-section">
-			<div class="container">
-				<h2>Ready to Take Control?</h2>
-				<p>
-					No credit card needed. No hidden fees.
-					Just honest financial guidance.
-				</p>
-				<button class="cta-button primary large">
-					Start Your Journey Today
-				</button>
-				<p class="cta-subtext">
-					14-day free trial • Cancel anytime • $0
-					if you cancel within 14 days
-				</p>
-			</div>
-		</section>
+          <!-- Main Headline -->
+          <h1 class="hero-headline">
+            Take Control of Your
+            <span class="hero-headline-gradient">Financial Future</span>
+            With AI-Powered Guidance
+          </h1>
 
-		<!-- Contact Section -->
-		<section
-			id="contact"
-			class="contact-section"
-		>
-			<div class="container">
-				<div class="contact-content">
-					<div class="contact-info">
-						<h3>Questions? We're Here to Help</h3>
-						<p>
-							Our financial coaching team is ready
-							to answer your questions and help
-							you get started.
-						</p>
-						<div class="contact-methods">
-							<div class="contact-method">
-								<span class="contact-icon"
-									>💬</span
-								>
-								<div>
-									<p class="contact-label">
-										Live Chat Support
-									</p>
-									<p class="contact-detail">
-										Available Monday-Friday,
-										9am-6pm EST
-									</p>
-								</div>
-							</div>
-							<div class="contact-method">
-								<span class="contact-icon"
-									>📧</span
-								>
-								<div>
-									<p class="contact-label">
-										Email
-									</p>
-									<p class="contact-detail">
-										hello@budgy.app
-									</p>
-								</div>
-							</div>
-							<div class="contact-method">
-								<span class="contact-icon"
-									>📚</span
-								>
-								<div>
-									<p class="contact-label">
-										Resource Center
-									</p>
-									<p class="contact-detail">
-										Visit our knowledge base for
-										instant answers
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<form
-						class="signup-form"
-						id="signupForm"
-					>
-						<h3>Start Your Free Trial</h3>
-						<div class="form-group">
-							<input
-								type="text"
-								placeholder="Your Name"
-								required
-							/>
-						</div>
-						<div class="form-group">
-							<input
-								type="email"
-								placeholder="Your Email"
-								required
-							/>
-						</div>
-						<div class="form-group">
-							<select required>
-								<option value="">
-									What's your primary financial
-									goal?
-								</option>
-								<option value="budget">
-									Budgeting & Tracking
-								</option>
-								<option value="debt">
-									Paying Off Debt
-								</option>
-								<option value="save">
-									Building Savings
-								</option>
-								<option value="invest">
-									Starting to Invest
-								</option>
-								<option value="general">
-									General Financial Health
-								</option>
-							</select>
-						</div>
-						<button
-							type="submit"
-							class="cta-button primary full-width"
-						>
-							Create Free Account
-						</button>
-						<p class="form-notice">
-							No credit card required. We'll never
-							spam you.
-						</p>
-					</form>
-				</div>
-			</div>
-		</section>
+          <!-- Subheadline -->
+          <p class="hero-subheadline">
+            Smart budgeting, personalized insights, and expert guidance—all in
+            one place. Start building the financial life you deserve today.
+          </p>
 
-		<!-- Footer -->
-		<footer class="footer">
-			<div class="container">
-				<div class="footer-grid">
-					<div class="footer-section">
-						<h4>Budgy</h4>
-						<p>
-							Your AI-powered financial coach,
-							ready when you are.
-						</p>
-					</div>
-					<div class="footer-section">
-						<h4>Product</h4>
-						<ul>
-							<li><a href="#">Features</a></li>
-							<li><a href="#">Pricing</a></li>
-							<li><a href="#">Security</a></li>
-							<li><a href="#">FAQ</a></li>
-						</ul>
-					</div>
-					<div class="footer-section">
-						<h4>Company</h4>
-						<ul>
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</div>
-					<div class="footer-section">
-						<h4>Legal</h4>
-						<ul>
-							<li>
-								<a href="#">Privacy Policy</a>
-							</li>
-							<li>
-								<a href="#">Terms of Service</a>
-							</li>
-							<li>
-								<a href="#">Security Policy</a>
-							</li>
-							<li>
-								<a href="#">Accessibility</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="footer-bottom">
-					<p>
-						&copy; 2025 Budgy, Inc. All rights
-						reserved.
-					</p>
-					<div class="social-links">
-						<a
-							href="#"
-							class="social-link"
-							>Twitter</a
-						>
-						<a
-							href="#"
-							class="social-link"
-							>LinkedIn</a
-						>
-						<a
-							href="#"
-							class="social-link"
-							>Instagram</a
-						>
-					</div>
-				</div>
-			</div>
-		</footer>
+          <!-- CTA Group -->
+          <div class="hero-cta-group">
+            <button class="cta-button primary large">
+              Get Started Free
+              <svg
+                class="cta-arrow"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M4 10H16M16 10L11 5M16 10L11 15"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button class="cta-button secondary-outline">
+              <svg
+                class="play-icon"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="9"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path d="M8 6L14 10L8 14V6Z" fill="currentColor" />
+              </svg>
+              Watch Demo
+            </button>
+          </div>
 
-		<script src="script.js"></script>
-	</body>
+          <!-- Trust Indicators -->
+          <div class="hero-trust-bar">
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M10 1L12.5 7.5L19 10L12.5 12.5L10 19L7.5 12.5L1 10L7.5 7.5L10 1Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <span class="trust-text"
+                ><strong>4.9/5</strong> from 12K+ reviews</span
+              >
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M10 2L3 6V9C3 13.5 10 18 10 18C10 18 17 13.5 17 9V6L10 2Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    fill="none"
+                  />
+                  <path
+                    d="M7 10L9 12L13 8"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <span class="trust-text">Bank-level security</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle
+                    cx="10"
+                    cy="7"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    fill="none"
+                  />
+                  <path
+                    d="M4 18C4 14 6 12 10 12C14 12 16 14 16 18"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <span class="trust-text">No credit card required</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="hero-visual">
+          <div class="hero-image-wrapper">
+            <!-- Floating Stats Cards -->
+            <div class="floating-card stats-card">
+              <div class="card-header">
+                <div class="card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M3 13L12 4L21 13"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M3 13L3 20L21 20L21 13"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <span class="card-label">Monthly Savings</span>
+              </div>
+              <div class="card-value">+$1,247</div>
+              <div class="card-trend positive">↗ 23% vs last month</div>
+            </div>
+
+            <div class="floating-card goal-card">
+              <div class="card-header">
+                <span class="card-label">Dream Vacation</span>
+                <span class="card-percentage">68%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 68%"></div>
+              </div>
+              <div class="card-amount">$6,800 of $10,000</div>
+            </div>
+
+            <div class="floating-card ai-card">
+              <div class="ai-icon-wrapper">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <circle
+                    cx="16"
+                    cy="16"
+                    r="14"
+                    stroke="url(#aiGradient)"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="16"
+                    cy="16"
+                    r="10"
+                    fill="url(#aiGradient)"
+                    opacity="0.2"
+                  />
+                  <path
+                    d="M12 14L16 10L20 14M12 18L16 22L20 18"
+                    stroke="url(#aiGradient)"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="aiGradient"
+                      x1="0"
+                      y1="0"
+                      x2="32"
+                      y2="32"
+                    >
+                      <stop offset="0%" stop-color="#5BA3A8" />
+                      <stop offset="100%" stop-color="#FF8C69" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div class="ai-text">
+                <div class="ai-label">AI Insight</div>
+                <div class="ai-message">
+                  You're on track to save $850 more this quarter!
+                </div>
+              </div>
+            </div>
+
+            <!-- Main Dashboard Preview -->
+            <div class="hero-dashboard">
+              <div class="dashboard-header">
+                <div class="dashboard-greeting">Welcome back, Alex</div>
+                <div class="dashboard-date">November 2025</div>
+              </div>
+              <div class="dashboard-chart">
+                <svg viewBox="0 0 300 180" fill="none">
+                  <defs>
+                    <linearGradient
+                      id="chartGradient"
+                      x1="0"
+                      y1="0"
+                      x2="0"
+                      y2="180"
+                    >
+                      <stop
+                        offset="0%"
+                        stop-color="#5BA3A8"
+                        stop-opacity="0.3"
+                      />
+                      <stop
+                        offset="100%"
+                        stop-color="#5BA3A8"
+                        stop-opacity="0"
+                      />
+                    </linearGradient>
+                  </defs>
+                  <!-- Chart Area -->
+                  <path
+                    d="M 20 160 L 50 140 L 80 110 L 110 120 L 140 80 L 170 90 L 200 50 L 230 60 L 260 30 L 280 40"
+                    stroke="#5BA3A8"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M 20 160 L 50 140 L 80 110 L 110 120 L 140 80 L 170 90 L 200 50 L 230 60 L 260 30 L 280 40 L 280 180 L 20 180 Z"
+                    fill="url(#chartGradient)"
+                  />
+                  <!-- Data Points -->
+                  <circle cx="140" cy="80" r="4" fill="#5BA3A8" />
+                  <circle cx="200" cy="50" r="4" fill="#5BA3A8" />
+                  <circle cx="260" cy="30" r="4" fill="#FF8C69" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Trust Section -->
+    <section class="trust-section">
+      <div class="trust-background">
+        <div class="trust-gradient-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="trust-header">
+          <h2 class="section-title">Why Choose Budgy?</h2>
+          <p class="section-subtitle">
+            We combine cutting-edge AI with human-centered design to deliver
+            financial guidance that actually works
+          </p>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-card">
+            <div class="trust-card-icon">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="22"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M18 24L22 28L30 18"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Personalized Guidance</h3>
+            <p>
+              Our AI learns your financial habits and goals to deliver guidance
+              specifically designed for your unique situation and aspirations.
+            </p>
+            <div class="trust-card-accent"></div>
+          </div>
+          <div class="trust-card">
+            <div class="trust-card-icon">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="8"
+                  y="16"
+                  width="32"
+                  height="24"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M16 16V12C16 10.9 16.9 10 18 10H30C31.1 10 32 10.9 32 12V16"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <circle cx="24" cy="28" r="3" fill="currentColor" />
+              </svg>
+            </div>
+            <h3>AI That Grows With You</h3>
+            <p>
+              As your life evolves—new job, home, family—your financial coach
+              adapts intelligently to meet your changing needs and priorities.
+            </p>
+            <div class="trust-card-accent"></div>
+          </div>
+          <div class="trust-card">
+            <div class="trust-card-icon">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 8L30 14L30 20C30 26.6 24 36 24 36C24 36 18 26.6 18 20V14L24 8Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+                <circle cx="24" cy="18" r="2" fill="currentColor" />
+              </svg>
+            </div>
+            <h3>Your Privacy Matters</h3>
+            <p>
+              Bank-level security protects your financial data with
+              industry-leading encryption. We never share your information
+              without explicit consent.
+            </p>
+            <div class="trust-card-accent"></div>
+          </div>
+          <div class="trust-card">
+            <div class="trust-card-icon">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="16"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M24 16V24L30 28"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>Actionable Insights</h3>
+            <p>
+              Clear, practical recommendations without the jargon. Every insight
+              is designed for immediate implementation with real impact.
+            </p>
+            <div class="trust-card-accent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+      <div class="features-background">
+        <div class="features-gradient"></div>
+        <div class="features-shapes">
+          <div class="feature-shape feature-shape-1"></div>
+          <div class="feature-shape feature-shape-2"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="features-header">
+          <h2 class="section-title">Designed for Your Financial Life</h2>
+          <p class="section-subtitle">
+            Everything you need to take control of your finances and build
+            lasting wealth—all in one intelligent platform
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-block">
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="16"
+                    cy="16"
+                    r="14"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M8 16H24M16 8V24"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="feature-number">01</div>
+            <h3>Understand Your Money</h3>
+            <p>
+              Get a clear picture of where your money goes. Our intelligent
+              tracking reveals spending patterns and opportunities you might
+              have missed.
+            </p>
+            <div class="feature-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 10H15M15 10L10 5M15 10L10 15"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="feature-block">
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="4"
+                    y="8"
+                    width="24"
+                    height="16"
+                    rx="2"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M4 12H28M8 16H12M16 16H20"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="feature-number">02</div>
+            <h3>Smart Budgeting</h3>
+            <p>
+              Create budgets that work with your life, not against it. Flexible
+              categories and real-time alerts keep you on track effortlessly.
+            </p>
+            <div class="feature-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 10H15M15 10L10 5M15 10L10 15"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="feature-block">
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 2L20 12H30L22 18L25 28L16 22L7 28L10 18L2 12H12L16 2Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="feature-number">03</div>
+            <h3>Goals Worth Celebrating</h3>
+            <p>
+              Whether it's your dream vacation or financial security, we help
+              you set, track, and celebrate your wins along the way.
+            </p>
+            <div class="feature-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 10H15M15 10L10 5M15 10L10 15"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="feature-block">
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6 12C6 8 8 4 16 4C24 4 26 8 26 12V18C26 22 24 26 16 26C8 26 6 22 6 18V12Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 16H20M12 20H16"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="feature-number">04</div>
+            <h3>Debt-Free Strategies</h3>
+            <p>
+              Personalized payoff plans adapted to your situation. Watch your
+              debt shrink with guidance every step of the way.
+            </p>
+            <div class="feature-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 10H15M15 10L10 5M15 10L10 15"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="feature-block">
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 4L20 10L27 11L22 16L23 23L16 20L9 23L10 16L5 11L12 10L16 4Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="feature-number">05</div>
+            <h3>Investment Foundations</h3>
+            <p>
+              Learn investing basics without the intimidation. Our coach helps
+              you make confident decisions for your future.
+            </p>
+            <div class="feature-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 10H15M15 10L10 5M15 10L10 15"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="feature-block">
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="16"
+                    cy="16"
+                    r="12"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M16 10V16L20 20"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="feature-number">06</div>
+            <h3>Emergency Preparedness</h3>
+            <p>
+              Build financial confidence through smart emergency fund planning.
+              Sleep better knowing you're prepared for anything.
+            </p>
+            <div class="feature-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 10H15M15 10L10 5M15 10L10 15"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Testimonial CTA -->
+    <section class="video-section">
+      <div class="video-background">
+        <div class="video-gradient"></div>
+        <div class="video-shapes">
+          <div class="video-shape video-shape-1"></div>
+          <div class="video-shape video-shape-2"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="video-header">
+          <h2 class="section-title">Real Stories, Real Results</h2>
+          <p class="section-subtitle">
+            See how Budgy has transformed financial lives and helped people
+            achieve their greatest financial goals
+          </p>
+        </div>
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-container">
+              <div class="video-thumbnail">
+                <div class="play-button">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M8 5V19L19 12L8 5Z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="video-overlay"></div>
+              <div class="video-content">
+                <h3 class="video-title">From Overwhelmed to Empowered</h3>
+                <p class="video-subtitle">
+                  Sarah's journey to financial clarity
+                </p>
+                <div class="video-meta">
+                  <span class="video-duration">4:32</span>
+                  <span class="video-views">12K views</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-container">
+              <div class="video-thumbnail">
+                <div class="play-button">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M8 5V19L19 12L8 5Z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="video-overlay"></div>
+              <div class="video-content">
+                <h3 class="video-title">Paying Off $50K in Debt</h3>
+                <p class="video-subtitle">Marcus shares his breakthrough</p>
+                <div class="video-meta">
+                  <span class="video-duration">6:15</span>
+                  <span class="video-views">8.5K views</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-container">
+              <div class="video-thumbnail">
+                <div class="play-button">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M8 5V19L19 12L8 5Z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="video-overlay"></div>
+              <div class="video-content">
+                <h3 class="video-title">Building Wealth Together</h3>
+                <p class="video-subtitle">The Chen family's success story</p>
+                <div class="video-meta">
+                  <span class="video-duration">5:48</span>
+                  <span class="video-views">15K views</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="testimonials-background">
+        <div class="testimonials-gradient"></div>
+        <div class="testimonials-shapes">
+          <div class="testimonial-shape testimonial-shape-1"></div>
+          <div class="testimonial-shape testimonial-shape-2"></div>
+          <div class="testimonial-shape testimonial-shape-3"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="testimonials-header">
+          <h2 class="section-title">What Our Users Say</h2>
+          <p class="section-subtitle">
+            Join thousands of people who have transformed their financial lives
+            with Budgy's personalized guidance
+          </p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="testimonial-badge">Verified User</div>
+            </div>
+            <p class="testimonial-quote">
+              "For the first time in my life, I feel like I have a plan. Budgy
+              made finances feel less scary and more manageable."
+            </p>
+            <div class="testimonial-footer">
+              <div class="author-info">
+                <div class="author-avatar">JR</div>
+                <div class="author-details">
+                  <p class="author-name">Jessica Reynolds</p>
+                  <p class="author-title">First-time saver, San Francisco</p>
+                </div>
+              </div>
+              <div class="testimonial-quote-mark">"</div>
+            </div>
+          </div>
+          <div class="testimonial-card featured">
+            <div class="featured-badge-wrapper">
+              <div class="featured-badge">Most Impactful</div>
+            </div>
+            <div class="testimonial-top">
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="testimonial-badge">Verified User</div>
+            </div>
+            <p class="testimonial-quote">
+              "I paid off $15,000 in credit card debt in 18 months thanks to
+              Budgy's guidance. I actually look forward to checking my finances
+              now."
+            </p>
+            <div class="testimonial-footer">
+              <div class="author-info">
+                <div class="author-avatar">MJ</div>
+                <div class="author-details">
+                  <p class="author-name">Marcus Johnson</p>
+                  <p class="author-title">Debt-free achiever, Austin</p>
+                </div>
+              </div>
+              <div class="testimonial-quote-mark">"</div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="testimonial-badge">Verified User</div>
+            </div>
+            <p class="testimonial-quote">
+              "The AI coaching feels like having a friend who actually knows
+              finance. It's personalized, not judgmental, and genuinely
+              helpful."
+            </p>
+            <div class="testimonial-footer">
+              <div class="author-info">
+                <div class="author-avatar">PC</div>
+                <div class="author-details">
+                  <p class="author-name">Priya Chatterjee</p>
+                  <p class="author-title">Young professional, New York</p>
+                </div>
+              </div>
+              <div class="testimonial-quote-mark">"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emotional Connection Section -->
+    <section class="connection-section">
+      <div class="connection-background">
+        <div class="connection-gradient"></div>
+        <div class="connection-shapes">
+          <div class="connection-shape connection-shape-1"></div>
+          <div class="connection-shape connection-shape-2"></div>
+          <div class="connection-shape connection-shape-3"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="connection-content">
+          <div class="connection-badge">
+            <span>✓</span> Your Well-Being Matters
+          </div>
+          <h2 class="connection-title">
+            Financial Wellness Isn't Just About Numbers
+          </h2>
+          <p class="connection-subtitle">
+            It's about peace of mind. It's about knowing you can handle life's
+            surprises. It's about building the future you want without constant
+            stress.
+          </p>
+          <div class="connection-quote-card">
+            <div class="quote-mark-left">"</div>
+            <p class="connection-quote">
+              Your financial health directly impacts your overall well-being.
+            </p>
+            <div class="quote-mark-right">"</div>
+          </div>
+          <p class="connection-description">
+            That's why Budgy was designed with empathy—by people who understand
+            that managing money is deeply personal.
+          </p>
+          <div class="connection-cta-group">
+            <button class="cta-button primary large">
+              Start Your Journey Today
+            </button>
+            <p class="connection-subtext">
+              No credit card required. Join thousands today.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources-section">
+      <div class="resources-background">
+        <div class="resources-gradient"></div>
+        <div class="resources-shapes">
+          <div class="resource-shape resource-shape-1"></div>
+          <div class="resource-shape resource-shape-2"></div>
+          <div class="resource-shape resource-shape-3"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="resources-header">
+          <h2 class="section-title">Learn & Grow</h2>
+          <p class="section-subtitle">
+            Free resources to accelerate your financial journey
+          </p>
+        </div>
+        <div class="resources-grid">
+          <div class="resource-card">
+            <div class="resource-icon-wrapper">
+              <svg
+                class="resource-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path
+                  d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3>Knowledge Base</h3>
+            <p>
+              Clear, jargon-free articles covering budgeting, debt, investing,
+              and life-changing financial decisions.
+            </p>
+            <a href="#" class="resource-link">
+              Explore Articles
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon-wrapper">
+              <svg
+                class="resource-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                ></path>
+              </svg>
+            </div>
+            <h3>Financial Coaching</h3>
+            <p>
+              Interactive guides and challenges designed to build financial
+              confidence step by step.
+            </p>
+            <a href="#" class="resource-link">
+              Start Learning
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon-wrapper">
+              <svg
+                class="resource-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3>Community Forum</h3>
+            <p>
+              Connect with others on similar journeys, share wins, and get
+              support from a caring community.
+            </p>
+            <a href="#" class="resource-link">
+              Join Community
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+          <div class="resource-card">
+            <div class="resource-icon-wrapper">
+              <svg
+                class="resource-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="2" x2="12" y2="22"></line>
+                <path
+                  d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                ></path>
+              </svg>
+            </div>
+            <h3>Financial Tools</h3>
+            <p>
+              Free calculators for savings goals, debt payoff, budgeting, and
+              net worth tracking.
+            </p>
+            <a href="#" class="resource-link">
+              Access Tools
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="final-cta-section">
+      <div class="final-cta-background">
+        <div class="final-cta-gradient"></div>
+        <div class="final-cta-shapes">
+          <div class="final-cta-shape final-cta-shape-1"></div>
+          <div class="final-cta-shape final-cta-shape-2"></div>
+          <div class="final-cta-shape final-cta-shape-3"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="final-cta-content">
+          <h2 class="final-cta-title">
+            Ready to Take Control of Your Finances?
+          </h2>
+          <p class="final-cta-subtitle">
+            Join thousands who have transformed their financial lives with
+            Budgy's personalized guidance and support.
+          </p>
+          <div class="final-cta-features">
+            <div class="cta-feature">
+              <svg
+                class="cta-feature-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+              <span>No credit card required</span>
+            </div>
+            <div class="cta-feature">
+              <svg
+                class="cta-feature-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+              <span>14-day free trial</span>
+            </div>
+            <div class="cta-feature">
+              <svg
+                class="cta-feature-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+              <span>Cancel anytime</span>
+            </div>
+          </div>
+          <button class="cta-button primary large">
+            Start Your Journey Today
+          </button>
+          <p class="final-cta-disclaimer">
+            $0 if you cancel within 14 days • No hidden fees
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-background">
+        <div class="contact-gradient"></div>
+        <div class="contact-shapes">
+          <div class="contact-shape contact-shape-1"></div>
+          <div class="contact-shape contact-shape-2"></div>
+          <div class="contact-shape contact-shape-3"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="contact-header">
+          <h2 class="section-title">Questions? We're Here to Help</h2>
+          <p class="section-subtitle">
+            Our dedicated financial coaching team is ready to answer your
+            questions and help you get started.
+          </p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-methods-wrapper">
+            <div class="contact-method-card">
+              <div class="contact-method-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  ></path>
+                </svg>
+              </div>
+              <h3>Live Chat Support</h3>
+              <p class="contact-method-detail">
+                Available Monday-Friday, 9am-6pm EST
+              </p>
+              <a href="#" class="contact-method-link">Start Chat →</a>
+            </div>
+            <div class="contact-method-card">
+              <div class="contact-method-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <h3>Email Support</h3>
+              <p class="contact-method-detail">hello@budgy.app</p>
+              <a href="mailto:hello@budgy.app" class="contact-method-link"
+                >Send Email →</a
+              >
+            </div>
+            <div class="contact-method-card">
+              <div class="contact-method-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                  ></path>
+                </svg>
+              </div>
+              <h3>Resource Center</h3>
+              <p class="contact-method-detail">
+                Visit our knowledge base for instant answers
+              </p>
+              <a href="#" class="contact-method-link">Learn More →</a>
+            </div>
+          </div>
+          <form class="signup-form" id="signupForm">
+            <div class="form-header">
+              <h3>Start Your Free Trial</h3>
+              <p>No credit card required. Join thousands today.</p>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Your Email" required />
+            </div>
+            <div class="form-group">
+              <select required>
+                <option value="">What's your primary financial goal?</option>
+                <option value="budget">Budgeting & Tracking</option>
+                <option value="debt">Paying Off Debt</option>
+                <option value="save">Building Savings</option>
+                <option value="invest">Starting to Invest</option>
+                <option value="general">General Financial Health</option>
+              </select>
+            </div>
+            <button type="submit" class="cta-button primary full-width">
+              Create Free Account
+            </button>
+            <p class="form-notice">
+              No credit card required • We'll never spam you
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-background">
+        <div class="footer-gradient"></div>
+      </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-main">
+            <div class="footer-brand">
+              <div class="footer-logo">
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M16 2L4 8v8c0 6.627 8 10 12 10s12-3.373 12-10V8l-12-6z"
+                  ></path>
+                  <path d="M16 16v6"></path>
+                </svg>
+              </div>
+              <h3>Budgy</h3>
+            </div>
+            <p class="footer-description">
+              Your AI-powered financial coach, empowering you to take control of
+              your finances with confidence and clarity.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link" aria-label="X">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                  ></path>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="footer-social-link" aria-label="Instagram">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect
+                    x="2"
+                    y="2"
+                    width="20"
+                    height="20"
+                    rx="5"
+                    ry="5"
+                    fill="none"
+                  ></rect>
+                  <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1.5"
+                    fill="currentColor"
+                  ></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Product</h4>
+              <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Security</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Legal</h4>
+              <ul>
+                <li>
+                  <a href="#">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#">Terms of Service</a>
+                </li>
+                <li>
+                  <a href="#">Security Policy</a>
+                </li>
+                <li>
+                  <a href="#">Accessibility</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            &copy; 2025 Budgy, Inc. All rights reserved.
+          </p>
+          <div class="footer-credits">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

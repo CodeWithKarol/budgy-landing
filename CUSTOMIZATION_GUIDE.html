@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Budgy Landing Page - Customization Guide</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		:root {
+			--primary-blue: #5ba3a8;
+			--secondary-blue: #4a8b92;
+			--warm-coral: #ff8c69;
+			--text-dark: #2c3e50;
+			--text-light: #5a6c7d;
+			--light-blue: #e8f4f8;
+			--cream: #fff9f5;
+			--white: #ffffff;
+		}
+
+		body {
+			font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+			line-height: 1.6;
+			color: var(--text-dark);
+			background-color: var(--cream);
+		}
+
+		.container {
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 2rem;
+		}
+
+		header {
+			background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+			color: var(--white);
+			padding: 3rem 2rem;
+			border-radius: 12px;
+			margin-bottom: 3rem;
+			text-align: center;
+		}
+
+		header h1 {
+			font-size: 2.5rem;
+			margin-bottom: 0.5rem;
+		}
+
+		header p {
+			font-size: 1.1rem;
+			opacity: 0.95;
+		}
+
+		nav {
+			background: var(--white);
+			padding: 1.5rem;
+			border-radius: 8px;
+			margin-bottom: 2rem;
+			box-shadow: 0 2px 8px rgba(91, 163, 168, 0.1);
+			position: sticky;
+			top: 2rem;
+			z-index: 50;
+		}
+
+		nav h3 {
+			color: var(--primary-blue);
+			margin-bottom: 1rem;
+			font-size: 0.95rem;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		nav ul {
+			list-style: none;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 0.5rem;
+		}
+
+		nav a {
+			color: var(--primary-blue);
+			text-decoration: none;
+			padding: 0.5rem;
+			border-radius: 4px;
+			transition: all 0.3s ease;
+		}
+
+		nav a:hover {
+			background: var(--light-blue);
+			color: var(--secondary-blue);
+		}
+
+		section {
+			background: var(--white);
+			padding: 2.5rem;
+			margin-bottom: 2rem;
+			border-radius: 12px;
+			box-shadow: 0 2px 12px rgba(91, 163, 168, 0.08);
+			border-left: 4px solid var(--primary-blue);
+		}
+
+		section h2 {
+			color: var(--primary-blue);
+			font-size: 1.8rem;
+			margin-bottom: 1.5rem;
+			padding-bottom: 0.75rem;
+			border-bottom: 2px solid var(--light-blue);
+		}
+
+		section h3 {
+			color: var(--secondary-blue);
+			font-size: 1.2rem;
+			margin-top: 1.5rem;
+			margin-bottom: 0.75rem;
+		}
+
+		section h4 {
+			color: var(--text-dark);
+			font-size: 1rem;
+			margin-top: 1.25rem;
+			margin-bottom: 0.5rem;
+			font-weight: 600;
+		}
+
+		p, li {
+			color: var(--text-light);
+			margin-bottom: 1rem;
+			line-height: 1.8;
+		}
+
+		code {
+			background: #f5f5f5;
+			color: #e83e8c;
+			padding: 0.2rem 0.5rem;
+			border-radius: 4px;
+			font-family: "Monaco", "Courier New", monospace;
+			font-size: 0.9em;
+		}
+
+		pre {
+			background: #2c3e50;
+			color: #a8e6e6;
+			padding: 1.5rem;
+			border-radius: 8px;
+			overflow-x: auto;
+			margin-bottom: 1.5rem;
+			line-height: 1.5;
+		}
+
+		pre code {
+			background: none;
+			color: inherit;
+			padding: 0;
+			border-radius: 0;
+		}
+
+		.code-label {
+			display: inline-block;
+			background: var(--primary-blue);
+			color: var(--white);
+			padding: 0.25rem 0.75rem;
+			border-radius: 20px;
+			font-size: 0.75rem;
+			font-weight: 600;
+			margin-bottom: 0.75rem;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+
+		ul {
+			margin-left: 2rem;
+			margin-bottom: 1.5rem;
+		}
+
+		li {
+			margin-bottom: 0.75rem;
+		}
+
+		.tip {
+			background: linear-gradient(135deg, rgba(91, 163, 168, 0.05) 0%, rgba(91, 163, 168, 0.02) 100%);
+			border-left: 4px solid var(--primary-blue);
+			padding: 1rem 1.5rem;
+			border-radius: 4px;
+			margin: 1.5rem 0;
+		}
+
+		.tip strong {
+			color: var(--primary-blue);
+		}
+
+		.warning {
+			background: linear-gradient(135deg, rgba(255, 140, 105, 0.05) 0%, rgba(255, 140, 105, 0.02) 100%);
+			border-left: 4px solid var(--warm-coral);
+			padding: 1rem 1.5rem;
+			border-radius: 4px;
+			margin: 1.5rem 0;
+		}
+
+		.warning strong {
+			color: var(--warm-coral);
+		}
+
+		.color-swatch {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.75rem;
+			padding: 0.5rem 1rem;
+			background: var(--white);
+			border: 1px solid #e0e0e0;
+			border-radius: 6px;
+			margin-right: 1rem;
+			margin-bottom: 0.75rem;
+		}
+
+		.color-box {
+			width: 40px;
+			height: 40px;
+			border-radius: 6px;
+			border: 1px solid #ddd;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 1.5rem;
+		}
+
+		th {
+			background: var(--light-blue);
+			color: var(--secondary-blue);
+			padding: 0.75rem;
+			text-align: left;
+			font-weight: 600;
+		}
+
+		td {
+			padding: 0.75rem;
+			border-bottom: 1px solid #e0e0e0;
+		}
+
+		tr:hover {
+			background: #fafafa;
+		}
+
+		.file-path {
+			display: inline-block;
+			background: #f0f0f0;
+			padding: 0.75rem 1rem;
+			border-radius: 6px;
+			font-family: "Monaco", monospace;
+			font-size: 0.9rem;
+			margin: 0.5rem 0;
+			border-left: 3px solid var(--primary-blue);
+		}
+
+		.step {
+			display: flex;
+			gap: 1rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.step-number {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 36px;
+			height: 36px;
+			background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+			color: var(--white);
+			border-radius: 50%;
+			font-weight: 700;
+			flex-shrink: 0;
+		}
+
+		.step-content h4 {
+			margin-top: 0;
+		}
+
+		footer {
+			text-align: center;
+			padding: 2rem;
+			color: var(--text-muted);
+			border-top: 1px solid #e0e0e0;
+			margin-top: 3rem;
+		}
+
+		footer a {
+			color: var(--primary-blue);
+			text-decoration: none;
+		}
+
+		footer a:hover {
+			text-decoration: underline;
+		}
+
+		@media (max-width: 768px) {
+			.container {
+				padding: 1rem;
+			}
+
+			header {
+				padding: 2rem 1rem;
+			}
+
+			header h1 {
+				font-size: 1.8rem;
+			}
+
+			nav {
+				position: static;
+				margin-bottom: 1.5rem;
+			}
+
+			nav ul {
+				grid-template-columns: 1fr;
+			}
+
+			section {
+				padding: 1.5rem;
+			}
+
+			section h2 {
+				font-size: 1.5rem;
+			}
+
+			.step {
+				gap: 0.75rem;
+			}
+
+			.step-number {
+				width: 32px;
+				height: 32px;
+				font-size: 0.9rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- Header -->
+		<header>
+			<h1>🎨 Budgy Landing Page</h1>
+			<p>Complete Customization & Modification Guide</p>
+		</header>
+
+		<!-- Navigation -->
+		<nav>
+			<h3>Quick Navigation</h3>
+			<ul>
+				<li><a href="#content">Content Changes</a></li>
+				<li><a href="#colors">Color Customization</a></li>
+				<li><a href="#fonts">Typography</a></li>
+				<li><a href="#sections">Section Modifications</a></li>
+				<li><a href="#animations">Animation Customization</a></li>
+				<li><a href="#images">Images & Media</a></li>
+				<li><a href="#buttons">Buttons & CTAs</a></li>
+				<li><a href="#forms">Forms</a></li>
+				<li><a href="#responsive">Responsive Design</a></li>
+				<li><a href="#analytics">Analytics</a></li>
+			</ul>
+		</nav>
+
+		<!-- Content Section -->
+		<section id="content">
+			<h2>📝 Content Changes</h2>
+
+			<h3>Changing the Headline</h3>
+			<p>The main headline appears in the hero section. Find and modify:</p>
+			<div class="file-path">index.html - Line ~135</div>
+			<pre><code>&lt;h1 class="hero-headline"&gt;
+	Your Financial Coach,
+	&lt;strong&gt;Ready When You Are.&lt;/strong&gt;
+&lt;/h1&gt;</code></pre>
+			<p>Simply replace the text between the tags. Keep the <code>&lt;strong&gt;</code> tags for gradient styling.</p>
+
+			<h3>Updating Subheadline</h3>
+			<div class="file-path">index.html - Line ~140</div>
+			<pre><code>&lt;p class="hero-subheadline"&gt;
+	Your unique financial journey deserves guidance that adapts...
+&lt;/p&gt;</code></pre>
+
+			<h3>Modifying Button Text</h3>
+			<p>CTAs are found throughout the page:</p>
+			<pre><code>&lt;button class="cta-button primary"&gt;Start Free Trial&lt;/button&gt;
+&lt;button class="cta-button secondary"&gt;Learn More&lt;/button&gt;</code></pre>
+
+			<h3>Updating Feature Cards</h3>
+			<div class="file-path">index.html - Features Section (~Line 420)</div>
+			<pre><code>&lt;div class="feature-card"&gt;
+	&lt;svg class="feature-icon"&gt;...&lt;/svg&gt;
+	&lt;h3&gt;Your Feature Title&lt;/h3&gt;
+	&lt;p&gt;Description of your feature...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>Adding/Modifying Testimonials</h3>
+			<div class="file-path">index.html - Testimonials Section (~Line 900)</div>
+			<pre><code>&lt;div class="testimonial-card featured-card"&gt;
+	&lt;div class="stars"&gt;
+		&lt;span&gt;⭐&lt;/span&gt;&lt;span&gt;⭐&lt;/span&gt;...
+	&lt;/div&gt;
+	&lt;p&gt;"Your testimonial quote here..."&lt;/p&gt;
+	&lt;div class="testimonial-author"&gt;
+		&lt;strong&gt;Name&lt;/strong&gt;
+		&lt;span&gt;Title/Role&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<div class="tip">
+				<strong>💡 Tip:</strong> Use line numbers in your editor to quickly navigate to sections. Search for section names like "FEATURES SECTION" or "TESTIMONIALS" in the HTML to find the right location.
+			</div>
+		</section>
+
+		<!-- Color Customization -->
+		<section id="colors">
+			<h2>🎨 Color Customization</h2>
+
+			<h3>Understanding the Color System</h3>
+			<p>All colors are defined as CSS variables in <code>styles.css</code> for easy global changes:</p>
+			<div class="file-path">styles.css - Lines 1-30</div>
+
+			<h3>Color Palette</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Variable Name</th>
+						<th>Current Color</th>
+						<th>Usage</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>--primary-blue</code></td>
+						<td><div class="color-swatch"><div class="color-box" style="background: #5ba3a8;"></div> #5BA3A8</div></td>
+						<td>Primary buttons, links, accents</td>
+					</tr>
+					<tr>
+						<td><code>--secondary-blue</code></td>
+						<td><div class="color-swatch"><div class="color-box" style="background: #4a8b92;"></div> #4A8B92</div></td>
+						<td>Hover states, secondary elements</td>
+					</tr>
+					<tr>
+						<td><code>--warm-coral</code></td>
+						<td><div class="color-swatch"><div class="color-box" style="background: #ff8c69;"></div> #FF8C69</div></td>
+						<td>CTAs, accents, secondary highlights</td>
+					</tr>
+					<tr>
+						<td><code>--light-blue</code></td>
+						<td><div class="color-swatch"><div class="color-box" style="background: #e8f4f8;"></div> #E8F4F8</div></td>
+						<td>Light backgrounds, accents</td>
+					</tr>
+					<tr>
+						<td><code>--cream</code></td>
+						<td><div class="color-swatch"><div class="color-box" style="background: #fff9f5;"></div> #FFF9F5</div></td>
+						<td>Page background</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>How to Change Colors</h3>
+			<div class="step">
+				<div class="step-number">1</div>
+				<div class="step-content">
+					<h4>Open <code>styles.css</code></h4>
+					<p>Navigate to the top of the file where variables are defined.</p>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">2</div>
+				<div class="step-content">
+					<h4>Find the <code>:root</code> section</h4>
+					<pre><code>:root {
+	--primary-blue: #5ba3a8;
+	--secondary-blue: #4a8b92;
+	/* ... etc */
+}</code></pre>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">3</div>
+				<div class="step-content">
+					<h4>Replace the hex color code</h4>
+					<p>For example, to change primary blue to a different shade:</p>
+					<pre><code>--primary-blue: #YOUR_HEX_CODE_HERE;</code></pre>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">4</div>
+				<div class="step-content">
+					<h4>Save and refresh your browser</h4>
+					<p>The changes will automatically apply to all elements using that color variable.</p>
+				</div>
+			</div>
+
+			<div class="tip">
+				<strong>💡 Tip:</strong> Use a color picker tool like <a href="https://htmlcolorcodes.com/" target="_blank">HTML Color Codes</a> or your browser's built-in inspector to find the perfect hex code.
+			</div>
+
+			<h3>Creating Color Gradients</h3>
+			<p>The page uses gradient backgrounds in several places. Search for <code>linear-gradient</code> in <code>styles.css</code> to modify:</p>
+			<pre><code>background: linear-gradient(
+	135deg,
+	var(--primary-blue) 0%,
+	var(--secondary-blue) 100%
+);</code></pre>
+			<p>The angle (135deg), colors, and percentages can all be adjusted.</p>
+		</section>
+
+		<!-- Font Customization -->
+		<section id="fonts">
+			<h2>🔤 Typography Customization</h2>
+
+			<h3>Current Fonts</h3>
+			<p>The landing page uses two main font families:</p>
+			<table>
+				<thead>
+					<tr>
+						<th>Font</th>
+						<th>Used For</th>
+						<th>Variable</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><strong>Inter</strong></td>
+						<td>Body text, buttons, descriptions</td>
+						<td><code>--font-body</code></td>
+					</tr>
+					<tr>
+						<td><strong>Caveat</strong></td>
+						<td>Handwriting style elements, quotes</td>
+						<td><code>--font-handwriting</code></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Changing Font Families</h3>
+
+			<h4>Step 1: Find the Font Definition</h4>
+			<div class="file-path">styles.css - Lines ~12-14</div>
+			<pre><code>--font-handwriting: "Caveat", cursive;
+--font-body: "Inter", sans-serif;</code></pre>
+
+			<h4>Step 2: Choose a New Font</h4>
+			<p>Popular alternatives from <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>:</p>
+			<ul>
+				<li><strong>For headings:</strong> Playfair Display, Poppins, Raleway</li>
+				<li><strong>For body:</strong> Open Sans, Lato, Roboto</li>
+				<li><strong>For handwriting:</strong> Dancing Script, Great Vibes, Satisfy</li>
+			</ul>
+
+			<h4>Step 3: Import the Font</h4>
+			<p>Add this to the top of your HTML or CSS:</p>
+			<pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=YOUR_FONT_NAME:wght@400;700&display=swap" rel="stylesheet"&gt;</code></pre>
+
+			<h4>Step 4: Update the Variable</h4>
+			<pre><code>--font-body: "Your New Font Name", fallback-font;</code></pre>
+
+			<h3>Changing Font Sizes</h3>
+			<p>Find the element you want to modify and adjust the <code>font-size</code> property:</p>
+			<pre><code>.hero-headline {
+	font-size: 3.75rem;  /* Change this value */
+	font-weight: 700;
+}</code></pre>
+
+			<h3>Font Size Guidelines</h3>
+			<ul>
+				<li><strong>Headlines (h1, h2):</strong> 2.5rem - 3.75rem</li>
+				<li><strong>Subheadings (h3):</strong> 1.5rem - 2rem</li>
+				<li><strong>Body text (p):</strong> 1rem - 1.2rem</li>
+				<li><strong>Small text (labels):</strong> 0.75rem - 0.95rem</li>
+			</ul>
+
+			<div class="warning">
+				<strong>⚠️ Warning:</strong> Avoid changing font sizes below 14px for body text on mobile devices to ensure readability and proper accessibility.
+			</div>
+		</section>
+
+		<!-- Section Modifications -->
+		<section id="sections">
+			<h2>🔧 Section-by-Section Modifications</h2>
+
+			<h3>Navigation Bar</h3>
+			<div class="file-path">index.html - Lines 24-120</div>
+			<p><strong>What to modify:</strong></p>
+			<ul>
+				<li>Logo text: Change "Budgy" to your brand name</li>
+				<li>Navigation links: Update href attributes to point to your pages</li>
+				<li>Button text: "Sign In" and "Get Started"</li>
+				<li>Background color: In styles.css, modify <code>.navbar</code> background property</li>
+			</ul>
+
+			<h3>Hero Section</h3>
+			<div class="file-path">index.html - Lines 123-232</div>
+			<p><strong>What to modify:</strong></p>
+			<ul>
+				<li>Headline and subheadline text</li>
+				<li>CTA button text and links</li>
+				<li>Trust metrics (numbers and labels)</li>
+				<li>Hero visual illustration: Replace SVG or add image</li>
+			</ul>
+
+			<h3>Trust Section</h3>
+			<div class="file-path">index.html - Lines 245-406</div>
+			<p>Displays 4 trust indicators with icons. To modify:</p>
+			<ul>
+				<li>Update trust metric labels and descriptions</li>
+				<li>Change SVG icons by modifying the <code>&lt;svg&gt;</code> elements</li>
+				<li>Adjust the number of trust cards by duplicating or removing cards</li>
+			</ul>
+
+			<h3>Features Section</h3>
+			<div class="file-path">index.html - Lines 408-730</div>
+			<p>Contains 6 feature cards. To modify:</p>
+			<ul>
+				<li>Update feature titles and descriptions</li>
+				<li>Replace feature icons with your own SVGs</li>
+				<li>Add or remove feature cards by copying/deleting the <code>.feature-card</code> div</li>
+				<li>Modify grid layout in styles.css: <code>.features-grid</code></li>
+			</ul>
+
+			<h3>Video Section</h3>
+			<div class="file-path">index.html - Lines 738-810</div>
+			<p>To add your videos:</p>
+			<pre><code>&lt;div class="video-card"&gt;
+	&lt;a href="YOUR_VIDEO_URL" target="_blank"&gt;
+		&lt;img src="thumbnail.jpg" alt="Video thumbnail"&gt;
+		&lt;div class="play-button"&gt;▶&lt;/div&gt;
+	&lt;/a&gt;
+	&lt;p class="video-meta"&gt;12 min • 45K views&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>Testimonials Section</h3>
+			<div class="file-path">index.html - Lines 878-1015</div>
+			<ul>
+				<li>Featured testimonial (large card) - edit the first testimonial card</li>
+				<li>Individual testimonials - modify each <code>.testimonial-card</code></li>
+				<li>Star ratings - change the number of ⭐ emojis</li>
+				<li>Author info - update name and title</li>
+			</ul>
+
+			<h3>Contact Section</h3>
+			<div class="file-path">index.html - Lines 1369-1540</div>
+			<p>Contains contact methods and signup form:</p>
+			<ul>
+				<li>Contact methods: Email, phone, social links</li>
+				<li>Form fields: Name, Email, Goal selection</li>
+				<li>Form action: Update the <code>form</code> tag's <code>action</code> attribute to your backend</li>
+			</ul>
+
+			<h3>Footer Section</h3>
+			<div class="file-path">index.html - Lines 1542-1630</div>
+			<ul>
+				<li>Brand description</li>
+				<li>Social media links (Twitter, LinkedIn, Instagram)</li>
+				<li>Footer navigation links</li>
+				<li>Copyright text</li>
+			</ul>
+		</section>
+
+		<!-- Animation Customization -->
+		<section id="animations">
+			<h2>✨ Animation Customization</h2>
+
+			<h3>Understanding Animations</h3>
+			<p>The page features sophisticated CSS animations defined in <code>styles.css</code>. All animations use <code>@keyframes</code> and are applied to elements via the <code>animation</code> property.</p>
+
+			<h3>Main Animation Types</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Animation Name</th>
+						<th>Duration</th>
+						<th>Applied To</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>float</code></td>
+						<td>12s</td>
+						<td>Background shapes, organic motion</td>
+					</tr>
+					<tr>
+						<td><code>fadeInUp</code></td>
+						<td>0.8-1s</td>
+						<td>Content elements on page load</td>
+					</tr>
+					<tr>
+						<td><code>fadeInScale</code></td>
+						<td>0.8s</td>
+						<td>Hero visual card</td>
+					</tr>
+					<tr>
+						<td><code>slideInRight</code></td>
+						<td>1s</td>
+						<td>Hero visual entrance</td>
+					</tr>
+					<tr>
+						<td><code>pulse-glow</code></td>
+						<td>3s (infinite)</td>
+						<td>Visual card subtle glow effect</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Modifying Animation Speed</h3>
+			<p>Find the animation definition in <code>styles.css</code>:</p>
+			<pre><code>animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;</code>
+            /* Breakdown:
+               - fadeInUp: animation name
+               - 0.8s: duration
+               - cubic-bezier: easing function
+               - 0.1s: delay
+               - both: fill mode */</code></pre>
+
+			<h4>Speed Adjustments:</h4>
+			<ul>
+				<li><strong>Slower:</strong> Change 0.8s to 1.2s or 1.5s</li>
+				<li><strong>Faster:</strong> Change 0.8s to 0.5s or 0.3s</li>
+				<li><strong>Much slower:</strong> Change 0.8s to 2s for a more dramatic effect</li>
+			</ul>
+
+			<h3>Disabling Animations</h3>
+			<p>To disable all animations (useful for accessibility), comment out or remove the <code>animation</code> property:</p>
+			<pre><code>.hero-badge {
+	/* animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both; */
+}</code></pre>
+
+			<h3>Respecting User Preferences</h3>
+			<p>For accessibility, the page should respect <code>prefers-reduced-motion</code>:</p>
+			<pre><code>@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
+}</code></pre>
+
+			<h3>Creating New Animations</h3>
+			<p>To add a custom animation:</p>
+			<div class="step">
+				<div class="step-number">1</div>
+				<div class="step-content">
+					<h4>Define the keyframes</h4>
+					<pre><code>@keyframes myCustomAnimation {
+	from {
+		opacity: 0;
+		transform: scale(0.8);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}</code></pre>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">2</div>
+				<div class="step-content">
+					<h4>Apply to an element</h4>
+					<pre><code>.my-element {
+	animation: myCustomAnimation 0.8s ease-out forwards;
+}</code></pre>
+				</div>
+			</div>
+
+			<div class="tip">
+				<strong>💡 Tip:</strong> Animations improve user engagement but can also distract. Use them purposefully to draw attention to important elements like CTAs and key features.
+			</div>
+		</section>
+
+		<!-- Images & Media -->
+		<section id="images">
+			<h2>🖼️ Images & Media Management</h2>
+
+			<h3>Adding Images</h3>
+			<p>The landing page uses several images and illustrations. To add your own:</p>
+
+			<h4>Hero Illustration</h4>
+			<div class="file-path">index.html - ~Line 230</div>
+			<pre><code>&lt;div class="card-illustration"&gt;
+	&lt;svg&gt;...&lt;/svg&gt; &lt;!-- Replace or modify SVG --&gt;
+&lt;/div&gt;</code></pre>
+
+			<h4>Adding Background Images</h4>
+			<p>To add a background image to a section:</p>
+			<pre><code>.hero {
+	background-image: url('path/to/image.jpg');
+	background-size: cover;
+	background-position: center;
+}</code></pre>
+
+			<h3>Video Integration</h3>
+			<p>For embedded videos (YouTube, Vimeo):</p>
+			<pre><code>&lt;div class="video-card"&gt;
+	&lt;iframe 
+		width="100%" 
+		height="400" 
+		src="https://www.youtube.com/embed/VIDEO_ID"
+		frameborder="0" 
+		allowfullscreen&gt;
+	&lt;/iframe&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>Optimizing Images</h3>
+			<div class="tip">
+				<strong>💡 Best Practices:</strong>
+				<ul>
+					<li>Use modern formats: WebP, JPEG, PNG</li>
+					<li>Compress images before uploading (tools: TinyPNG, ImageOptim)</li>
+					<li>Use responsive images with srcset for different screen sizes</li>
+					<li>Add descriptive alt text for accessibility</li>
+				</ul>
+			</div>
+
+			<h3>Using SVG Icons</h3>
+			<p>The page extensively uses SVG icons. To modify SVG colors:</p>
+			<pre><code>&lt;svg class="feature-icon"&gt;
+	&lt;circle fill="currentColor" cx="50" cy="50" r="40"/&gt;
+&lt;/svg&gt;</code></pre>
+			<p>Then in CSS:</p>
+			<pre><code>.feature-icon {
+	color: var(--primary-blue);
+}</code></pre>
+		</section>
+
+		<!-- Buttons & CTAs -->
+		<section id="buttons">
+			<h2>🔘 Buttons & Call-to-Action Customization</h2>
+
+			<h3>Button Styles</h3>
+			<p>Two main button styles are used throughout the page:</p>
+			<table>
+				<thead>
+					<tr>
+						<th>Style</th>
+						<th>Class</th>
+						<th>Usage</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><strong>Primary</strong></td>
+						<td><code>.cta-button.primary</code></td>
+						<td>Main CTAs, signup, get started</td>
+					</tr>
+					<tr>
+						<td><strong>Secondary</strong></td>
+						<td><code>.cta-button.secondary</code></td>
+						<td>Alternative actions, learn more</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Modifying Button Styling</h3>
+			<div class="file-path">styles.css - Lines ~120-145</div>
+			<pre><code>.cta-button.primary {
+	background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+	color: var(--white);
+	padding: 1rem 2rem;
+	border-radius: 8px;
+}</code></pre>
+
+			<h4>Customization Options:</h4>
+			<ul>
+				<li><strong>Padding:</strong> Adjust button size with padding values</li>
+				<li><strong>Border-radius:</strong> Change from 8px to 0px for sharp corners, or 50px for pill shape</li>
+				<li><strong>Font size:</strong> Modify the font-size property</li>
+				<li><strong>Hover effect:</strong> Modify the :hover state</li>
+			</ul>
+
+			<h3>Button Hover Effects</h3>
+			<pre><code>.cta-button.primary:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 25px rgba(91, 163, 168, 0.3);
+}</code></pre>
+
+			<h4>Common Hover Effects:</h4>
+			<ul>
+				<li><code>transform: translateY(-2px)</code> - Lifts button on hover</li>
+				<li><code>transform: scale(1.05)</code> - Slightly enlarges button</li>
+				<li><code>box-shadow: 0 10px 25px</code> - Adds shadow for depth</li>
+				<li><code>background: brightness(1.1)</code> - Brightens the color</li>
+			</ul>
+
+			<h3>Adding Button Links</h3>
+			<p>To make buttons functional, set the href or form action:</p>
+			<pre><code>&lt;a href="/signup" class="cta-button primary"&gt;Get Started&lt;/a&gt;</code></pre>
+
+			<div class="warning">
+				<strong>⚠️ Important:</strong> Update all button links to point to your actual pages/backend before deployment.
+			</div>
+		</section>
+
+		<!-- Forms -->
+		<section id="forms">
+			<h2>📋 Form Customization</h2>
+
+			<h3>Contact Form Location</h3>
+			<div class="file-path">index.html - Lines 1450-1520</div>
+
+			<h3>Form Fields</h3>
+			<p>The current form includes:</p>
+			<ul>
+				<li><strong>Name field:</strong> Text input for user's name</li>
+				<li><strong>Email field:</strong> Email input for contact</li>
+				<li><strong>Goal field:</strong> Dropdown select menu</li>
+			</ul>
+
+			<h3>Modifying Form Fields</h3>
+			<pre><code>&lt;form class="contact-form" action="/api/signup" method="POST"&gt;
+	&lt;input type="text" name="name" placeholder="Your Name" required&gt;
+	&lt;input type="email" name="email" placeholder="Your Email" required&gt;
+	&lt;select name="goal" required&gt;
+		&lt;option value=""&gt;Select your goal&lt;/option&gt;
+		&lt;option value="save"&gt;Save More&lt;/option&gt;
+		&lt;option value="invest"&gt;Start Investing&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;button type="submit"&gt;Get Started&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+			<h3>Adding New Form Fields</h3>
+			<div class="step">
+				<div class="step-number">1</div>
+				<div class="step-content">
+					<h4>Add input element</h4>
+					<pre><code>&lt;input type="text" name="phone" placeholder="Phone Number"&gt;</code></pre>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">2</div>
+				<div class="step-content">
+					<h4>Style the input (optional)</h4>
+					<p>Edit <code>styles.css</code> form input styling sections</p>
+				</div>
+			</div>
+
+			<h3>Form Submission Handling</h3>
+			<p>Set the form action to your backend endpoint:</p>
+			<pre><code>&lt;form action="https://your-api.com/submit-form" method="POST"&gt;</code></pre>
+
+			<h3>Form Styling</h3>
+			<div class="file-path">styles.css - Search for "contact-form"</div>
+			<p>Key styling properties:</p>
+			<ul>
+				<li><code>input, select</code> - Modifies all form inputs</li>
+				<li><code>input:focus</code> - Styling when field is active</li>
+				<li><code>button[type="submit"]</code> - Submit button styling</li>
+			</ul>
+
+			<div class="tip">
+				<strong>💡 Tip:</strong> Use form validation libraries like Parsley.js or HTML5 validation attributes for better user experience.
+			</div>
+		</section>
+
+		<!-- Responsive Design -->
+		<section id="responsive">
+			<h2>📱 Responsive Design Customization</h2>
+
+			<h3>Comprehensive Breakpoint System</h3>
+			<p>The page features a sophisticated 9-breakpoint responsive system optimized for all device sizes:</p>
+			<table>
+				<thead>
+					<tr>
+						<th>Breakpoint</th>
+						<th>Screen Width</th>
+						<th>Device Types</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><strong>Large Desktop</strong></td>
+						<td>1280px and above</td>
+						<td>Large monitors, widescreen displays</td>
+					</tr>
+					<tr>
+						<td><strong>Medium Desktop</strong></td>
+						<td>1140px - 1280px</td>
+						<td>Standard desktops, laptops</td>
+					</tr>
+					<tr>
+						<td><strong>Large Tablets</strong></td>
+						<td>1024px - 1140px</td>
+						<td>Large tablets, small laptops</td>
+					</tr>
+					<tr>
+						<td><strong>Medium Tablets</strong></td>
+						<td>900px - 1024px</td>
+						<td>iPad landscape, tablets</td>
+					</tr>
+					<tr>
+						<td><strong>Tablets</strong></td>
+						<td>768px - 900px</td>
+						<td>iPad portrait, tablets</td>
+					</tr>
+					<tr>
+						<td><strong>Small Tablets</strong></td>
+						<td>640px - 768px</td>
+						<td>Small tablets, large phones landscape</td>
+					</tr>
+					<tr>
+						<td><strong>Mobile</strong></td>
+						<td>480px - 640px</td>
+						<td>Modern smartphones</td>
+					</tr>
+					<tr>
+						<td><strong>Small Mobile</strong></td>
+						<td>375px - 480px</td>
+						<td>iPhone SE, smaller phones</td>
+					</tr>
+					<tr>
+						<td><strong>Extra Small Mobile</strong></td>
+						<td>320px - 375px</td>
+						<td>Older/compact smartphones</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Header/Navigation Responsive Features</h3>
+			<p>The header has comprehensive responsive adjustments across all breakpoints:</p>
+
+			<h4>Desktop (1280px+)</h4>
+			<ul>
+				<li>Full navigation menu with all links visible</li>
+				<li>Sign In and Get Started buttons displayed</li>
+				<li>Logo at full size (40px)</li>
+				<li>Comfortable spacing between navigation items</li>
+			</ul>
+
+			<h4>Tablets (768px - 1140px)</h4>
+			<ul>
+				<li>Progressive font size reduction for better fit</li>
+				<li>Reduced padding and gaps to optimize space</li>
+				<li>Sign In button visible (hidden only below 768px)</li>
+				<li>Logo scales proportionally</li>
+				<li>At 768px: Switch to mobile menu (hamburger icon)</li>
+			</ul>
+
+			<h4>Mobile (Below 768px)</h4>
+			<ul>
+				<li>Side drawer mobile menu replaces desktop navigation</li>
+				<li>Mobile menu accessible via hamburger toggle button</li>
+				<li>Sign In and Get Started available in mobile menu footer</li>
+				<li>Touch-optimized button sizes (minimum 38-44px)</li>
+				<li>Logo scales down progressively (36px → 30px)</li>
+			</ul>
+
+			<h3>Hero Section Responsive Features</h3>
+			<p>The hero section adapts seamlessly across 8 breakpoints:</p>
+			<ul>
+				<li><strong>1280px:</strong> Full layout with optimal spacing</li>
+				<li><strong>1024px:</strong> Reduced font sizes and card dimensions</li>
+				<li><strong>768px:</strong> Stack layout changes, card adjustments</li>
+				<li><strong>640px:</strong> Single column layout, compact spacing</li>
+				<li><strong>480px:</strong> Further optimizations for smartphones</li>
+				<li><strong>375px:</strong> Fine-tuned for smaller phones</li>
+				<li><strong>320px:</strong> Maximum optimization for compact devices</li>
+			</ul>
+
+			<h3>Media Queries Structure</h3>
+			<p>Media queries are organized by section throughout <code>styles.css</code>:</p>
+			<pre><code>/* Navigation Responsive Styles - Lines 598-955 */
+@media (max-width: 1280px) { /* Large Desktop */ }
+@media (max-width: 1140px) { /* Medium Desktop */ }
+@media (max-width: 1024px) { /* Large Tablets */ }
+@media (max-width: 900px)  { /* Medium Tablets */ }
+@media (max-width: 768px)  { /* Tablets */ }
+@media (max-width: 640px)  { /* Small Tablets */ }
+@media (max-width: 480px)  { /* Mobile */ }
+@media (max-width: 375px)  { /* Small Mobile */ }
+@media (max-width: 320px)  { /* Extra Small Mobile */ }
+
+/* Hero Section Responsive Styles - Lines 1290-1680 */
+@media (max-width: 1280px) { ... }
+@media (max-width: 1024px) { ... }
+/* ... and so on */</code></pre>
+
+			<h3>Adding Custom Breakpoints</h3>
+			<p>To add a new breakpoint between existing ones:</p>
+			<pre><code>/* Custom breakpoint for specific device */
+@media (max-width: 850px) {
+	.hero-headline {
+		font-size: 2.2rem;
+	}
+	.nav-container {
+		padding: 0 1.4rem;
+	}
+}</code></pre>
+
+			<h3>Testing Responsive Design</h3>
+			<div class="tip">
+				<strong>💡 Testing Tools:</strong>
+				<ul>
+					<li>Chrome DevTools (F12 → Toggle device toolbar)</li>
+					<li>Firefox Developer Tools</li>
+					<li>Online tools: Responsively.app, BrowserStack</li>
+					<li>Physical devices for accurate testing</li>
+				</ul>
+			</div>
+
+			<h3>Responsive Typography</h3>
+			<p>Font sizes scale at different breakpoints:</p>
+			<pre><code>.hero-headline {
+	font-size: 3.75rem;    /* Desktop */
+}
+
+@media (max-width: 1024px) {
+	.hero-headline {
+		font-size: 2.5rem;  /* Tablet */
+	}
+}
+
+@media (max-width: 768px) {
+	.hero-headline {
+		font-size: 1.95rem; /* Mobile */
+	}
+}</code></pre>
+
+			<h3>Responsive Spacing</h3>
+			<p>Padding and margins also adjust for different screens:</p>
+			<pre><code>.section {
+	padding: 2rem;      /* Desktop */
+}
+
+@media (max-width: 768px) {
+	.section {
+		padding: 1rem;  /* Mobile */
+	}
+}</code></pre>
+		</section>
+
+		<!-- Analytics -->
+		<section id="analytics">
+			<h2>📊 Analytics & Tracking Setup</h2>
+
+			<h3>Google Analytics Integration</h3>
+			<p>The page is ready for Google Analytics 4 (GA4) integration:</p>
+
+			<h4>Step 1: Get Your Google Analytics ID</h4>
+			<ul>
+				<li>Go to <a href="https://analytics.google.com/" target="_blank">Google Analytics</a></li>
+				<li>Create a new property for your landing page</li>
+				<li>Copy your Measurement ID (format: G-XXXXXXXXXX)</li>
+			</ul>
+
+			<h4>Step 2: Add GA4 to Your HTML</h4>
+			<p>Add this to the <code>&lt;head&gt;</code> of your <code>index.html</code>:</p>
+			<pre><code>&lt;!-- Google Analytics --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_ID"&gt;&lt;/script&gt;
+&lt;script&gt;
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-YOUR_ID');
+&lt;/script&gt;</code></pre>
+
+			<h3>Event Tracking</h3>
+			<p>Track important user interactions:</p>
+
+			<h4>Button Click Tracking</h4>
+			<pre><code>&lt;button onclick="gtag('event', 'cta_click', {'button_location': 'hero'})"&gt;
+	Get Started
+&lt;/button&gt;</code></pre>
+
+			<h4>Form Submission Tracking</h4>
+			<pre><code>&lt;form onsubmit="gtag('event', 'signup_submit', {'form_location': 'contact'})"&gt;
+	...
+&lt;/form&gt;</code></pre>
+
+			<h4>Video Play Tracking</h4>
+			<pre><code>&lt;video onplay="gtag('event', 'video_play', {'video_id': 'video-1'})"&gt;
+	...
+&lt;/video&gt;</code></pre>
+
+			<h3>Key Metrics to Track</h3>
+			<ul>
+				<li><strong>Page Views:</strong> How many people visit the page</li>
+				<li><strong>CTA Clicks:</strong> Clicks on "Get Started" and "Learn More" buttons</li>
+				<li><strong>Form Submissions:</strong> Completed sign-up forms</li>
+				<li><strong>Video Engagement:</strong> Video plays and watch time</li>
+				<li><strong>Scroll Depth:</strong> How far down the page users scroll</li>
+				<li><strong>Time on Page:</strong> How long users spend on the page</li>
+			</ul>
+
+			<h3>Setting Up Conversion Goals</h3>
+			<p>In Google Analytics:</p>
+			<div class="step">
+				<div class="step-number">1</div>
+				<div class="step-content">
+					<h4>Go to Admin → Conversion</h4>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">2</div>
+				<div class="step-content">
+					<h4>Create a new conversion event</h4>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">3</div>
+				<div class="step-content">
+					<h4>Name it (e.g., "signup_submit")</h4>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">4</div>
+				<div class="step-content">
+					<h4>Track the event from your forms</h4>
+				</div>
+			</div>
+
+			<div class="tip">
+				<strong>💡 Tip:</strong> Set up conversion goals for your most important actions (sign-ups, demo requests, etc.) to measure campaign effectiveness.
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer>
+			<p>For more information, refer to the README.md and documentation files in the project folder.</p>
+			<p><strong>Happy customizing! 🚀</strong></p>
+			<p style="margin-top: 1.5rem; font-size: 0.9rem;">
+				Need help? Check out the <a href="README.md">README.md</a> or review the source code comments.
+			</p>
+		</footer>
+	</div>
+</body>
+</html>

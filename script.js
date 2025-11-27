@@ -2,90 +2,70 @@
 // SMOOTH SCROLLING & NAVIGATION
 // ========================================
 
-document
-	.querySelectorAll('a[href^="#"]')
-	.forEach((anchor) => {
-		anchor.addEventListener(
-			"click",
-			function (e) {
-				e.preventDefault();
-				const target = document.querySelector(
-					this.getAttribute("href")
-				);
-				if (target) {
-					target.scrollIntoView({
-						behavior: "smooth",
-						block: "start",
-					});
-				}
-			}
-		);
-	});
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const href = this.getAttribute("href");
+    // Only scroll if href is a valid selector (not just "#")
+    if (href && href !== "#") {
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  });
+});
 
 // ========================================
 // SIGN-UP FORM HANDLING
 // ========================================
 
-const signupForm =
-	document.getElementById("signupForm");
+const signupForm = document.getElementById("signupForm");
 if (signupForm) {
-	signupForm.addEventListener(
-		"submit",
-		function (e) {
-			e.preventDefault();
+  signupForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-			// Get form values
-			const name = this.querySelector(
-				'input[type="text"]'
-			).value;
-			const email = this.querySelector(
-				'input[type="email"]'
-			).value;
-			const goal =
-				this.querySelector("select").value;
+    // Get form values
+    const name = this.querySelector('input[type="text"]').value;
+    const email = this.querySelector('input[type="email"]').value;
+    const goal = this.querySelector("select").value;
 
-			// Here you would typically send this to your backend
-			console.log("Sign-up submitted:", {
-				name,
-				email,
-				goal,
-			});
+    // Here you would typically send this to your backend
+    console.log("Sign-up submitted:", {
+      name,
+      email,
+      goal,
+    });
 
-			// Show success message
-			showNotification(
-				"Welcome to Budgy! Check your email to get started.",
-				"success"
-			);
+    // Show success message
+    showNotification(
+      "Welcome to Budgy! Check your email to get started.",
+      "success"
+    );
 
-			// Reset form
-			this.reset();
-		}
-	);
+    // Reset form
+    this.reset();
+  });
 }
 
 // ========================================
 // NOTIFICATION SYSTEM
 // ========================================
 
-function showNotification(
-	message,
-	type = "info"
-) {
-	// Create notification element
-	const notification =
-		document.createElement("div");
-	notification.className = `notification notification-${type}`;
-	notification.textContent = message;
+function showNotification(message, type = "info") {
+  // Create notification element
+  const notification = document.createElement("div");
+  notification.className = `notification notification-${type}`;
+  notification.textContent = message;
 
-	// Add notification styles
-	const style = document.createElement("style");
-	if (
-		!document.getElementById(
-			"notification-styles"
-		)
-	) {
-		style.id = "notification-styles";
-		style.textContent = `
+  // Add notification styles
+  const style = document.createElement("style");
+  if (!document.getElementById("notification-styles")) {
+    style.id = "notification-styles";
+    style.textContent = `
             .notification {
                 position: fixed;
                 top: 20px;
@@ -133,19 +113,18 @@ function showNotification(
                 }
             }
         `;
-		document.head.appendChild(style);
-	}
+    document.head.appendChild(style);
+  }
 
-	document.body.appendChild(notification);
+  document.body.appendChild(notification);
 
-	// Remove notification after 5 seconds
-	setTimeout(() => {
-		notification.style.animation =
-			"slideIn 0.3s ease reverse";
-		setTimeout(() => {
-			notification.remove();
-		}, 300);
-	}, 5000);
+  // Remove notification after 5 seconds
+  setTimeout(() => {
+    notification.style.animation = "slideIn 0.3s ease reverse";
+    setTimeout(() => {
+      notification.remove();
+    }, 300);
+  }, 5000);
 }
 
 // ========================================
@@ -153,26 +132,21 @@ function showNotification(
 // ========================================
 
 const observerOptions = {
-	threshold: 0.1,
-	rootMargin: "0px 0px -50px 0px",
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px",
 };
 
-const observer = new IntersectionObserver(
-	function (entries) {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				entry.target.style.animation =
-					"fadeInUp 0.6s ease forwards";
-				observer.unobserve(entry.target);
-			}
-		});
-	},
-	observerOptions
-);
+const observer = new IntersectionObserver(function (entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.animation = "fadeInUp 0.6s ease forwards";
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
 
 // Add fade-in animation CSS
-const styleSheet =
-	document.createElement("style");
+const styleSheet = document.createElement("style");
 styleSheet.textContent = `
     @keyframes fadeInUp {
         from {
@@ -197,91 +171,82 @@ document.head.appendChild(styleSheet);
 
 // Observe elements for animation
 document
-	.querySelectorAll(
-		".trust-card, .feature-block, .video-card, .testimonial-card, .resource-card"
-	)
-	.forEach((el) => {
-		observer.observe(el);
-	});
+  .querySelectorAll(
+    ".trust-card, .feature-block, .video-card, .testimonial-card, .resource-card"
+  )
+  .forEach((el) => {
+    observer.observe(el);
+  });
 
 // ========================================
 // MOBILE MENU TOGGLE (if implemented in HTML)
 // ========================================
 
 function initMobileMenu() {
-	const menuButton = document.getElementById(
-		"mobileMenuButton"
-	);
-	const mobileMenu =
-		document.getElementById("mobileMenu");
-	const mobileLinks = document.querySelectorAll(
-		".mobile-nav-link"
-	);
+  const menuButton = document.getElementById("mobileMenuButton");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileLinks = document.querySelectorAll(".mobile-nav-link");
 
-	console.log("Mobile Menu Debug:", {
-		menuButton,
-		mobileMenu,
-		linkCount: mobileLinks.length,
-	});
+  if (menuButton && mobileMenu) {
+    // Toggle menu on button click
+    menuButton.addEventListener("click", function (e) {
+      e.stopPropagation();
+      menuButton.classList.toggle("active");
+      mobileMenu.classList.toggle("active");
+      document.body.style.overflow = mobileMenu.classList.contains("active")
+        ? "hidden"
+        : "";
+    });
 
-	if (menuButton && mobileMenu) {
-		console.log(
-			"Mobile menu initialized successfully"
-		);
+    // Close menu when a link is clicked
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        menuButton.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    });
 
-		// Toggle menu on button click
-		menuButton.addEventListener(
-			"click",
-			function (e) {
-				console.log("Hamburger clicked");
-				e.stopPropagation();
-				menuButton.classList.toggle("active");
-				mobileMenu.classList.toggle("active");
-				console.log(
-					"Menu active:",
-					mobileMenu.classList.contains("active")
-				);
-			}
-		);
+    // Close menu when clicking on the CTA button
+    const mobileCTA = document.querySelector(".mobile-menu-cta");
+    if (mobileCTA) {
+      mobileCTA.addEventListener("click", () => {
+        menuButton.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    }
 
-		// Close menu when a link is clicked
-		mobileLinks.forEach((link) => {
-			link.addEventListener("click", () => {
-				menuButton.classList.remove("active");
-				mobileMenu.classList.remove("active");
-			});
-		});
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+      const isClickInsideMenu = mobileMenu.contains(event.target);
+      const isClickOnButton = menuButton.contains(event.target);
 
-		// Close menu when clicking on the CTA button
-		const mobileCTA = document.querySelector(
-			".mobile-nav-cta"
-		);
-		if (mobileCTA) {
-			mobileCTA.addEventListener("click", () => {
-				menuButton.classList.remove("active");
-				mobileMenu.classList.remove("active");
-			});
-		}
+      if (!isClickInsideMenu && !isClickOnButton) {
+        menuButton.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
 
-		// Close menu when clicking outside
-		document.addEventListener(
-			"click",
-			function (event) {
-				const isClickInsideMenu =
-					mobileMenu.contains(event.target);
-				const isClickOnButton =
-					menuButton.contains(event.target);
+    // Close menu on window resize (when transitioning to desktop)
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        menuButton.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
 
-				if (
-					!isClickInsideMenu &&
-					!isClickOnButton
-				) {
-					menuButton.classList.remove("active");
-					mobileMenu.classList.remove("active");
-				}
-			}
-		);
-	}
+    // Close menu on Escape key press
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && mobileMenu.classList.contains("active")) {
+        menuButton.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+  }
 }
 
 // ========================================
@@ -289,32 +254,23 @@ function initMobileMenu() {
 // ========================================
 
 function initVideoModals() {
-	const videoCards = document.querySelectorAll(
-		".video-card"
-	);
+  const videoCards = document.querySelectorAll(".video-card");
 
-	videoCards.forEach((card) => {
-		card.addEventListener("click", function () {
-			const videoTitle = this.querySelector(
-				".video-title"
-			).textContent;
-			const videoSubtitle = this.querySelector(
-				".video-subtitle"
-			).textContent;
+  videoCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      const videoTitle = this.querySelector(".video-title").textContent;
+      const videoSubtitle = this.querySelector(".video-subtitle").textContent;
 
-			// In a real implementation, you would open an actual video
-			showNotification(
-				`Opening: ${videoTitle}`,
-				"info"
-			);
+      // In a real implementation, you would open an actual video
+      showNotification(`Opening: ${videoTitle}`, "info");
 
-			// Example: You could use a modal or iframe here
-			console.log("Video clicked:", {
-				videoTitle,
-				videoSubtitle,
-			});
-		});
-	});
+      // Example: You could use a modal or iframe here
+      console.log("Video clicked:", {
+        videoTitle,
+        videoSubtitle,
+      });
+    });
+  });
 }
 
 initVideoModals();
@@ -323,21 +279,21 @@ initVideoModals();
 // NAVBAR SCROLL EFFECTS
 // ========================================
 
+const header = document.querySelector(".header");
 const navbar = document.querySelector(".navbar");
 let lastScrollY = 0;
 
 window.addEventListener("scroll", () => {
-	const currentScroll = window.scrollY;
+  const currentScroll = window.scrollY;
 
-	if (currentScroll > 50) {
-		navbar.style.boxShadow =
-			"0 4px 20px rgba(91, 163, 168, 0.15)";
-	} else {
-		navbar.style.boxShadow =
-			"0 2px 10px rgba(91, 163, 168, 0.1)";
-	}
+  // Add scrolled class to header
+  if (currentScroll > 20) {
+    header?.classList.add("scrolled");
+  } else {
+    header?.classList.remove("scrolled");
+  }
 
-	lastScrollY = currentScroll;
+  lastScrollY = currentScroll;
 });
 
 // ========================================
@@ -345,51 +301,39 @@ window.addEventListener("scroll", () => {
 // ========================================
 
 function validateEmail(email) {
-	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	return emailRegex.test(email);
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 }
 
 // Add email validation to form
-const emailInputs = document.querySelectorAll(
-	'input[type="email"]'
-);
+const emailInputs = document.querySelectorAll('input[type="email"]');
 emailInputs.forEach((input) => {
-	input.addEventListener("blur", function () {
-		if (
-			this.value &&
-			!validateEmail(this.value)
-		) {
-			this.style.borderColor = "#FF6B6B";
-		} else {
-			this.style.borderColor =
-				"rgba(91, 163, 168, 0.2)";
-		}
-	});
+  input.addEventListener("blur", function () {
+    if (this.value && !validateEmail(this.value)) {
+      this.style.borderColor = "#FF6B6B";
+    } else {
+      this.style.borderColor = "rgba(91, 163, 168, 0.2)";
+    }
+  });
 });
 
 // ========================================
 // COUNTER ANIMATION (for stats, if added)
 // ========================================
 
-function animateCounter(
-	element,
-	target,
-	duration = 1000
-) {
-	const increment = target / (duration / 16);
-	let current = 0;
+function animateCounter(element, target, duration = 1000) {
+  const increment = target / (duration / 16);
+  let current = 0;
 
-	const timer = setInterval(() => {
-		current += increment;
-		if (current >= target) {
-			element.textContent =
-				target.toLocaleString();
-			clearInterval(timer);
-		} else {
-			element.textContent =
-				Math.floor(current).toLocaleString();
-		}
-	}, 16);
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      element.textContent = target.toLocaleString();
+      clearInterval(timer);
+    } else {
+      element.textContent = Math.floor(current).toLocaleString();
+    }
+  }, 16);
 }
 
 // ========================================
@@ -397,64 +341,47 @@ function animateCounter(
 // ========================================
 
 function trackEvent(eventName, eventData = {}) {
-	if (typeof gtag !== "undefined") {
-		gtag("event", eventName, eventData);
-	}
-	console.log(
-		"Event tracked:",
-		eventName,
-		eventData
-	);
+  if (typeof gtag !== "undefined") {
+    gtag("event", eventName, eventData);
+  }
 }
 
 // Track CTA button clicks
-document
-	.querySelectorAll(".cta-button")
-	.forEach((button) => {
-		button.addEventListener(
-			"click",
-			function (e) {
-				const buttonText = this.textContent;
-				trackEvent("cta_click", {
-					button_text: buttonText,
-					location:
-						this.closest("section")?.className ||
-						"unknown",
-				});
-			}
-		);
-	});
+document.querySelectorAll(".cta-button").forEach((button) => {
+  button.addEventListener("click", function (e) {
+    const buttonText = this.textContent;
+    trackEvent("cta_click", {
+      button_text: buttonText,
+      location: this.closest("section")?.className || "unknown",
+    });
+  });
+});
 
 // Track form submissions
 document.addEventListener("submit", function (e) {
-	if (e.target.id === "signupForm") {
-		trackEvent("signup_submit", {
-			form_type: "main_signup",
-		});
-	}
+  if (e.target.id === "signupForm") {
+    trackEvent("signup_submit", {
+      form_type: "main_signup",
+    });
+  }
 });
 
 // ========================================
 // DOCUMENT READY
 // ========================================
 
-document.addEventListener(
-	"DOMContentLoaded",
-	function () {
-		console.log(
-			"Landing page initialized successfully"
-		);
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("Landing page initialized successfully");
 
-		// Initialize all components
-		initMobileMenu();
-		initVideoModals();
+  // Initialize all components
+  initMobileMenu();
+  initVideoModals();
 
-		// Track page view
-		trackEvent("page_view", {
-			page_location: window.location.href,
-		});
-	}
-);
+  // Track page view
+  trackEvent("page_view", {
+    page_location: window.location.href,
+  });
+});
 
 // ========================================
 // UTILITY FUNCTIONS
@@ -462,24 +389,18 @@ document.addEventListener(
 
 // Get user's preferred theme
 function getPreferredTheme() {
-	const savedTheme =
-		localStorage.getItem("theme");
-	if (savedTheme) return savedTheme;
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) return savedTheme;
 
-	return window.matchMedia(
-		"(prefers-color-scheme: dark)"
-	).matches
-		? "dark"
-		: "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 }
 
 // Set theme
 function setTheme(theme) {
-	document.documentElement.setAttribute(
-		"data-theme",
-		theme
-	);
-	localStorage.setItem("theme", theme);
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
 }
 
 // Initialize theme on page load
