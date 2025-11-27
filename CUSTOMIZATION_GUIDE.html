@@ -963,8 +963,8 @@
 		<section id="responsive">
 			<h2>📱 Responsive Design Customization</h2>
 
-			<h3>Breakpoints</h3>
-			<p>The page is optimized for three main screen sizes:</p>
+			<h3>Comprehensive Breakpoint System</h3>
+			<p>The page features a sophisticated 9-breakpoint responsive system optimized for all device sizes:</p>
 			<table>
 				<thead>
 					<tr>
@@ -975,44 +975,121 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><strong>Desktop</strong></td>
-						<td>1024px and above</td>
-						<td>Desktops, large laptops</td>
+						<td><strong>Large Desktop</strong></td>
+						<td>1280px and above</td>
+						<td>Large monitors, widescreen displays</td>
 					</tr>
 					<tr>
-						<td><strong>Tablet</strong></td>
-						<td>768px - 1024px</td>
-						<td>Tablets, small laptops</td>
+						<td><strong>Medium Desktop</strong></td>
+						<td>1140px - 1280px</td>
+						<td>Standard desktops, laptops</td>
+					</tr>
+					<tr>
+						<td><strong>Large Tablets</strong></td>
+						<td>1024px - 1140px</td>
+						<td>Large tablets, small laptops</td>
+					</tr>
+					<tr>
+						<td><strong>Medium Tablets</strong></td>
+						<td>900px - 1024px</td>
+						<td>iPad landscape, tablets</td>
+					</tr>
+					<tr>
+						<td><strong>Tablets</strong></td>
+						<td>768px - 900px</td>
+						<td>iPad portrait, tablets</td>
+					</tr>
+					<tr>
+						<td><strong>Small Tablets</strong></td>
+						<td>640px - 768px</td>
+						<td>Small tablets, large phones landscape</td>
 					</tr>
 					<tr>
 						<td><strong>Mobile</strong></td>
-						<td>Below 768px</td>
-						<td>Smartphones</td>
+						<td>480px - 640px</td>
+						<td>Modern smartphones</td>
+					</tr>
+					<tr>
+						<td><strong>Small Mobile</strong></td>
+						<td>375px - 480px</td>
+						<td>iPhone SE, smaller phones</td>
+					</tr>
+					<tr>
+						<td><strong>Extra Small Mobile</strong></td>
+						<td>320px - 375px</td>
+						<td>Older/compact smartphones</td>
 					</tr>
 				</tbody>
 			</table>
 
-			<h3>Media Queries</h3>
-			<p>Media queries are defined throughout <code>styles.css</code>:</p>
-			<pre><code>/* Tablet */
-@media (max-width: 1024px) {
-	.hero-headline {
-		font-size: 2.5rem;
-	}
-}
+			<h3>Header/Navigation Responsive Features</h3>
+			<p>The header has comprehensive responsive adjustments across all breakpoints:</p>
 
-/* Mobile */
-@media (max-width: 768px) {
-	.hero-headline {
-		font-size: 1.95rem;
-	}
-}</code></pre>
+			<h4>Desktop (1280px+)</h4>
+			<ul>
+				<li>Full navigation menu with all links visible</li>
+				<li>Sign In and Get Started buttons displayed</li>
+				<li>Logo at full size (40px)</li>
+				<li>Comfortable spacing between navigation items</li>
+			</ul>
+
+			<h4>Tablets (768px - 1140px)</h4>
+			<ul>
+				<li>Progressive font size reduction for better fit</li>
+				<li>Reduced padding and gaps to optimize space</li>
+				<li>Sign In button visible (hidden only below 768px)</li>
+				<li>Logo scales proportionally</li>
+				<li>At 768px: Switch to mobile menu (hamburger icon)</li>
+			</ul>
+
+			<h4>Mobile (Below 768px)</h4>
+			<ul>
+				<li>Side drawer mobile menu replaces desktop navigation</li>
+				<li>Mobile menu accessible via hamburger toggle button</li>
+				<li>Sign In and Get Started available in mobile menu footer</li>
+				<li>Touch-optimized button sizes (minimum 38-44px)</li>
+				<li>Logo scales down progressively (36px → 30px)</li>
+			</ul>
+
+			<h3>Hero Section Responsive Features</h3>
+			<p>The hero section adapts seamlessly across 8 breakpoints:</p>
+			<ul>
+				<li><strong>1280px:</strong> Full layout with optimal spacing</li>
+				<li><strong>1024px:</strong> Reduced font sizes and card dimensions</li>
+				<li><strong>768px:</strong> Stack layout changes, card adjustments</li>
+				<li><strong>640px:</strong> Single column layout, compact spacing</li>
+				<li><strong>480px:</strong> Further optimizations for smartphones</li>
+				<li><strong>375px:</strong> Fine-tuned for smaller phones</li>
+				<li><strong>320px:</strong> Maximum optimization for compact devices</li>
+			</ul>
+
+			<h3>Media Queries Structure</h3>
+			<p>Media queries are organized by section throughout <code>styles.css</code>:</p>
+			<pre><code>/* Navigation Responsive Styles - Lines 598-955 */
+@media (max-width: 1280px) { /* Large Desktop */ }
+@media (max-width: 1140px) { /* Medium Desktop */ }
+@media (max-width: 1024px) { /* Large Tablets */ }
+@media (max-width: 900px)  { /* Medium Tablets */ }
+@media (max-width: 768px)  { /* Tablets */ }
+@media (max-width: 640px)  { /* Small Tablets */ }
+@media (max-width: 480px)  { /* Mobile */ }
+@media (max-width: 375px)  { /* Small Mobile */ }
+@media (max-width: 320px)  { /* Extra Small Mobile */ }
+
+/* Hero Section Responsive Styles - Lines 1290-1680 */
+@media (max-width: 1280px) { ... }
+@media (max-width: 1024px) { ... }
+/* ... and so on */</code></pre>
 
 			<h3>Adding Custom Breakpoints</h3>
-			<pre><code>/* New breakpoint for very small phones */
-@media (max-width: 480px) {
+			<p>To add a new breakpoint between existing ones:</p>
+			<pre><code>/* Custom breakpoint for specific device */
+@media (max-width: 850px) {
 	.hero-headline {
-		font-size: 1.5rem;
+		font-size: 2.2rem;
+	}
+	.nav-container {
+		padding: 0 1.4rem;
 	}
 }</code></pre>
 
