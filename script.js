@@ -1,4 +1,66 @@
 // ========================================
+// CTA BUTTON HANDLERS
+// ========================================
+
+function initCTAButtons() {
+  // Helper function to scroll to section
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  // Helper to close mobile menu
+  const closeMobileMenu = () => {
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const menuToggle = document.querySelector(".mobile-menu-toggle");
+    if (mobileMenu && menuToggle) {
+      mobileMenu.classList.remove("active");
+      menuToggle.classList.remove("active");
+    }
+  };
+
+  // Get Started buttons - scroll to contact
+  document
+    .querySelectorAll(".nav-cta, .cta-button.primary.large")
+    .forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        scrollToSection("contact");
+        closeMobileMenu();
+      });
+    });
+
+  // Watch Demo buttons - scroll to video
+  document
+    .querySelectorAll(".cta-button.secondary-outline")
+    .forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        scrollToSection("video");
+      });
+    });
+
+  // Final CTA buttons
+  document.querySelectorAll(".cta-button-modern").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      const href = button.getAttribute("href");
+      const text = button.textContent.trim();
+      if (href === "#contact" || text.includes("Get Started")) {
+        scrollToSection("contact");
+      } else if (href === "#video" || text.includes("Demo")) {
+        scrollToSection("video");
+      }
+    });
+  });
+}
+
+// ========================================
 // SMOOTH SCROLLING & NAVIGATION
 // ========================================
 
@@ -80,17 +142,17 @@ function showNotification(message, type = "info") {
             }
             
             .notification-success {
-                background: linear-gradient(135deg, #5BA3A8 0%, #4A8B92 100%);
+                background: linear-gradient(135deg, #10b981 0%, #059669 100%);
                 color: white;
             }
             
             .notification-error {
-                background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
+                background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
                 color: white;
             }
             
             .notification-info {
-                background: linear-gradient(135deg, #4ECDC4 0%, #44B8AC 100%);
+                background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
                 color: white;
             }
             
@@ -160,7 +222,7 @@ styleSheet.textContent = `
     }
     
     .trust-card,
-    .feature-block,
+    .bento-card,
     .video-card,
     .testimonial-card,
     .resource-card {
@@ -172,7 +234,7 @@ document.head.appendChild(styleSheet);
 // Observe elements for animation
 document
   .querySelectorAll(
-    ".trust-card, .feature-block, .video-card, .testimonial-card, .resource-card"
+    ".trust-card, .bento-card, .video-card, .testimonial-card, .resource-card"
   )
   .forEach((el) => {
     observer.observe(el);
@@ -187,15 +249,18 @@ function initMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
   const mobileLinks = document.querySelectorAll(".mobile-nav-link");
 
+  const toggleScroll = (disable) => {
+    document.body.style.overflow = disable ? "hidden" : "";
+    document.documentElement.style.overflow = disable ? "hidden" : "";
+  };
+
   if (menuButton && mobileMenu) {
     // Toggle menu on button click
     menuButton.addEventListener("click", function (e) {
       e.stopPropagation();
       menuButton.classList.toggle("active");
       mobileMenu.classList.toggle("active");
-      document.body.style.overflow = mobileMenu.classList.contains("active")
-        ? "hidden"
-        : "";
+      toggleScroll(mobileMenu.classList.contains("active"));
     });
 
     // Close menu when a link is clicked
@@ -203,7 +268,7 @@ function initMobileMenu() {
       link.addEventListener("click", () => {
         menuButton.classList.remove("active");
         mobileMenu.classList.remove("active");
-        document.body.style.overflow = "";
+        toggleScroll(false);
       });
     });
 
@@ -213,7 +278,7 @@ function initMobileMenu() {
       mobileCTA.addEventListener("click", () => {
         menuButton.classList.remove("active");
         mobileMenu.classList.remove("active");
-        document.body.style.overflow = "";
+        toggleScroll(false);
       });
     }
 
@@ -222,19 +287,23 @@ function initMobileMenu() {
       const isClickInsideMenu = mobileMenu.contains(event.target);
       const isClickOnButton = menuButton.contains(event.target);
 
-      if (!isClickInsideMenu && !isClickOnButton) {
+      if (
+        !isClickInsideMenu &&
+        !isClickOnButton &&
+        mobileMenu.classList.contains("active")
+      ) {
         menuButton.classList.remove("active");
         mobileMenu.classList.remove("active");
-        document.body.style.overflow = "";
+        toggleScroll(false);
       }
     });
 
     // Close menu on window resize (when transitioning to desktop)
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1024) {
         menuButton.classList.remove("active");
         mobileMenu.classList.remove("active");
-        document.body.style.overflow = "";
+        toggleScroll(false);
       }
     });
 
@@ -243,7 +312,7 @@ function initMobileMenu() {
       if (e.key === "Escape" && mobileMenu.classList.contains("active")) {
         menuButton.classList.remove("active");
         mobileMenu.classList.remove("active");
-        document.body.style.overflow = "";
+        toggleScroll(false);
       }
     });
   }
@@ -254,6 +323,289 @@ function initMobileMenu() {
 // ========================================
 
 function initVideoModals() {
+  // Handle play button large click
+  const playButtonLarge = document.querySelector(".play-button-large");
+  if (playButtonLarge) {
+    playButtonLarge.addEventListener("click", function () {
+      // Prevent multiple modals
+      if (document.querySelector(".video-modal")) {
+        return;
+      }
+
+      // Create modal
+      const modal = document.createElement("div");
+      modal.className = "video-modal";
+      modal.innerHTML = `
+				<div class="video-modal-overlay"></div>
+				<button class="video-modal-close" aria-label="Close">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+						<line x1="18" y1="6" x2="6" y2="18"></line>
+						<line x1="6" y1="6" x2="18" y2="18"></line>
+					</svg>
+				</button>
+				<div class="video-modal-wrapper">
+					<div class="video-modal-content">
+						<div class="video-modal-player">
+							<iframe
+								width="100%"
+								height="100%"
+								src="https://www.youtube.com/embed/LXb3EKWsInQ?autoplay=1&rel=0"
+								title="Video Player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen
+							></iframe>
+						</div>
+					</div>
+				</div>
+			`;
+
+      // Add modal styles
+      if (!document.getElementById("video-modal-styles")) {
+        const style = document.createElement("style");
+        style.id = "video-modal-styles";
+        style.textContent = `
+					.video-modal {
+						position: fixed;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						z-index: 10000;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						padding: 20px;
+						animation: fadeIn 0.3s ease;
+					}
+					
+					.video-modal-overlay {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						background: rgba(15, 23, 42, 0.95);
+						backdrop-filter: blur(8px);
+						cursor: pointer;
+					}
+					
+					.video-modal-wrapper {
+						position: relative;
+						width: 100%;
+						max-width: 1200px;
+						z-index: 1;
+					}
+					
+					.video-modal-content {
+						position: relative;
+						width: 100%;
+						aspect-ratio: 16 / 9;
+						background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+						border-radius: 24px;
+						overflow: hidden;
+						box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 
+									0 0 0 1px rgba(255, 255, 255, 0.1);
+						animation: modalSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+					}
+					
+					.video-modal-player {
+						width: 100%;
+						height: 100%;
+						position: relative;
+						overflow: hidden;
+					}
+					
+					.video-modal-player iframe {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+					}
+					
+					.video-modal-close {
+						position: fixed;
+						top: 20px;
+						right: 20px;
+						background: rgba(255, 255, 255, 0.1);
+						backdrop-filter: blur(12px);
+						-webkit-backdrop-filter: blur(12px);
+						border: 2px solid rgba(255, 255, 255, 0.15);
+						color: white;
+						cursor: pointer;
+						z-index: 10002;
+						width: 52px;
+						height: 52px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						border-radius: 50%;
+						transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+						padding: 0;
+						box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+					}
+					
+					.video-modal-close:hover {
+						transform: scale(1.1) rotate(90deg);
+						background: rgba(255, 255, 255, 0.2);
+						border-color: rgba(255, 255, 255, 0.3);
+						box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+					}
+					
+					.video-modal-close svg {
+						width: 24px;
+						height: 24px;
+						pointer-events: none;
+					}
+					
+					.video-modal-close svg line {
+						pointer-events: none;
+					}
+					
+					@keyframes fadeIn {
+						from {
+							opacity: 0;
+						}
+						to {
+							opacity: 1;
+						}
+					}
+					
+					@keyframes fadeOut {
+						from {
+							opacity: 1;
+						}
+						to {
+							opacity: 0;
+						}
+					}
+					
+					@keyframes modalSlideIn {
+						from {
+							opacity: 0;
+							transform: scale(0.9) translateY(30px);
+						}
+						to {
+							opacity: 1;
+							transform: scale(1) translateY(0);
+						}
+					}
+					
+					@media (max-width: 768px) {
+						.video-modal {
+							padding: 15px;
+						}
+						
+						.video-modal-content {
+							border-radius: 16px;
+						}
+						
+						.video-modal-close {
+							top: 15px;
+							right: 15px;
+							width: 48px;
+							height: 48px;
+						}
+						
+						.video-modal-close svg {
+							width: 20px;
+							height: 20px;
+							pointer-events: none;
+						}
+						
+						.video-modal-close svg line {
+							pointer-events: none;
+						}
+					}
+					
+					@media (max-width: 480px) {
+						.video-modal {
+							padding: 0;
+						}
+						
+						.video-modal-content {
+							border-radius: 0;
+							box-shadow: none;
+						}
+						
+						.video-modal-close {
+							top: 15px;
+							right: 15px;
+							width: 44px;
+							height: 44px;
+							background: rgba(0, 0, 0, 0.8);
+							border-color: rgba(255, 255, 255, 0.2);
+						}
+						
+						.video-modal-close svg {
+							pointer-events: none;
+						}
+						
+						.video-modal-close svg line {
+							pointer-events: none;
+						}
+					}
+				`;
+        document.head.appendChild(style);
+      }
+
+      // Add modal to body
+      document.body.appendChild(modal);
+      document.body.style.overflow = "hidden";
+
+      // Close modal functionality
+      const closeModal = () => {
+        modal.style.animation = "fadeOut 0.2s ease";
+        setTimeout(() => {
+          modal.remove();
+          document.body.style.overflow = "";
+        }, 200);
+      };
+
+      // Get elements
+      const closeButton = modal.querySelector(".video-modal-close");
+      const overlay = modal.querySelector(".video-modal-overlay");
+      const videoContent = modal.querySelector(".video-modal-content");
+
+      // Close button - direct handler without stopPropagation
+      if (closeButton) {
+        closeButton.addEventListener(
+          "click",
+          (e) => {
+            closeModal();
+          },
+          true
+        );
+      }
+
+      // Overlay click
+      if (overlay) {
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) {
+            closeModal();
+          }
+        });
+      }
+
+      // Prevent clicks on video content from closing modal
+      if (videoContent) {
+        videoContent.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+      }
+
+      // Close on Escape key
+      const escapeClose = (e) => {
+        if (e.key === "Escape") {
+          closeModal();
+          document.removeEventListener("keydown", escapeClose);
+        }
+      };
+      document.addEventListener("keydown", escapeClose);
+    });
+  }
+
   const videoCards = document.querySelectorAll(".video-card");
 
   videoCards.forEach((card) => {
@@ -273,9 +625,7 @@ function initVideoModals() {
   });
 }
 
-initVideoModals();
-
-// ========================================
+initVideoModals(); // ========================================
 // NAVBAR SCROLL EFFECTS
 // ========================================
 
@@ -374,6 +724,7 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("Landing page initialized successfully");
 
   // Initialize all components
+  initCTAButtons();
   initMobileMenu();
   initVideoModals();
 

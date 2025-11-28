@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Budgy Landing Page - Customization Guide</title>
+	<title>Budgy Landing Page - Complete Customization Guide</title>
 	<style>
 		* {
 			margin: 0;
@@ -12,13 +12,13 @@
 		}
 
 		:root {
-			--primary-blue: #5ba3a8;
-			--secondary-blue: #4a8b92;
-			--warm-coral: #ff8c69;
-			--text-dark: #2c3e50;
-			--text-light: #5a6c7d;
-			--light-blue: #e8f4f8;
-			--cream: #fff9f5;
+			--primary-blue: #6366f1;
+			--secondary-blue: #4f46e5;
+			--warm-coral: #10b981;
+			--text-dark: #0f172a;
+			--text-light: #64748b;
+			--light-blue: #e0e7ff;
+			--cream: #f8fafc;
 			--white: #ffffff;
 		}
 
@@ -26,11 +26,11 @@
 			font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 			line-height: 1.6;
 			color: var(--text-dark);
-			background-color: var(--cream);
+			background: var(--cream);
 		}
 
 		.container {
-			max-width: 1000px;
+			max-width: 1100px;
 			margin: 0 auto;
 			padding: 2rem;
 		}
@@ -38,90 +38,101 @@
 		header {
 			background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
 			color: var(--white);
-			padding: 3rem 2rem;
-			border-radius: 12px;
+			padding: 3.5rem 2rem;
+			border-radius: 16px;
 			margin-bottom: 3rem;
 			text-align: center;
+			box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
 		}
 
 		header h1 {
-			font-size: 2.5rem;
-			margin-bottom: 0.5rem;
+			font-size: 2.75rem;
+			margin-bottom: 0.75rem;
+			font-weight: 800;
 		}
 
 		header p {
-			font-size: 1.1rem;
+			font-size: 1.15rem;
 			opacity: 0.95;
+			font-weight: 500;
 		}
 
 		nav {
 			background: var(--white);
-			padding: 1.5rem;
-			border-radius: 8px;
-			margin-bottom: 2rem;
-			box-shadow: 0 2px 8px rgba(91, 163, 168, 0.1);
+			padding: 1.75rem;
+			border-radius: 12px;
+			margin-bottom: 2.5rem;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 			position: sticky;
-			top: 2rem;
+			top: 1.5rem;
 			z-index: 50;
+			border: 1px solid rgba(99, 102, 241, 0.1);
 		}
 
 		nav h3 {
 			color: var(--primary-blue);
-			margin-bottom: 1rem;
-			font-size: 0.95rem;
+			margin-bottom: 1.25rem;
+			font-size: 0.875rem;
 			text-transform: uppercase;
-			letter-spacing: 1px;
+			letter-spacing: 1.5px;
+			font-weight: 700;
 		}
 
 		nav ul {
 			list-style: none;
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-			gap: 0.5rem;
+			grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+			gap: 0.75rem;
 		}
 
 		nav a {
-			color: var(--primary-blue);
+			color: var(--text-light);
 			text-decoration: none;
-			padding: 0.5rem;
-			border-radius: 4px;
-			transition: all 0.3s ease;
+			padding: 0.75rem 1rem;
+			border-radius: 8px;
+			transition: all 0.2s ease;
+			display: block;
+			font-weight: 500;
+			font-size: 0.95rem;
 		}
 
 		nav a:hover {
 			background: var(--light-blue);
-			color: var(--secondary-blue);
+			color: var(--primary-blue);
+			transform: translateX(4px);
 		}
 
 		section {
 			background: var(--white);
-			padding: 2.5rem;
-			margin-bottom: 2rem;
-			border-radius: 12px;
-			box-shadow: 0 2px 12px rgba(91, 163, 168, 0.08);
-			border-left: 4px solid var(--primary-blue);
+			padding: 3rem;
+			margin-bottom: 2.5rem;
+			border-radius: 16px;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+			border-left: 5px solid var(--primary-blue);
 		}
 
 		section h2 {
 			color: var(--primary-blue);
-			font-size: 1.8rem;
-			margin-bottom: 1.5rem;
-			padding-bottom: 0.75rem;
+			font-size: 2rem;
+			margin-bottom: 1.75rem;
+			padding-bottom: 1rem;
 			border-bottom: 2px solid var(--light-blue);
+			font-weight: 800;
 		}
 
 		section h3 {
 			color: var(--secondary-blue);
-			font-size: 1.2rem;
-			margin-top: 1.5rem;
-			margin-bottom: 0.75rem;
+			font-size: 1.35rem;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+			font-weight: 700;
 		}
 
 		section h4 {
 			color: var(--text-dark);
-			font-size: 1rem;
-			margin-top: 1.25rem;
-			margin-bottom: 0.5rem;
+			font-size: 1.05rem;
+			margin-top: 1.5rem;
+			margin-bottom: 0.75rem;
 			font-weight: 600;
 		}
 
@@ -132,22 +143,24 @@
 		}
 
 		code {
-			background: #f5f5f5;
-			color: #e83e8c;
-			padding: 0.2rem 0.5rem;
-			border-radius: 4px;
+			background: #f1f5f9;
+			color: #e11d48;
+			padding: 0.25rem 0.6rem;
+			border-radius: 6px;
 			font-family: "Monaco", "Courier New", monospace;
-			font-size: 0.9em;
+			font-size: 0.875em;
+			font-weight: 500;
 		}
 
 		pre {
-			background: #2c3e50;
-			color: #a8e6e6;
-			padding: 1.5rem;
-			border-radius: 8px;
+			background: #1e293b;
+			color: #cbd5e1;
+			padding: 1.75rem;
+			border-radius: 12px;
 			overflow-x: auto;
-			margin-bottom: 1.5rem;
-			line-height: 1.5;
+			margin-bottom: 1.75rem;
+			line-height: 1.6;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 		}
 
 		pre code {
@@ -161,13 +174,13 @@
 			display: inline-block;
 			background: var(--primary-blue);
 			color: var(--white);
-			padding: 0.25rem 0.75rem;
+			padding: 0.35rem 0.85rem;
 			border-radius: 20px;
 			font-size: 0.75rem;
-			font-weight: 600;
+			font-weight: 700;
 			margin-bottom: 0.75rem;
 			text-transform: uppercase;
-			letter-spacing: 0.5px;
+			letter-spacing: 0.75px;
 		}
 
 		ul {
@@ -180,11 +193,11 @@
 		}
 
 		.tip {
-			background: linear-gradient(135deg, rgba(91, 163, 168, 0.05) 0%, rgba(91, 163, 168, 0.02) 100%);
+			background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(99, 102, 241, 0.02) 100%);
 			border-left: 4px solid var(--primary-blue);
-			padding: 1rem 1.5rem;
-			border-radius: 4px;
-			margin: 1.5rem 0;
+			padding: 1.25rem 1.75rem;
+			border-radius: 8px;
+			margin: 1.75rem 0;
 		}
 
 		.tip strong {
@@ -192,87 +205,114 @@
 		}
 
 		.warning {
-			background: linear-gradient(135deg, rgba(255, 140, 105, 0.05) 0%, rgba(255, 140, 105, 0.02) 100%);
-			border-left: 4px solid var(--warm-coral);
-			padding: 1rem 1.5rem;
-			border-radius: 4px;
-			margin: 1.5rem 0;
+			background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(239, 68, 68, 0.02) 100%);
+			border-left: 4px solid #ef4444;
+			padding: 1.25rem 1.75rem;
+			border-radius: 8px;
+			margin: 1.75rem 0;
 		}
 
 		.warning strong {
+			color: #ef4444;
+		}
+
+		.success {
+			background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.02) 100%);
+			border-left: 4px solid var(--warm-coral);
+			padding: 1.25rem 1.75rem;
+			border-radius: 8px;
+			margin: 1.75rem 0;
+		}
+
+		.success strong {
 			color: var(--warm-coral);
 		}
 
 		.color-swatch {
 			display: inline-flex;
 			align-items: center;
-			gap: 0.75rem;
-			padding: 0.5rem 1rem;
+			gap: 0.85rem;
+			padding: 0.65rem 1.15rem;
 			background: var(--white);
-			border: 1px solid #e0e0e0;
-			border-radius: 6px;
+			border: 1px solid #e2e8f0;
+			border-radius: 8px;
 			margin-right: 1rem;
-			margin-bottom: 0.75rem;
+			margin-bottom: 0.85rem;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 		}
 
 		.color-box {
-			width: 40px;
-			height: 40px;
-			border-radius: 6px;
-			border: 1px solid #ddd;
+			width: 44px;
+			height: 44px;
+			border-radius: 8px;
+			border: 2px solid #e2e8f0;
+			box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
 		}
 
 		table {
 			width: 100%;
 			border-collapse: collapse;
-			margin-bottom: 1.5rem;
+			margin-bottom: 1.75rem;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+			border-radius: 8px;
+			overflow: hidden;
 		}
 
 		th {
 			background: var(--light-blue);
 			color: var(--secondary-blue);
-			padding: 0.75rem;
+			padding: 0.95rem 1.15rem;
 			text-align: left;
-			font-weight: 600;
+			font-weight: 700;
+			font-size: 0.95rem;
 		}
 
 		td {
-			padding: 0.75rem;
-			border-bottom: 1px solid #e0e0e0;
+			padding: 0.95rem 1.15rem;
+			border-bottom: 1px solid #e2e8f0;
 		}
 
 		tr:hover {
 			background: #fafafa;
 		}
 
+		tr:last-child td {
+			border-bottom: none;
+		}
+
 		.file-path {
 			display: inline-block;
-			background: #f0f0f0;
-			padding: 0.75rem 1rem;
-			border-radius: 6px;
+			background: #f1f5f9;
+			padding: 0.85rem 1.25rem;
+			border-radius: 8px;
 			font-family: "Monaco", monospace;
-			font-size: 0.9rem;
-			margin: 0.5rem 0;
+			font-size: 0.875rem;
+			margin: 0.75rem 0;
 			border-left: 3px solid var(--primary-blue);
+			font-weight: 600;
+			color: var(--text-dark);
 		}
 
 		.step {
 			display: flex;
-			gap: 1rem;
-			margin-bottom: 1.5rem;
+			gap: 1.25rem;
+			margin-bottom: 1.75rem;
+			align-items: flex-start;
 		}
 
 		.step-number {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: 36px;
-			height: 36px;
+			min-width: 40px;
+			height: 40px;
 			background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
 			color: var(--white);
 			border-radius: 50%;
-			font-weight: 700;
+			font-weight: 800;
 			flex-shrink: 0;
+			font-size: 1.05rem;
+			box-shadow: 0 4px 8px rgba(99, 102, 241, 0.25);
 		}
 
 		.step-content h4 {
@@ -281,15 +321,16 @@
 
 		footer {
 			text-align: center;
-			padding: 2rem;
-			color: var(--text-muted);
-			border-top: 1px solid #e0e0e0;
-			margin-top: 3rem;
+			padding: 2.5rem;
+			color: var(--text-light);
+			border-top: 2px solid #e2e8f0;
+			margin-top: 4rem;
 		}
 
 		footer a {
 			color: var(--primary-blue);
 			text-decoration: none;
+			font-weight: 600;
 		}
 
 		footer a:hover {
@@ -302,11 +343,11 @@
 			}
 
 			header {
-				padding: 2rem 1rem;
+				padding: 2.5rem 1.5rem;
 			}
 
 			header h1 {
-				font-size: 1.8rem;
+				font-size: 2rem;
 			}
 
 			nav {
@@ -319,21 +360,29 @@
 			}
 
 			section {
-				padding: 1.5rem;
+				padding: 1.75rem;
 			}
 
 			section h2 {
-				font-size: 1.5rem;
+				font-size: 1.65rem;
 			}
 
 			.step {
-				gap: 0.75rem;
+				gap: 1rem;
 			}
 
 			.step-number {
-				width: 32px;
-				height: 32px;
-				font-size: 0.9rem;
+				min-width: 36px;
+				height: 36px;
+				font-size: 0.95rem;
+			}
+
+			table {
+				font-size: 0.875rem;
+			}
+
+			th, td {
+				padding: 0.75rem;
 			}
 		}
 	</style>
@@ -342,119 +391,182 @@
 	<div class="container">
 		<!-- Header -->
 		<header>
-			<h1>🎨 Budgy Landing Page</h1>
-			<p>Complete Customization & Modification Guide</p>
+			<h1>💰 Budgy Landing Page</h1>
+			<p>Complete Customization Guide for Your Financial App Landing Page</p>
 		</header>
 
 		<!-- Navigation -->
 		<nav>
 			<h3>Quick Navigation</h3>
 			<ul>
-				<li><a href="#content">Content Changes</a></li>
-				<li><a href="#colors">Color Customization</a></li>
-				<li><a href="#fonts">Typography</a></li>
-				<li><a href="#sections">Section Modifications</a></li>
-				<li><a href="#animations">Animation Customization</a></li>
-				<li><a href="#images">Images & Media</a></li>
-				<li><a href="#buttons">Buttons & CTAs</a></li>
-				<li><a href="#forms">Forms</a></li>
-				<li><a href="#responsive">Responsive Design</a></li>
-				<li><a href="#analytics">Analytics</a></li>
+				<li><a href="#overview">📋 Overview</a></li>
+				<li><a href="#content">✏️ Content Changes</a></li>
+				<li><a href="#colors">🎨 Colors & Styling</a></li>
+				<li><a href="#typography">🔤 Typography</a></li>
+				<li><a href="#hero">🚀 Hero Section</a></li>
+				<li><a href="#trust">🛡️ Trust Section</a></li>
+				<li><a href="#features">⭐ Features Section</a></li>
+				<li><a href="#video">🎬 Video Section</a></li>
+				<li><a href="#testimonials">💬 Testimonials</a></li>
+				<li><a href="#contact">📧 Contact Form</a></li>
+				<li><a href="#animations">✨ Animations</a></li>
+				<li><a href="#responsive">📱 Responsive Design</a></li>
 			</ul>
 		</nav>
 
-		<!-- Content Section -->
-		<section id="content">
-			<h2>📝 Content Changes</h2>
+		<!-- Overview Section -->
+		<section id="overview">
+			<h2>📋 Overview</h2>
 
-			<h3>Changing the Headline</h3>
-			<p>The main headline appears in the hero section. Find and modify:</p>
-			<div class="file-path">index.html - Line ~135</div>
-			<pre><code>&lt;h1 class="hero-headline"&gt;
-	Your Financial Coach,
-	&lt;strong&gt;Ready When You Are.&lt;/strong&gt;
-&lt;/h1&gt;</code></pre>
-			<p>Simply replace the text between the tags. Keep the <code>&lt;strong&gt;</code> tags for gradient styling.</p>
+			<p>This guide covers every aspect of customizing your Budgy landing page. The page is built with:</p>
+			<ul>
+				<li><strong>HTML5</strong> - Semantic structure (~1200 lines)</li>
+				<li><strong>CSS3</strong> - Modern styling with variables (~3230 lines)</li>
+				<li><strong>Vanilla JavaScript</strong> - Interactive features (~900 lines)</li>
+				<li><strong>No frameworks</strong> - Pure code, easy to customize</li>
+			</ul>
 
-			<h3>Updating Subheadline</h3>
-			<div class="file-path">index.html - Line ~140</div>
-			<pre><code>&lt;p class="hero-subheadline"&gt;
-	Your unique financial journey deserves guidance that adapts...
-&lt;/p&gt;</code></pre>
+			<h3>File Structure</h3>
+			<pre><code>budgy-landing/
+├── index.html          # Main HTML structure
+├── styles.css          # All styling (CSS variables, animations)
+├── script.js           # JavaScript functionality
+├── favicon.svg         # Site icon
+└── README.md           # Documentation</code></pre>
 
-			<h3>Modifying Button Text</h3>
-			<p>CTAs are found throughout the page:</p>
-			<pre><code>&lt;button class="cta-button primary"&gt;Start Free Trial&lt;/button&gt;
-&lt;button class="cta-button secondary"&gt;Learn More&lt;/button&gt;</code></pre>
-
-			<h3>Updating Feature Cards</h3>
-			<div class="file-path">index.html - Features Section (~Line 420)</div>
-			<pre><code>&lt;div class="feature-card"&gt;
-	&lt;svg class="feature-icon"&gt;...&lt;/svg&gt;
-	&lt;h3&gt;Your Feature Title&lt;/h3&gt;
-	&lt;p&gt;Description of your feature...&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-
-			<h3>Adding/Modifying Testimonials</h3>
-			<div class="file-path">index.html - Testimonials Section (~Line 900)</div>
-			<pre><code>&lt;div class="testimonial-card featured-card"&gt;
-	&lt;div class="stars"&gt;
-		&lt;span&gt;⭐&lt;/span&gt;&lt;span&gt;⭐&lt;/span&gt;...
-	&lt;/div&gt;
-	&lt;p&gt;"Your testimonial quote here..."&lt;/p&gt;
-	&lt;div class="testimonial-author"&gt;
-		&lt;strong&gt;Name&lt;/strong&gt;
-		&lt;span&gt;Title/Role&lt;/span&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+			<h3>Key Sections on the Page</h3>
+			<ol style="margin-left: 2rem;">
+				<li><strong>Navigation</strong> - Fixed header with glassmorphism</li>
+				<li><strong>Hero Section</strong> - Headline, CTAs, visual with floating cards</li>
+				<li><strong>Trust Section</strong> - Logo strip, security features</li>
+				<li><strong>Features Section</strong> - Bento grid with 5 features</li>
+				<li><strong>Video Section</strong> - Featured video with playlist</li>
+				<li><strong>Testimonials</strong> - 3 user testimonials</li>
+				<li><strong>Emotional Connection</strong> - Quote and statistic</li>
+				<li><strong>Resources</strong> - 3 blog article cards</li>
+				<li><strong>Final CTA</strong> - Last conversion opportunity</li>
+				<li><strong>Contact</strong> - Form with multiple contact methods</li>
+				<li><strong>Footer</strong> - Links and copyright</li>
+			</ol>
 
 			<div class="tip">
-				<strong>💡 Tip:</strong> Use line numbers in your editor to quickly navigate to sections. Search for section names like "FEATURES SECTION" or "TESTIMONIALS" in the HTML to find the right location.
+				<strong>💡 Pro Tip:</strong> Before making changes, duplicate the original files as backups. This allows you to revert if needed.
 			</div>
 		</section>
 
-		<!-- Color Customization -->
+		<!-- Content Changes -->
+		<section id="content">
+			<h2>✏️ Content Changes</h2>
+
+			<h3>Changing Headlines</h3>
+			<p>The main headline appears in the hero section:</p>
+			<div class="file-path">index.html - Line ~163</div>
+			<pre><code>&lt;h1 class="hero-headline"&gt;
+  Master Your Money with
+  &lt;span class="hero-headline-gradient"&gt;Intelligent Insights&lt;/span&gt;
+&lt;/h1&gt;</code></pre>
+			<p>Keep the <code>&lt;span class="hero-headline-gradient"&gt;</code> for the gradient text effect.</p>
+
+			<h3>Updating Subheadline</h3>
+			<div class="file-path">index.html - Line ~169</div>
+			<pre><code>&lt;p class="hero-subheadline"&gt;
+  Stop guessing where your money goes. Budgy connects all your
+  accounts, tracks spending automatically, and helps you reach your
+  financial goals faster.
+&lt;/p&gt;</code></pre>
+
+			<h3>Modifying Button Text</h3>
+			<p>Hero CTAs:</p>
+			<pre><code>&lt;button class="cta-button primary large"&gt;
+  Start Your Free Trial
+  &lt;svg class="cta-arrow"&gt;...&lt;/svg&gt;
+&lt;/button&gt;
+
+&lt;button class="cta-button secondary-outline"&gt;
+  &lt;svg class="play-icon"&gt;...&lt;/svg&gt;
+  See How It Works
+&lt;/button&gt;</code></pre>
+
+			<h3>Trust Badge</h3>
+			<p>Update the hero badge text:</p>
+			<div class="file-path">index.html - Line ~157</div>
+			<pre><code>&lt;div class="hero-badge"&gt;
+  &lt;span class="badge-icon"&gt;✨&lt;/span&gt;
+  &lt;span&gt;#1 Personal Finance App of 2025&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>Social Proof Stats</h3>
+			<p>Update user count and rating:</p>
+			<div class="file-path">index.html - Line ~199</div>
+			<pre><code>&lt;div class="trust-label"&gt;Loved by 50,000+ users&lt;/div&gt;</code></pre>
+
+			<h3>Floating Card Values</h3>
+			<p>Update the statistics on floating cards:</p>
+			<pre><code>&lt;!-- Savings Card --&gt;
+&lt;span class="card-label"&gt;Total Savings&lt;/span&gt;
+&lt;span class="card-value"&gt;$12,450&lt;/span&gt;
+
+&lt;!-- Growth Card --&gt;
+&lt;span class="card-label"&gt;Monthly Growth&lt;/span&gt;
+&lt;span class="card-value"&gt;+24.5%&lt;/span&gt;</code></pre>
+
+			<div class="success">
+				<strong>✓ Quick Tip:</strong> Use realistic, achievable numbers that reflect actual user outcomes to build trust.
+			</div>
+		</section>
+
+		<!-- Colors & Styling -->
 		<section id="colors">
-			<h2>🎨 Color Customization</h2>
+			<h2>🎨 Colors & Styling</h2>
 
-			<h3>Understanding the Color System</h3>
-			<p>All colors are defined as CSS variables in <code>styles.css</code> for easy global changes:</p>
-			<div class="file-path">styles.css - Lines 1-30</div>
+			<h3>Color System</h3>
+			<p>All colors are defined as CSS variables at the top of <code>styles.css</code>:</p>
+			<div class="file-path">styles.css - Lines 8-18</div>
 
-			<h3>Color Palette</h3>
+			<h3>Current Color Palette</h3>
 			<table>
 				<thead>
 					<tr>
-						<th>Variable Name</th>
-						<th>Current Color</th>
+						<th>Variable</th>
+						<th>Color</th>
 						<th>Usage</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td><code>--primary-blue</code></td>
-						<td><div class="color-swatch"><div class="color-box" style="background: #5ba3a8;"></div> #5BA3A8</div></td>
+						<td><div class="color-swatch"><div class="color-box" style="background: #6366f1;"></div> #6366f1</div></td>
 						<td>Primary buttons, links, accents</td>
 					</tr>
 					<tr>
 						<td><code>--secondary-blue</code></td>
-						<td><div class="color-swatch"><div class="color-box" style="background: #4a8b92;"></div> #4A8B92</div></td>
-						<td>Hover states, secondary elements</td>
-					</tr>
-					<tr>
-						<td><code>--warm-coral</code></td>
-						<td><div class="color-swatch"><div class="color-box" style="background: #ff8c69;"></div> #FF8C69</div></td>
-						<td>CTAs, accents, secondary highlights</td>
+						<td><div class="color-swatch"><div class="color-box" style="background: #4f46e5;"></div> #4f46e5</div></td>
+						<td>Hover states, darker accents</td>
 					</tr>
 					<tr>
 						<td><code>--light-blue</code></td>
-						<td><div class="color-swatch"><div class="color-box" style="background: #e8f4f8;"></div> #E8F4F8</div></td>
-						<td>Light backgrounds, accents</td>
+						<td><div class="color-swatch"><div class="color-box" style="background: #e0e7ff;"></div> #e0e7ff</div></td>
+						<td>Light backgrounds, badges</td>
+					</tr>
+					<tr>
+						<td><code>--warm-coral</code></td>
+						<td><div class="color-swatch"><div class="color-box" style="background: #10b981;"></div> #10b981</div></td>
+						<td>Success states, secondary CTAs</td>
 					</tr>
 					<tr>
 						<td><code>--cream</code></td>
-						<td><div class="color-swatch"><div class="color-box" style="background: #fff9f5;"></div> #FFF9F5</div></td>
+						<td><div class="color-swatch"><div class="color-box" style="background: #f8fafc;"></div> #f8fafc</div></td>
 						<td>Page background</td>
+					</tr>
+					<tr>
+						<td><code>--text-dark</code></td>
+						<td><div class="color-swatch"><div class="color-box" style="background: #0f172a;"></div> #0f172a</div></td>
+						<td>Headings, main text</td>
+					</tr>
+					<tr>
+						<td><code>--text-light</code></td>
+						<td><div class="color-swatch"><div class="color-box" style="background: #64748b;"></div> #64748b</div></td>
+						<td>Descriptions, body text</td>
 					</tr>
 				</tbody>
 			</table>
@@ -464,18 +576,18 @@
 				<div class="step-number">1</div>
 				<div class="step-content">
 					<h4>Open <code>styles.css</code></h4>
-					<p>Navigate to the top of the file where variables are defined.</p>
+					<p>Navigate to the <code>:root</code> section at the top of the file.</p>
 				</div>
 			</div>
 
 			<div class="step">
 				<div class="step-number">2</div>
 				<div class="step-content">
-					<h4>Find the <code>:root</code> section</h4>
+					<h4>Find the color variable</h4>
 					<pre><code>:root {
-	--primary-blue: #5ba3a8;
-	--secondary-blue: #4a8b92;
-	/* ... etc */
+  --primary-blue: #6366f1;
+  --secondary-blue: #4f46e5;
+  /* ... */
 }</code></pre>
 				</div>
 			</div>
@@ -483,752 +595,777 @@
 			<div class="step">
 				<div class="step-number">3</div>
 				<div class="step-content">
-					<h4>Replace the hex color code</h4>
-					<p>For example, to change primary blue to a different shade:</p>
-					<pre><code>--primary-blue: #YOUR_HEX_CODE_HERE;</code></pre>
+					<h4>Replace with your hex code</h4>
+					<pre><code>--primary-blue: #YOUR_COLOR_HERE;</code></pre>
 				</div>
 			</div>
 
 			<div class="step">
 				<div class="step-number">4</div>
 				<div class="step-content">
-					<h4>Save and refresh your browser</h4>
-					<p>The changes will automatically apply to all elements using that color variable.</p>
+					<h4>Save and refresh</h4>
+					<p>All elements using that variable will update automatically.</p>
 				</div>
 			</div>
 
-			<div class="tip">
-				<strong>💡 Tip:</strong> Use a color picker tool like <a href="https://htmlcolorcodes.com/" target="_blank">HTML Color Codes</a> or your browser's built-in inspector to find the perfect hex code.
-			</div>
+			<h3>Gradient Customization</h3>
+			<p>Many elements use gradient backgrounds. Search for <code>linear-gradient</code> in <code>styles.css</code>:</p>
+			<pre><code>/* Primary button gradient */
+background: linear-gradient(
+  135deg,
+  var(--primary-blue) 0%,
+  var(--secondary-blue) 100%
+);
 
-			<h3>Creating Color Gradients</h3>
-			<p>The page uses gradient backgrounds in several places. Search for <code>linear-gradient</code> in <code>styles.css</code> to modify:</p>
-			<pre><code>background: linear-gradient(
-	135deg,
-	var(--primary-blue) 0%,
-	var(--secondary-blue) 100%
-);</code></pre>
-			<p>The angle (135deg), colors, and percentages can all be adjusted.</p>
+/* You can modify:
+   - Angle: 135deg → 90deg, 180deg, etc.
+   - Colors: Any hex or CSS variable
+   - Stops: 0%, 50%, 100% positions */</code></pre>
+
+			<div class="tip">
+				<strong>💡 Color Tool:</strong> Use <a href="https://coolors.co/" target="_blank">Coolors.co</a> to generate harmonious color palettes, or <a href="https://uigradients.com/" target="_blank">UI Gradients</a> for gradient inspiration.
+			</div>
 		</section>
 
-		<!-- Font Customization -->
-		<section id="fonts">
-			<h2>🔤 Typography Customization</h2>
+		<!-- Typography -->
+		<section id="typography">
+			<h2>🔤 Typography</h2>
 
-			<h3>Current Fonts</h3>
-			<p>The landing page uses two main font families:</p>
+			<h3>Font Families</h3>
+			<p>The page uses two Google Fonts:</p>
 			<table>
 				<thead>
 					<tr>
 						<th>Font</th>
-						<th>Used For</th>
+						<th>Usage</th>
 						<th>Variable</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td><strong>Inter</strong></td>
-						<td>Body text, buttons, descriptions</td>
+						<td>Body text, UI elements</td>
 						<td><code>--font-body</code></td>
 					</tr>
 					<tr>
 						<td><strong>Caveat</strong></td>
-						<td>Handwriting style elements, quotes</td>
+						<td>Decorative elements, quotes</td>
 						<td><code>--font-handwriting</code></td>
 					</tr>
 				</tbody>
 			</table>
 
-			<h3>Changing Font Families</h3>
-
-			<h4>Step 1: Find the Font Definition</h4>
-			<div class="file-path">styles.css - Lines ~12-14</div>
-			<pre><code>--font-handwriting: "Caveat", cursive;
---font-body: "Inter", sans-serif;</code></pre>
-
-			<h4>Step 2: Choose a New Font</h4>
-			<p>Popular alternatives from <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>:</p>
-			<ul>
-				<li><strong>For headings:</strong> Playfair Display, Poppins, Raleway</li>
-				<li><strong>For body:</strong> Open Sans, Lato, Roboto</li>
-				<li><strong>For handwriting:</strong> Dancing Script, Great Vibes, Satisfy</li>
-			</ul>
-
-			<h4>Step 3: Import the Font</h4>
-			<p>Add this to the top of your HTML or CSS:</p>
-			<pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=YOUR_FONT_NAME:wght@400;700&display=swap" rel="stylesheet"&gt;</code></pre>
-
-			<h4>Step 4: Update the Variable</h4>
-			<pre><code>--font-body: "Your New Font Name", fallback-font;</code></pre>
-
-			<h3>Changing Font Sizes</h3>
-			<p>Find the element you want to modify and adjust the <code>font-size</code> property:</p>
-			<pre><code>.hero-headline {
-	font-size: 3.75rem;  /* Change this value */
-	font-weight: 700;
-}</code></pre>
-
-			<h3>Font Size Guidelines</h3>
-			<ul>
-				<li><strong>Headlines (h1, h2):</strong> 2.5rem - 3.75rem</li>
-				<li><strong>Subheadings (h3):</strong> 1.5rem - 2rem</li>
-				<li><strong>Body text (p):</strong> 1rem - 1.2rem</li>
-				<li><strong>Small text (labels):</strong> 0.75rem - 0.95rem</li>
-			</ul>
-
-			<div class="warning">
-				<strong>⚠️ Warning:</strong> Avoid changing font sizes below 14px for body text on mobile devices to ensure readability and proper accessibility.
-			</div>
-		</section>
-
-		<!-- Section Modifications -->
-		<section id="sections">
-			<h2>🔧 Section-by-Section Modifications</h2>
-
-			<h3>Navigation Bar</h3>
-			<div class="file-path">index.html - Lines 24-120</div>
-			<p><strong>What to modify:</strong></p>
-			<ul>
-				<li>Logo text: Change "Budgy" to your brand name</li>
-				<li>Navigation links: Update href attributes to point to your pages</li>
-				<li>Button text: "Sign In" and "Get Started"</li>
-				<li>Background color: In styles.css, modify <code>.navbar</code> background property</li>
-			</ul>
-
-			<h3>Hero Section</h3>
-			<div class="file-path">index.html - Lines 123-232</div>
-			<p><strong>What to modify:</strong></p>
-			<ul>
-				<li>Headline and subheadline text</li>
-				<li>CTA button text and links</li>
-				<li>Trust metrics (numbers and labels)</li>
-				<li>Hero visual illustration: Replace SVG or add image</li>
-			</ul>
-
-			<h3>Trust Section</h3>
-			<div class="file-path">index.html - Lines 245-406</div>
-			<p>Displays 4 trust indicators with icons. To modify:</p>
-			<ul>
-				<li>Update trust metric labels and descriptions</li>
-				<li>Change SVG icons by modifying the <code>&lt;svg&gt;</code> elements</li>
-				<li>Adjust the number of trust cards by duplicating or removing cards</li>
-			</ul>
-
-			<h3>Features Section</h3>
-			<div class="file-path">index.html - Lines 408-730</div>
-			<p>Contains 6 feature cards. To modify:</p>
-			<ul>
-				<li>Update feature titles and descriptions</li>
-				<li>Replace feature icons with your own SVGs</li>
-				<li>Add or remove feature cards by copying/deleting the <code>.feature-card</code> div</li>
-				<li>Modify grid layout in styles.css: <code>.features-grid</code></li>
-			</ul>
-
-			<h3>Video Section</h3>
-			<div class="file-path">index.html - Lines 738-810</div>
-			<p>To add your videos:</p>
-			<pre><code>&lt;div class="video-card"&gt;
-	&lt;a href="YOUR_VIDEO_URL" target="_blank"&gt;
-		&lt;img src="thumbnail.jpg" alt="Video thumbnail"&gt;
-		&lt;div class="play-button"&gt;▶&lt;/div&gt;
-	&lt;/a&gt;
-	&lt;p class="video-meta"&gt;12 min • 45K views&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-
-			<h3>Testimonials Section</h3>
-			<div class="file-path">index.html - Lines 878-1015</div>
-			<ul>
-				<li>Featured testimonial (large card) - edit the first testimonial card</li>
-				<li>Individual testimonials - modify each <code>.testimonial-card</code></li>
-				<li>Star ratings - change the number of ⭐ emojis</li>
-				<li>Author info - update name and title</li>
-			</ul>
-
-			<h3>Contact Section</h3>
-			<div class="file-path">index.html - Lines 1369-1540</div>
-			<p>Contains contact methods and signup form:</p>
-			<ul>
-				<li>Contact methods: Email, phone, social links</li>
-				<li>Form fields: Name, Email, Goal selection</li>
-				<li>Form action: Update the <code>form</code> tag's <code>action</code> attribute to your backend</li>
-			</ul>
-
-			<h3>Footer Section</h3>
-			<div class="file-path">index.html - Lines 1542-1630</div>
-			<ul>
-				<li>Brand description</li>
-				<li>Social media links (Twitter, LinkedIn, Instagram)</li>
-				<li>Footer navigation links</li>
-				<li>Copyright text</li>
-			</ul>
-		</section>
-
-		<!-- Animation Customization -->
-		<section id="animations">
-			<h2>✨ Animation Customization</h2>
-
-			<h3>Understanding Animations</h3>
-			<p>The page features sophisticated CSS animations defined in <code>styles.css</code>. All animations use <code>@keyframes</code> and are applied to elements via the <code>animation</code> property.</p>
-
-			<h3>Main Animation Types</h3>
-			<table>
-				<thead>
-					<tr>
-						<th>Animation Name</th>
-						<th>Duration</th>
-						<th>Applied To</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>float</code></td>
-						<td>12s</td>
-						<td>Background shapes, organic motion</td>
-					</tr>
-					<tr>
-						<td><code>fadeInUp</code></td>
-						<td>0.8-1s</td>
-						<td>Content elements on page load</td>
-					</tr>
-					<tr>
-						<td><code>fadeInScale</code></td>
-						<td>0.8s</td>
-						<td>Hero visual card</td>
-					</tr>
-					<tr>
-						<td><code>slideInRight</code></td>
-						<td>1s</td>
-						<td>Hero visual entrance</td>
-					</tr>
-					<tr>
-						<td><code>pulse-glow</code></td>
-						<td>3s (infinite)</td>
-						<td>Visual card subtle glow effect</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<h3>Modifying Animation Speed</h3>
-			<p>Find the animation definition in <code>styles.css</code>:</p>
-			<pre><code>animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;</code>
-            /* Breakdown:
-               - fadeInUp: animation name
-               - 0.8s: duration
-               - cubic-bezier: easing function
-               - 0.1s: delay
-               - both: fill mode */</code></pre>
-
-			<h4>Speed Adjustments:</h4>
-			<ul>
-				<li><strong>Slower:</strong> Change 0.8s to 1.2s or 1.5s</li>
-				<li><strong>Faster:</strong> Change 0.8s to 0.5s or 0.3s</li>
-				<li><strong>Much slower:</strong> Change 0.8s to 2s for a more dramatic effect</li>
-			</ul>
-
-			<h3>Disabling Animations</h3>
-			<p>To disable all animations (useful for accessibility), comment out or remove the <code>animation</code> property:</p>
-			<pre><code>.hero-badge {
-	/* animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both; */
-}</code></pre>
-
-			<h3>Respecting User Preferences</h3>
-			<p>For accessibility, the page should respect <code>prefers-reduced-motion</code>:</p>
-			<pre><code>@media (prefers-reduced-motion: reduce) {
-	* {
-		animation: none !important;
-		transition: none !important;
-	}
-}</code></pre>
-
-			<h3>Creating New Animations</h3>
-			<p>To add a custom animation:</p>
+			<h3>Changing Fonts</h3>
 			<div class="step">
 				<div class="step-number">1</div>
 				<div class="step-content">
-					<h4>Define the keyframes</h4>
-					<pre><code>@keyframes myCustomAnimation {
-	from {
-		opacity: 0;
-		transform: scale(0.8);
-	}
-	to {
-		opacity: 1;
-		transform: scale(1);
-	}
-}</code></pre>
+					<h4>Find font import in HTML</h4>
+					<div class="file-path">index.html - Line ~9</div>
+					<pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"&gt;</code></pre>
 				</div>
 			</div>
 
 			<div class="step">
 				<div class="step-number">2</div>
 				<div class="step-content">
-					<h4>Apply to an element</h4>
-					<pre><code>.my-element {
-	animation: myCustomAnimation 0.8s ease-out forwards;
-}</code></pre>
-				</div>
-			</div>
-
-			<div class="tip">
-				<strong>💡 Tip:</strong> Animations improve user engagement but can also distract. Use them purposefully to draw attention to important elements like CTAs and key features.
-			</div>
-		</section>
-
-		<!-- Images & Media -->
-		<section id="images">
-			<h2>🖼️ Images & Media Management</h2>
-
-			<h3>Adding Images</h3>
-			<p>The landing page uses several images and illustrations. To add your own:</p>
-
-			<h4>Hero Illustration</h4>
-			<div class="file-path">index.html - ~Line 230</div>
-			<pre><code>&lt;div class="card-illustration"&gt;
-	&lt;svg&gt;...&lt;/svg&gt; &lt;!-- Replace or modify SVG --&gt;
-&lt;/div&gt;</code></pre>
-
-			<h4>Adding Background Images</h4>
-			<p>To add a background image to a section:</p>
-			<pre><code>.hero {
-	background-image: url('path/to/image.jpg');
-	background-size: cover;
-	background-position: center;
-}</code></pre>
-
-			<h3>Video Integration</h3>
-			<p>For embedded videos (YouTube, Vimeo):</p>
-			<pre><code>&lt;div class="video-card"&gt;
-	&lt;iframe 
-		width="100%" 
-		height="400" 
-		src="https://www.youtube.com/embed/VIDEO_ID"
-		frameborder="0" 
-		allowfullscreen&gt;
-	&lt;/iframe&gt;
-&lt;/div&gt;</code></pre>
-
-			<h3>Optimizing Images</h3>
-			<div class="tip">
-				<strong>💡 Best Practices:</strong>
-				<ul>
-					<li>Use modern formats: WebP, JPEG, PNG</li>
-					<li>Compress images before uploading (tools: TinyPNG, ImageOptim)</li>
-					<li>Use responsive images with srcset for different screen sizes</li>
-					<li>Add descriptive alt text for accessibility</li>
-				</ul>
-			</div>
-
-			<h3>Using SVG Icons</h3>
-			<p>The page extensively uses SVG icons. To modify SVG colors:</p>
-			<pre><code>&lt;svg class="feature-icon"&gt;
-	&lt;circle fill="currentColor" cx="50" cy="50" r="40"/&gt;
-&lt;/svg&gt;</code></pre>
-			<p>Then in CSS:</p>
-			<pre><code>.feature-icon {
-	color: var(--primary-blue);
-}</code></pre>
-		</section>
-
-		<!-- Buttons & CTAs -->
-		<section id="buttons">
-			<h2>🔘 Buttons & Call-to-Action Customization</h2>
-
-			<h3>Button Styles</h3>
-			<p>Two main button styles are used throughout the page:</p>
-			<table>
-				<thead>
-					<tr>
-						<th>Style</th>
-						<th>Class</th>
-						<th>Usage</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><strong>Primary</strong></td>
-						<td><code>.cta-button.primary</code></td>
-						<td>Main CTAs, signup, get started</td>
-					</tr>
-					<tr>
-						<td><strong>Secondary</strong></td>
-						<td><code>.cta-button.secondary</code></td>
-						<td>Alternative actions, learn more</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<h3>Modifying Button Styling</h3>
-			<div class="file-path">styles.css - Lines ~120-145</div>
-			<pre><code>.cta-button.primary {
-	background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-	color: var(--white);
-	padding: 1rem 2rem;
-	border-radius: 8px;
-}</code></pre>
-
-			<h4>Customization Options:</h4>
-			<ul>
-				<li><strong>Padding:</strong> Adjust button size with padding values</li>
-				<li><strong>Border-radius:</strong> Change from 8px to 0px for sharp corners, or 50px for pill shape</li>
-				<li><strong>Font size:</strong> Modify the font-size property</li>
-				<li><strong>Hover effect:</strong> Modify the :hover state</li>
-			</ul>
-
-			<h3>Button Hover Effects</h3>
-			<pre><code>.cta-button.primary:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 10px 25px rgba(91, 163, 168, 0.3);
-}</code></pre>
-
-			<h4>Common Hover Effects:</h4>
-			<ul>
-				<li><code>transform: translateY(-2px)</code> - Lifts button on hover</li>
-				<li><code>transform: scale(1.05)</code> - Slightly enlarges button</li>
-				<li><code>box-shadow: 0 10px 25px</code> - Adds shadow for depth</li>
-				<li><code>background: brightness(1.1)</code> - Brightens the color</li>
-			</ul>
-
-			<h3>Adding Button Links</h3>
-			<p>To make buttons functional, set the href or form action:</p>
-			<pre><code>&lt;a href="/signup" class="cta-button primary"&gt;Get Started&lt;/a&gt;</code></pre>
-
-			<div class="warning">
-				<strong>⚠️ Important:</strong> Update all button links to point to your actual pages/backend before deployment.
-			</div>
-		</section>
-
-		<!-- Forms -->
-		<section id="forms">
-			<h2>📋 Form Customization</h2>
-
-			<h3>Contact Form Location</h3>
-			<div class="file-path">index.html - Lines 1450-1520</div>
-
-			<h3>Form Fields</h3>
-			<p>The current form includes:</p>
-			<ul>
-				<li><strong>Name field:</strong> Text input for user's name</li>
-				<li><strong>Email field:</strong> Email input for contact</li>
-				<li><strong>Goal field:</strong> Dropdown select menu</li>
-			</ul>
-
-			<h3>Modifying Form Fields</h3>
-			<pre><code>&lt;form class="contact-form" action="/api/signup" method="POST"&gt;
-	&lt;input type="text" name="name" placeholder="Your Name" required&gt;
-	&lt;input type="email" name="email" placeholder="Your Email" required&gt;
-	&lt;select name="goal" required&gt;
-		&lt;option value=""&gt;Select your goal&lt;/option&gt;
-		&lt;option value="save"&gt;Save More&lt;/option&gt;
-		&lt;option value="invest"&gt;Start Investing&lt;/option&gt;
-	&lt;/select&gt;
-	&lt;button type="submit"&gt;Get Started&lt;/button&gt;
-&lt;/form&gt;</code></pre>
-
-			<h3>Adding New Form Fields</h3>
-			<div class="step">
-				<div class="step-number">1</div>
-				<div class="step-content">
-					<h4>Add input element</h4>
-					<pre><code>&lt;input type="text" name="phone" placeholder="Phone Number"&gt;</code></pre>
-				</div>
-			</div>
-
-			<div class="step">
-				<div class="step-number">2</div>
-				<div class="step-content">
-					<h4>Style the input (optional)</h4>
-					<p>Edit <code>styles.css</code> form input styling sections</p>
-				</div>
-			</div>
-
-			<h3>Form Submission Handling</h3>
-			<p>Set the form action to your backend endpoint:</p>
-			<pre><code>&lt;form action="https://your-api.com/submit-form" method="POST"&gt;</code></pre>
-
-			<h3>Form Styling</h3>
-			<div class="file-path">styles.css - Search for "contact-form"</div>
-			<p>Key styling properties:</p>
-			<ul>
-				<li><code>input, select</code> - Modifies all form inputs</li>
-				<li><code>input:focus</code> - Styling when field is active</li>
-				<li><code>button[type="submit"]</code> - Submit button styling</li>
-			</ul>
-
-			<div class="tip">
-				<strong>💡 Tip:</strong> Use form validation libraries like Parsley.js or HTML5 validation attributes for better user experience.
-			</div>
-		</section>
-
-		<!-- Responsive Design -->
-		<section id="responsive">
-			<h2>📱 Responsive Design Customization</h2>
-
-			<h3>Comprehensive Breakpoint System</h3>
-			<p>The page features a sophisticated 9-breakpoint responsive system optimized for all device sizes:</p>
-			<table>
-				<thead>
-					<tr>
-						<th>Breakpoint</th>
-						<th>Screen Width</th>
-						<th>Device Types</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><strong>Large Desktop</strong></td>
-						<td>1280px and above</td>
-						<td>Large monitors, widescreen displays</td>
-					</tr>
-					<tr>
-						<td><strong>Medium Desktop</strong></td>
-						<td>1140px - 1280px</td>
-						<td>Standard desktops, laptops</td>
-					</tr>
-					<tr>
-						<td><strong>Large Tablets</strong></td>
-						<td>1024px - 1140px</td>
-						<td>Large tablets, small laptops</td>
-					</tr>
-					<tr>
-						<td><strong>Medium Tablets</strong></td>
-						<td>900px - 1024px</td>
-						<td>iPad landscape, tablets</td>
-					</tr>
-					<tr>
-						<td><strong>Tablets</strong></td>
-						<td>768px - 900px</td>
-						<td>iPad portrait, tablets</td>
-					</tr>
-					<tr>
-						<td><strong>Small Tablets</strong></td>
-						<td>640px - 768px</td>
-						<td>Small tablets, large phones landscape</td>
-					</tr>
-					<tr>
-						<td><strong>Mobile</strong></td>
-						<td>480px - 640px</td>
-						<td>Modern smartphones</td>
-					</tr>
-					<tr>
-						<td><strong>Small Mobile</strong></td>
-						<td>375px - 480px</td>
-						<td>iPhone SE, smaller phones</td>
-					</tr>
-					<tr>
-						<td><strong>Extra Small Mobile</strong></td>
-						<td>320px - 375px</td>
-						<td>Older/compact smartphones</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<h3>Header/Navigation Responsive Features</h3>
-			<p>The header has comprehensive responsive adjustments across all breakpoints:</p>
-
-			<h4>Desktop (1280px+)</h4>
-			<ul>
-				<li>Full navigation menu with all links visible</li>
-				<li>Sign In and Get Started buttons displayed</li>
-				<li>Logo at full size (40px)</li>
-				<li>Comfortable spacing between navigation items</li>
-			</ul>
-
-			<h4>Tablets (768px - 1140px)</h4>
-			<ul>
-				<li>Progressive font size reduction for better fit</li>
-				<li>Reduced padding and gaps to optimize space</li>
-				<li>Sign In button visible (hidden only below 768px)</li>
-				<li>Logo scales proportionally</li>
-				<li>At 768px: Switch to mobile menu (hamburger icon)</li>
-			</ul>
-
-			<h4>Mobile (Below 768px)</h4>
-			<ul>
-				<li>Side drawer mobile menu replaces desktop navigation</li>
-				<li>Mobile menu accessible via hamburger toggle button</li>
-				<li>Sign In and Get Started available in mobile menu footer</li>
-				<li>Touch-optimized button sizes (minimum 38-44px)</li>
-				<li>Logo scales down progressively (36px → 30px)</li>
-			</ul>
-
-			<h3>Hero Section Responsive Features</h3>
-			<p>The hero section adapts seamlessly across 8 breakpoints:</p>
-			<ul>
-				<li><strong>1280px:</strong> Full layout with optimal spacing</li>
-				<li><strong>1024px:</strong> Reduced font sizes and card dimensions</li>
-				<li><strong>768px:</strong> Stack layout changes, card adjustments</li>
-				<li><strong>640px:</strong> Single column layout, compact spacing</li>
-				<li><strong>480px:</strong> Further optimizations for smartphones</li>
-				<li><strong>375px:</strong> Fine-tuned for smaller phones</li>
-				<li><strong>320px:</strong> Maximum optimization for compact devices</li>
-			</ul>
-
-			<h3>Media Queries Structure</h3>
-			<p>Media queries are organized by section throughout <code>styles.css</code>:</p>
-			<pre><code>/* Navigation Responsive Styles - Lines 598-955 */
-@media (max-width: 1280px) { /* Large Desktop */ }
-@media (max-width: 1140px) { /* Medium Desktop */ }
-@media (max-width: 1024px) { /* Large Tablets */ }
-@media (max-width: 900px)  { /* Medium Tablets */ }
-@media (max-width: 768px)  { /* Tablets */ }
-@media (max-width: 640px)  { /* Small Tablets */ }
-@media (max-width: 480px)  { /* Mobile */ }
-@media (max-width: 375px)  { /* Small Mobile */ }
-@media (max-width: 320px)  { /* Extra Small Mobile */ }
-
-/* Hero Section Responsive Styles - Lines 1290-1680 */
-@media (max-width: 1280px) { ... }
-@media (max-width: 1024px) { ... }
-/* ... and so on */</code></pre>
-
-			<h3>Adding Custom Breakpoints</h3>
-			<p>To add a new breakpoint between existing ones:</p>
-			<pre><code>/* Custom breakpoint for specific device */
-@media (max-width: 850px) {
-	.hero-headline {
-		font-size: 2.2rem;
-	}
-	.nav-container {
-		padding: 0 1.4rem;
-	}
-}</code></pre>
-
-			<h3>Testing Responsive Design</h3>
-			<div class="tip">
-				<strong>💡 Testing Tools:</strong>
-				<ul>
-					<li>Chrome DevTools (F12 → Toggle device toolbar)</li>
-					<li>Firefox Developer Tools</li>
-					<li>Online tools: Responsively.app, BrowserStack</li>
-					<li>Physical devices for accurate testing</li>
-				</ul>
-			</div>
-
-			<h3>Responsive Typography</h3>
-			<p>Font sizes scale at different breakpoints:</p>
-			<pre><code>.hero-headline {
-	font-size: 3.75rem;    /* Desktop */
-}
-
-@media (max-width: 1024px) {
-	.hero-headline {
-		font-size: 2.5rem;  /* Tablet */
-	}
-}
-
-@media (max-width: 768px) {
-	.hero-headline {
-		font-size: 1.95rem; /* Mobile */
-	}
-}</code></pre>
-
-			<h3>Responsive Spacing</h3>
-			<p>Padding and margins also adjust for different screens:</p>
-			<pre><code>.section {
-	padding: 2rem;      /* Desktop */
-}
-
-@media (max-width: 768px) {
-	.section {
-		padding: 1rem;  /* Mobile */
-	}
-}</code></pre>
-		</section>
-
-		<!-- Analytics -->
-		<section id="analytics">
-			<h2>📊 Analytics & Tracking Setup</h2>
-
-			<h3>Google Analytics Integration</h3>
-			<p>The page is ready for Google Analytics 4 (GA4) integration:</p>
-
-			<h4>Step 1: Get Your Google Analytics ID</h4>
-			<ul>
-				<li>Go to <a href="https://analytics.google.com/" target="_blank">Google Analytics</a></li>
-				<li>Create a new property for your landing page</li>
-				<li>Copy your Measurement ID (format: G-XXXXXXXXXX)</li>
-			</ul>
-
-			<h4>Step 2: Add GA4 to Your HTML</h4>
-			<p>Add this to the <code>&lt;head&gt;</code> of your <code>index.html</code>:</p>
-			<pre><code>&lt;!-- Google Analytics --&gt;
-&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_ID"&gt;&lt;/script&gt;
-&lt;script&gt;
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-YOUR_ID');
-&lt;/script&gt;</code></pre>
-
-			<h3>Event Tracking</h3>
-			<p>Track important user interactions:</p>
-
-			<h4>Button Click Tracking</h4>
-			<pre><code>&lt;button onclick="gtag('event', 'cta_click', {'button_location': 'hero'})"&gt;
-	Get Started
-&lt;/button&gt;</code></pre>
-
-			<h4>Form Submission Tracking</h4>
-			<pre><code>&lt;form onsubmit="gtag('event', 'signup_submit', {'form_location': 'contact'})"&gt;
-	...
-&lt;/form&gt;</code></pre>
-
-			<h4>Video Play Tracking</h4>
-			<pre><code>&lt;video onplay="gtag('event', 'video_play', {'video_id': 'video-1'})"&gt;
-	...
-&lt;/video&gt;</code></pre>
-
-			<h3>Key Metrics to Track</h3>
-			<ul>
-				<li><strong>Page Views:</strong> How many people visit the page</li>
-				<li><strong>CTA Clicks:</strong> Clicks on "Get Started" and "Learn More" buttons</li>
-				<li><strong>Form Submissions:</strong> Completed sign-up forms</li>
-				<li><strong>Video Engagement:</strong> Video plays and watch time</li>
-				<li><strong>Scroll Depth:</strong> How far down the page users scroll</li>
-				<li><strong>Time on Page:</strong> How long users spend on the page</li>
-			</ul>
-
-			<h3>Setting Up Conversion Goals</h3>
-			<p>In Google Analytics:</p>
-			<div class="step">
-				<div class="step-number">1</div>
-				<div class="step-content">
-					<h4>Go to Admin → Conversion</h4>
-				</div>
-			</div>
-
-			<div class="step">
-				<div class="step-number">2</div>
-				<div class="step-content">
-					<h4>Create a new conversion event</h4>
+					<h4>Replace with new font from <a href="https://fonts.google.com" target="_blank">Google Fonts</a></h4>
+					<p>Popular alternatives:</p>
+					<ul>
+						<li><strong>Body:</strong> Open Sans, Roboto, Lato, Poppins</li>
+						<li><strong>Headings:</strong> Playfair Display, Montserrat, Raleway</li>
+					</ul>
 				</div>
 			</div>
 
 			<div class="step">
 				<div class="step-number">3</div>
 				<div class="step-content">
-					<h4>Name it (e.g., "signup_submit")</h4>
+					<h4>Update CSS variable</h4>
+					<div class="file-path">styles.css - Lines 16-17</div>
+					<pre><code>--font-handwriting: "Your New Font", cursive;
+--font-body: "Your New Font", sans-serif;</code></pre>
+				</div>
+			</div>
+
+			<h3>Font Sizes</h3>
+			<p>Key typography sizes throughout the page:</p>
+			<pre><code>/* Hero headline */
+.hero-headline {
+  font-size: 4rem;      /* Desktop */
+}
+
+/* Section titles */
+.section-title {
+  font-size: 2.5rem;
+}
+
+/* Body text */
+body {
+  font-size: 1rem;      /* 16px base */
+}</code></pre>
+
+			<h3>Responsive Typography</h3>
+			<p>Font sizes adapt at different breakpoints:</p>
+			<pre><code>@media (max-width: 1024px) {
+  .hero-headline {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+}</code></pre>
+
+			<div class="warning">
+				<strong>⚠️ Accessibility:</strong> Never set body text below 14px (0.875rem) on mobile devices for readability compliance.
+			</div>
+		</section>
+
+		<!-- Hero Section -->
+		<section id="hero">
+			<h2>🚀 Hero Section</h2>
+
+			<p>The hero section is your first impression. It includes:</p>
+			<ul>
+				<li>Badge with achievement/award</li>
+				<li>Main headline with gradient text</li>
+				<li>Subheadline description</li>
+				<li>Two CTA buttons</li>
+				<li>Trust indicators (avatars + ratings)</li>
+				<li>Visual with floating statistic cards</li>
+			</ul>
+
+			<h3>Hero Badge</h3>
+			<div class="file-path">index.html - Lines 157-160</div>
+			<pre><code>&lt;div class="hero-badge"&gt;
+  &lt;span class="badge-icon"&gt;✨&lt;/span&gt;
+  &lt;span&gt;#1 Personal Finance App of 2025&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+			<p>Customize the emoji and text to highlight your key achievement.</p>
+
+			<h3>Floating Statistics Cards</h3>
+			<p>Two cards overlay the hero image showing key metrics:</p>
+			<div class="file-path">index.html - Lines 225-252</div>
+			<pre><code>&lt;!-- Card 1: Savings --&gt;
+&lt;div class="floating-card card-savings"&gt;
+  &lt;div class="card-icon-box savings"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;div class="card-content"&gt;
+    &lt;span class="card-label"&gt;Total Savings&lt;/span&gt;
+    &lt;span class="card-value"&gt;$12,450&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Card 2: Growth --&gt;
+&lt;div class="floating-card card-growth"&gt;
+  &lt;div class="card-icon-box growth"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;div class="card-content"&gt;
+    &lt;span class="card-label"&gt;Monthly Growth&lt;/span&gt;
+    &lt;span class="card-value"&gt;+24.5%&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>Customizing Card Positions</h3>
+			<div class="file-path">styles.css - Lines ~880-895</div>
+			<pre><code>.card-savings {
+  top: 10%;      /* Adjust vertical position */
+  left: -10%;    /* Adjust horizontal position */
+}
+
+.card-growth {
+  bottom: 15%;   /* From bottom */
+  right: -5%;    /* From right */
+}</code></pre>
+
+			<h3>Hero Image</h3>
+			<p>Replace the hero image:</p>
+			<div class="file-path">index.html - Line ~217</div>
+			<pre><code>&lt;img
+  src="YOUR_IMAGE_URL_HERE"
+  alt="Budgy Dashboard on Tablet"
+  class="hero-main-image"
+/&gt;</code></pre>
+
+			<div class="tip">
+				<strong>💡 Image Tips:</strong>
+				<ul>
+					<li>Recommended size: 1200x800px or larger</li>
+					<li>Use high-quality screenshots or mockups</li>
+					<li>Compress images with TinyPNG before uploading</li>
+					<li>Consider using WebP format for better performance</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Trust Section -->
+		<section id="trust">
+			<h2>🛡️ Trust Section</h2>
+
+			<h3>Logo Strip</h3>
+			<p>Shows partner/trusted company logos:</p>
+			<div class="file-path">index.html - Lines 267-325</div>
+			<p>The section includes 5 company logos. To modify:</p>
+			<pre><code>&lt;div class="company-logo" title="Company Name"&gt;
+  &lt;svg class="logo-svg" viewBox="0 0 120 30" fill="currentColor"&gt;
+    &lt;!-- Your SVG logo here --&gt;
+    &lt;text x="35" y="21"&gt;COMPANY&lt;/text&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>Security Features</h3>
+			<p>Three key trust indicators:</p>
+			<ul>
+				<li><strong>SOC2 Certified Security</strong> - Bank-level encryption</li>
+				<li><strong>Private AI Models</strong> - Data privacy</li>
+				<li><strong>No Hidden Fees</strong> - Transparency</li>
+			</ul>
+
+			<div class="file-path">index.html - Lines 348-395</div>
+			<pre><code>&lt;div class="trust-feature-item"&gt;
+  &lt;div class="feature-icon-box"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;div class="feature-text"&gt;
+    &lt;h3&gt;SOC2 Certified Security&lt;/h3&gt;
+    &lt;p&gt;Your data is encrypted with AES-256 bit encryption...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>Floating Badges</h3>
+			<p>Two animated badges overlay the trust image:</p>
+			<div class="file-path">index.html - Lines 410-426</div>
+			<pre><code>&lt;div class="floating-badge badge-1"&gt;
+  &lt;div class="badge-icon"&gt;🛡️&lt;/div&gt;
+  &lt;div class="badge-text"&gt;
+    &lt;span class="badge-title"&gt;100% Secure&lt;/span&gt;
+    &lt;span class="badge-subtitle"&gt;Audited daily&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</section>
+
+		<!-- Features Section -->
+		<section id="features">
+			<h2>⭐ Features Section</h2>
+
+			<p>The features use a modern <strong>Bento Grid</strong> layout with 5 cards:</p>
+
+			<h3>Feature Cards</h3>
+			<ol style="margin-left: 2rem;">
+				<li><strong>Smart Budgeting</strong> - Large card with image</li>
+				<li><strong>Real-time Analytics</strong> - Tall card with image overlay</li>
+				<li><strong>Goal Tracking</strong> - Full image card</li>
+				<li><strong>Debt Payoff</strong> - Full image card</li>
+				<li><strong>Bank-Level Security</strong> - Full image card</li>
+			</ol>
+
+			<h3>Large Feature Card (Smart Budgeting)</h3>
+			<div class="file-path">index.html - Lines 461-489</div>
+			<pre><code>&lt;div class="bento-card feature-large"&gt;
+  &lt;div class="bento-content"&gt;
+    &lt;div class="feature-icon-box"&gt;
+      &lt;svg&gt;...&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;Smart Budgeting&lt;/h3&gt;
+    &lt;p&gt;Create custom budgets that automatically categorize...&lt;/p&gt;
+    &lt;ul class="feature-list"&gt;
+      &lt;li&gt;Auto-categorization&lt;/li&gt;
+      &lt;li&gt;Custom spending limits&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="bento-image"&gt;
+    &lt;img src="IMAGE_URL" alt="Budgeting Dashboard"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>Image Overlay Cards</h3>
+			<p>Features with image backgrounds and text overlays:</p>
+			<pre><code>&lt;div class="bento-card feature-full-img"&gt;
+  &lt;div class="bento-image-full"&gt;
+    &lt;img src="IMAGE_URL" alt="Goal Tracking"&gt;
+    &lt;div class="bento-overlay"&gt;
+      &lt;div class="feature-icon-box"&gt;
+        &lt;svg&gt;...&lt;/svg&gt;
+      &lt;/div&gt;
+      &lt;h3&gt;Goal Tracking&lt;/h3&gt;
+      &lt;p&gt;Set savings goals for vacations, emergency funds...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>Adding a New Feature Card</h3>
+			<div class="step">
+				<div class="step-number">1</div>
+				<div class="step-content">
+					<h4>Copy an existing card</h4>
+					<p>Duplicate one of the <code>.bento-card</code> divs</p>
 				</div>
 			</div>
 
 			<div class="step">
-				<div class="step-number">4</div>
+				<div class="step-number">2</div>
 				<div class="step-content">
-					<h4>Track the event from your forms</h4>
+					<h4>Update content</h4>
+					<p>Change icon, title, description, and image</p>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">3</div>
+				<div class="step-content">
+					<h4>Adjust grid layout if needed</h4>
+					<p>Modify <code>.bento-grid</code> in CSS for different arrangements</p>
 				</div>
 			</div>
 
 			<div class="tip">
-				<strong>💡 Tip:</strong> Set up conversion goals for your most important actions (sign-ups, demo requests, etc.) to measure campaign effectiveness.
+				<strong>💡 Grid Tip:</strong> The Bento grid uses CSS Grid with <code>grid-column: span X</code>. Adjust the span value to make cards wider (span 8, 4, etc.).
+			</div>
+		</section>
+
+		<!-- Video Section -->
+		<section id="video">
+			<h2>🎬 Video Section</h2>
+
+			<p>Features a main video player with a playlist sidebar.</p>
+
+			<h3>Main Featured Video</h3>
+			<div class="file-path">index.html - Lines 673-698</div>
+			<pre><code>&lt;div class="video-main"&gt;
+  &lt;div class="video-player-wrapper"&gt;
+    &lt;img
+      src="THUMBNAIL_IMAGE_URL"
+      alt="Main Success Story"
+      class="video-thumbnail-main"
+    /&gt;
+    &lt;button class="play-button-large"&gt;
+      &lt;svg&gt;...&lt;/svg&gt;
+    &lt;/button&gt;
+    &lt;div class="video-info-overlay"&gt;
+      &lt;span class="video-duration-badge"&gt;04:32&lt;/span&gt;
+      &lt;h3&gt;From Debt to Freedom: Sarah's Journey&lt;/h3&gt;
+      &lt;p&gt;Discover how Sarah paid off $50k...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>Changing the Video</h3>
+			<p>The video modal opens when clicking the play button. To change the video URL:</p>
+			<div class="file-path">script.js - Line ~284</div>
+			<pre><code>src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&rel=0"</code></pre>
+
+			<div class="step">
+				<div class="step-number">1</div>
+				<div class="step-content">
+					<h4>Get YouTube video ID</h4>
+					<p>From URL: <code>youtube.com/watch?v=<strong>LXb3EKWsInQ</strong></code></p>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">2</div>
+				<div class="step-content">
+					<h4>Replace in script.js</h4>
+					<p>Update the iframe src with your video ID</p>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">3</div>
+				<div class="step-content">
+					<h4>Update thumbnail</h4>
+					<p>Replace the thumbnail image in HTML</p>
+				</div>
+			</div>
+
+			<h3>Playlist Items</h3>
+			<p>Three sidebar videos:</p>
+			<div class="file-path">index.html - Lines 713-798</div>
+			<pre><code>&lt;div class="playlist-item"&gt;
+  &lt;div class="playlist-thumb"&gt;
+    &lt;img src="THUMBNAIL_URL" alt="Thumbnail"&gt;
+    &lt;span class="duration-small"&gt;2:15&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="playlist-info"&gt;
+    &lt;h4&gt;Investment Basics 101&lt;/h4&gt;
+    &lt;p&gt;Start growing your wealth today&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<div class="success">
+				<strong>✓ Video Modal Features:</strong>
+				<ul>
+					<li>Full-screen responsive modal</li>
+					<li>YouTube embed with autoplay</li>
+					<li>Click outside or ESC to close</li>
+					<li>Smooth animations</li>
+					<li>Mobile-optimized</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Testimonials -->
+		<section id="testimonials">
+			<h2>💬 Testimonials</h2>
+
+			<p>Three testimonial cards with user quotes, photos, and ratings.</p>
+
+			<h3>Testimonial Structure</h3>
+			<div class="file-path">index.html - Lines 823-925</div>
+			<pre><code>&lt;div class="testimonial-card-modern"&gt;
+  &lt;div class="card-header"&gt;
+    &lt;img src="USER_PHOTO_URL" alt="User Avatar" class="user-avatar"&gt;
+    &lt;div class="user-info"&gt;
+      &lt;h4&gt;Sarah Jenkins&lt;/h4&gt;
+      &lt;p&gt;Freelance Designer&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="platform-icon"&gt;
+      &lt;svg&gt;...&lt;/svg&gt; &lt;!-- Twitter/X icon --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="star-rating"&gt;★★★★★&lt;/div&gt;
+  &lt;p class="testimonial-text"&gt;
+    "Budgy completely changed how I view my finances..."
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>Featured Testimonial</h3>
+			<p>The middle card has a special "featured" class for emphasis:</p>
+			<pre><code>&lt;div class="testimonial-card-modern featured"&gt;
+  &lt;!-- Same structure as above --&gt;
+  &lt;div class="verified-badge"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+    Verified
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>Adding More Testimonials</h3>
+			<div class="step">
+				<div class="step-number">1</div>
+				<div class="step-content">
+					<h4>Duplicate a testimonial card</h4>
+					<p>Copy the entire <code>.testimonial-card-modern</code> div</p>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">2</div>
+				<div class="step-content">
+					<h4>Update user information</h4>
+					<ul>
+						<li>Photo (use Unsplash for placeholders)</li>
+						<li>Name and title</li>
+						<li>Quote text</li>
+						<li>Star rating (★ symbols)</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">3</div>
+				<div class="step-content">
+					<h4>Adjust grid if needed</h4>
+					<p>Modify <code>.testimonials-grid-modern</code> in CSS for more columns</p>
+				</div>
+			</div>
+
+			<div class="tip">
+				<strong>💡 Authenticity:</strong> Use real customer testimonials with photos (with permission). Real stories build more trust than stock photos.
+			</div>
+		</section>
+
+		<!-- Contact Form -->
+		<section id="contact">
+			<h2>📧 Contact Form</h2>
+
+			<p>The contact section includes multiple contact methods and a form.</p>
+
+			<h3>Contact Methods</h3>
+			<div class="file-path">index.html - Lines 1068-1146</div>
+			<pre><code>&lt;div class="contact-item-modern"&gt;
+  &lt;div class="contact-icon-wrapper"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;h3&gt;Chat with us&lt;/h3&gt;
+    &lt;p&gt;Our friendly team is here to help.&lt;/p&gt;
+    &lt;a href="#"&gt;Start a live chat&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>Contact Form</h3>
+			<div class="file-path">index.html - Lines 1150-1182</div>
+			<pre><code>&lt;form class="contact-form-modern"&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="form-group-modern"&gt;
+      &lt;label for="first-name"&gt;First name&lt;/label&gt;
+      &lt;input type="text" id="first-name" placeholder="First name"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group-modern"&gt;
+      &lt;label for="last-name"&gt;Last name&lt;/label&gt;
+      &lt;input type="text" id="last-name" placeholder="Last name"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group-modern"&gt;
+    &lt;label for="email"&gt;Email&lt;/label&gt;
+    &lt;input type="email" id="email" placeholder="you@example.com"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group-modern"&gt;
+    &lt;label for="message"&gt;Message&lt;/label&gt;
+    &lt;textarea id="message" rows="4" placeholder="Leave us a message..."&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="contact-submit-modern"&gt;
+    Send Message
+  &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+			<h3>Form Submission</h3>
+			<p>To connect the form to your backend:</p>
+			<pre><code>&lt;form action="https://your-api.com/contact" method="POST"&gt;</code></pre>
+
+			<p>Or use a service like:</p>
+			<ul>
+				<li><strong>Formspree</strong> - Simple form backend</li>
+				<li><strong>Netlify Forms</strong> - If hosted on Netlify</li>
+				<li><strong>Google Forms</strong> - Free alternative</li>
+			</ul>
+
+			<h3>Email Validation</h3>
+			<p>Basic validation is included in <code>script.js</code>:</p>
+			<div class="file-path">script.js - Lines 742-755</div>
+			<pre><code>function validateEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}</code></pre>
+
+			<div class="warning">
+				<strong>⚠️ Security:</strong> Always validate and sanitize form data on the server-side, not just client-side, to prevent attacks.
+			</div>
+		</section>
+
+		<!-- Animations -->
+		<section id="animations">
+			<h2>✨ Animations</h2>
+
+			<p>The page features sophisticated CSS animations for a polished experience.</p>
+
+			<h3>Key Animations</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Animation</th>
+						<th>Duration</th>
+						<th>Applied To</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>fadeInUp</code></td>
+						<td>0.6s</td>
+						<td>Cards, sections on scroll</td>
+					</tr>
+					<tr>
+						<td><code>float</code></td>
+						<td>3-20s</td>
+						<td>Floating cards, orbs</td>
+					</tr>
+					<tr>
+						<td><code>floatCard</code></td>
+						<td>6s</td>
+						<td>Statistic cards</td>
+					</tr>
+					<tr>
+						<td><code>modalSlideIn</code></td>
+						<td>0.5s</td>
+						<td>Video modal entrance</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Modifying Animation Speed</h3>
+			<p>Find the animation in <code>styles.css</code>:</p>
+			<pre><code>.hero-badge {
+  animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+  /*         ^name    ^dur  ^easing                            ^delay  ^mode */
+}</code></pre>
+
+			<h4>Speed Adjustments:</h4>
+			<ul>
+				<li><strong>Faster:</strong> Change 0.8s → 0.4s or 0.5s</li>
+				<li><strong>Slower:</strong> Change 0.8s → 1.2s or 1.5s</li>
+				<li><strong>Much slower:</strong> Change to 2s for dramatic effect</li>
+			</ul>
+
+			<h3>Disabling Animations</h3>
+			<p>To disable all animations (good for accessibility):</p>
+			<pre><code>/* Add to styles.css */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}</code></pre>
+
+			<h3>Creating Custom Animations</h3>
+			<div class="step">
+				<div class="step-number">1</div>
+				<div class="step-content">
+					<h4>Define keyframes</h4>
+					<pre><code>@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}</code></pre>
+				</div>
+			</div>
+
+			<div class="step">
+				<div class="step-number">2</div>
+				<div class="step-content">
+					<h4>Apply to element</h4>
+					<pre><code>.my-element {
+  animation: slideInLeft 0.8s ease-out forwards;
+}</code></pre>
+				</div>
+			</div>
+
+			<h3>Intersection Observer</h3>
+			<p>Cards animate when scrolled into view:</p>
+			<div class="file-path">script.js - Lines 194-219</div>
+			<pre><code>const observer = new IntersectionObserver(function (entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.animation = "fadeInUp 0.6s ease forwards";
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);</code></pre>
+
+			<div class="tip">
+				<strong>💡 Performance:</strong> Use <code>transform</code> and <code>opacity</code> for animations. They're GPU-accelerated and won't cause reflows.
+			</div>
+		</section>
+
+		<!-- Responsive Design -->
+		<section id="responsive">
+			<h2>📱 Responsive Design</h2>
+
+			<p>The page features a comprehensive <strong>9-breakpoint system</strong> for all devices.</p>
+
+			<h3>Breakpoints</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Breakpoint</th>
+						<th>Width</th>
+						<th>Devices</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Large Desktop</td>
+						<td>1280px+</td>
+						<td>Widescreen monitors</td>
+					</tr>
+					<tr>
+						<td>Desktop</td>
+						<td>1024px-1280px</td>
+						<td>Standard laptops</td>
+					</tr>
+					<tr>
+						<td>Tablets</td>
+						<td>768px-1024px</td>
+						<td>iPads, tablets</td>
+					</tr>
+					<tr>
+						<td>Mobile</td>
+						<td>480px-768px</td>
+						<td>Smartphones</td>
+					</tr>
+					<tr>
+						<td>Small Mobile</td>
+						<td>320px-480px</td>
+						<td>Compact phones</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Media Query Structure</h3>
+			<p>Responsive styles are organized by section in <code>styles.css</code>:</p>
+			<pre><code>/* Desktop default styles */
+.hero-headline {
+  font-size: 4rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-headline {
+    font-size: 3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+}</code></pre>
+
+			<h3>Mobile Menu</h3>
+			<p>At 768px, the navigation switches to a mobile drawer menu:</p>
+			<div class="file-path">script.js - initMobileMenu() function</div>
+			<ul>
+				<li>Hamburger toggle button</li>
+				<li>Slide-in drawer animation</li>
+				<li>Touch-optimized links</li>
+				<li>Close on link click or outside tap</li>
+			</ul>
+
+			<h3>Testing Responsive Design</h3>
+			<div class="tip">
+				<strong>💡 Testing Tools:</strong>
+				<ul>
+					<li>Chrome DevTools (F12 → Device Toolbar)</li>
+					<li>Firefox Responsive Design Mode</li>
+					<li>Real devices for accurate testing</li>
+					<li>BrowserStack for cross-browser testing</li>
+				</ul>
+			</div>
+
+			<h3>Touch Targets</h3>
+			<p>All interactive elements meet the 44px minimum on mobile:</p>
+			<pre><code>/* Mobile touch target */
+@media (max-width: 768px) {
+  .mobile-nav-link {
+    min-height: 44px;
+    padding: 1rem;
+  }
+}</code></pre>
+
+			<div class="warning">
+				<strong>⚠️ Mobile Testing:</strong> Always test on real devices. Emulators don't perfectly replicate touch interactions and scrolling behavior.
 			</div>
 		</section>
 
 		<!-- Footer -->
 		<footer>
-			<p>For more information, refer to the README.md and documentation files in the project folder.</p>
-			<p><strong>Happy customizing! 🚀</strong></p>
-			<p style="margin-top: 1.5rem; font-size: 0.9rem;">
-				Need help? Check out the <a href="README.md">README.md</a> or review the source code comments.
+			<h3 style="color: var(--primary-blue); margin-bottom: 1rem;">🎉 You're All Set!</h3>
+			<p>This guide covers all major customization points. For more details:</p>
+			<p style="margin-top: 1rem;">
+				<a href="README.md">📚 Read the README</a> | 
+				<a href="https://github.com/CodeWithKarol/budgy-landing">🔗 View on GitHub</a>
+			</p>
+			<p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
+				Happy customizing! 🚀
 			</p>
 		</footer>
 	</div>
