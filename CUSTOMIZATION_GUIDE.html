@@ -1,483 +1,1453 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Budgy Landing Page - Complete Customization Guide</title>
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>
+			Budgy Landing Page - Complete Customization
+			Guide
+		</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
-		:root {
-			--primary-blue: #6366f1;
-			--secondary-blue: #4f46e5;
-			--warm-coral: #10b981;
-			--text-dark: #0f172a;
-			--text-light: #64748b;
-			--light-blue: #e0e7ff;
-			--cream: #f8fafc;
-			--white: #ffffff;
-		}
+			:root {
+				--primary-blue: #6366f1;
+				--secondary-blue: #4f46e5;
+				--warm-coral: #10b981;
+				--text-dark: #0f172a;
+				--text-light: #64748b;
+				--light-blue: #e0e7ff;
+				--cream: #f8fafc;
+				--white: #ffffff;
+			}
 
-		body {
-			font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-			line-height: 1.6;
-			color: var(--text-dark);
-			background: var(--cream);
-		}
+			body {
+				font-family: "Inter", -apple-system,
+					BlinkMacSystemFont, "Segoe UI",
+					sans-serif;
+				line-height: 1.6;
+				color: var(--text-dark);
+				background: var(--cream);
+			}
 
-		.container {
-			max-width: 1100px;
-			margin: 0 auto;
-			padding: 2rem;
-		}
-
-		header {
-			background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-			color: var(--white);
-			padding: 3.5rem 2rem;
-			border-radius: 16px;
-			margin-bottom: 3rem;
-			text-align: center;
-			box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
-		}
-
-		header h1 {
-			font-size: 2.75rem;
-			margin-bottom: 0.75rem;
-			font-weight: 800;
-		}
-
-		header p {
-			font-size: 1.15rem;
-			opacity: 0.95;
-			font-weight: 500;
-		}
-
-		nav {
-			background: var(--white);
-			padding: 1.75rem;
-			border-radius: 12px;
-			margin-bottom: 2.5rem;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-			position: sticky;
-			top: 1.5rem;
-			z-index: 50;
-			border: 1px solid rgba(99, 102, 241, 0.1);
-		}
-
-		nav h3 {
-			color: var(--primary-blue);
-			margin-bottom: 1.25rem;
-			font-size: 0.875rem;
-			text-transform: uppercase;
-			letter-spacing: 1.5px;
-			font-weight: 700;
-		}
-
-		nav ul {
-			list-style: none;
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-			gap: 0.75rem;
-		}
-
-		nav a {
-			color: var(--text-light);
-			text-decoration: none;
-			padding: 0.75rem 1rem;
-			border-radius: 8px;
-			transition: all 0.2s ease;
-			display: block;
-			font-weight: 500;
-			font-size: 0.95rem;
-		}
-
-		nav a:hover {
-			background: var(--light-blue);
-			color: var(--primary-blue);
-			transform: translateX(4px);
-		}
-
-		section {
-			background: var(--white);
-			padding: 3rem;
-			margin-bottom: 2.5rem;
-			border-radius: 16px;
-			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-			border-left: 5px solid var(--primary-blue);
-		}
-
-		section h2 {
-			color: var(--primary-blue);
-			font-size: 2rem;
-			margin-bottom: 1.75rem;
-			padding-bottom: 1rem;
-			border-bottom: 2px solid var(--light-blue);
-			font-weight: 800;
-		}
-
-		section h3 {
-			color: var(--secondary-blue);
-			font-size: 1.35rem;
-			margin-top: 2rem;
-			margin-bottom: 1rem;
-			font-weight: 700;
-		}
-
-		section h4 {
-			color: var(--text-dark);
-			font-size: 1.05rem;
-			margin-top: 1.5rem;
-			margin-bottom: 0.75rem;
-			font-weight: 600;
-		}
-
-		p, li {
-			color: var(--text-light);
-			margin-bottom: 1rem;
-			line-height: 1.8;
-		}
-
-		code {
-			background: #f1f5f9;
-			color: #e11d48;
-			padding: 0.25rem 0.6rem;
-			border-radius: 6px;
-			font-family: "Monaco", "Courier New", monospace;
-			font-size: 0.875em;
-			font-weight: 500;
-		}
-
-		pre {
-			background: #1e293b;
-			color: #cbd5e1;
-			padding: 1.75rem;
-			border-radius: 12px;
-			overflow-x: auto;
-			margin-bottom: 1.75rem;
-			line-height: 1.6;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-		}
-
-		pre code {
-			background: none;
-			color: inherit;
-			padding: 0;
-			border-radius: 0;
-		}
-
-		.code-label {
-			display: inline-block;
-			background: var(--primary-blue);
-			color: var(--white);
-			padding: 0.35rem 0.85rem;
-			border-radius: 20px;
-			font-size: 0.75rem;
-			font-weight: 700;
-			margin-bottom: 0.75rem;
-			text-transform: uppercase;
-			letter-spacing: 0.75px;
-		}
-
-		ul {
-			margin-left: 2rem;
-			margin-bottom: 1.5rem;
-		}
-
-		li {
-			margin-bottom: 0.75rem;
-		}
-
-		.tip {
-			background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(99, 102, 241, 0.02) 100%);
-			border-left: 4px solid var(--primary-blue);
-			padding: 1.25rem 1.75rem;
-			border-radius: 8px;
-			margin: 1.75rem 0;
-		}
-
-		.tip strong {
-			color: var(--primary-blue);
-		}
-
-		.warning {
-			background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(239, 68, 68, 0.02) 100%);
-			border-left: 4px solid #ef4444;
-			padding: 1.25rem 1.75rem;
-			border-radius: 8px;
-			margin: 1.75rem 0;
-		}
-
-		.warning strong {
-			color: #ef4444;
-		}
-
-		.success {
-			background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.02) 100%);
-			border-left: 4px solid var(--warm-coral);
-			padding: 1.25rem 1.75rem;
-			border-radius: 8px;
-			margin: 1.75rem 0;
-		}
-
-		.success strong {
-			color: var(--warm-coral);
-		}
-
-		.color-swatch {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.85rem;
-			padding: 0.65rem 1.15rem;
-			background: var(--white);
-			border: 1px solid #e2e8f0;
-			border-radius: 8px;
-			margin-right: 1rem;
-			margin-bottom: 0.85rem;
-			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-		}
-
-		.color-box {
-			width: 44px;
-			height: 44px;
-			border-radius: 8px;
-			border: 2px solid #e2e8f0;
-			box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
-		}
-
-		table {
-			width: 100%;
-			border-collapse: collapse;
-			margin-bottom: 1.75rem;
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-			border-radius: 8px;
-			overflow: hidden;
-		}
-
-		th {
-			background: var(--light-blue);
-			color: var(--secondary-blue);
-			padding: 0.95rem 1.15rem;
-			text-align: left;
-			font-weight: 700;
-			font-size: 0.95rem;
-		}
-
-		td {
-			padding: 0.95rem 1.15rem;
-			border-bottom: 1px solid #e2e8f0;
-		}
-
-		tr:hover {
-			background: #fafafa;
-		}
-
-		tr:last-child td {
-			border-bottom: none;
-		}
-
-		.file-path {
-			display: inline-block;
-			background: #f1f5f9;
-			padding: 0.85rem 1.25rem;
-			border-radius: 8px;
-			font-family: "Monaco", monospace;
-			font-size: 0.875rem;
-			margin: 0.75rem 0;
-			border-left: 3px solid var(--primary-blue);
-			font-weight: 600;
-			color: var(--text-dark);
-		}
-
-		.step {
-			display: flex;
-			gap: 1.25rem;
-			margin-bottom: 1.75rem;
-			align-items: flex-start;
-		}
-
-		.step-number {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			min-width: 40px;
-			height: 40px;
-			background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-			color: var(--white);
-			border-radius: 50%;
-			font-weight: 800;
-			flex-shrink: 0;
-			font-size: 1.05rem;
-			box-shadow: 0 4px 8px rgba(99, 102, 241, 0.25);
-		}
-
-		.step-content h4 {
-			margin-top: 0;
-		}
-
-		footer {
-			text-align: center;
-			padding: 2.5rem;
-			color: var(--text-light);
-			border-top: 2px solid #e2e8f0;
-			margin-top: 4rem;
-		}
-
-		footer a {
-			color: var(--primary-blue);
-			text-decoration: none;
-			font-weight: 600;
-		}
-
-		footer a:hover {
-			text-decoration: underline;
-		}
-
-		@media (max-width: 768px) {
 			.container {
-				padding: 1rem;
+				max-width: 1100px;
+				margin: 0 auto;
+				padding: 2rem;
 			}
 
 			header {
-				padding: 2.5rem 1.5rem;
+				background: linear-gradient(
+					135deg,
+					#4338ca 0%,
+					#3730a3 100%
+				);
+				color: #ffffff;
+				padding: 3.5rem 2rem;
+				border-radius: 16px;
+				margin-bottom: 3rem;
+				text-align: center;
+				box-shadow: 0 20px 40px
+						rgba(67, 56, 202, 0.4),
+					0 10px 20px rgba(0, 0, 0, 0.15);
+				border: 1px solid rgba(255, 255, 255, 0.1);
 			}
 
 			header h1 {
-				font-size: 2rem;
+				font-size: 2.75rem;
+				margin-bottom: 0.75rem;
+				font-weight: 900;
+				color: #ffffff;
+				text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+				letter-spacing: -0.02em;
 			}
+
+			header p {
+				font-size: 1.15rem;
+				opacity: 1;
+				font-weight: 500;
+				color: #e0e7ff;
+				text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+			} /* ========================================
+	   QUICK NAVIGATION - MODERN REDESIGN
+	   ======================================== */
 
 			nav {
-				position: static;
-				margin-bottom: 1.5rem;
+				background: linear-gradient(
+					135deg,
+					#ffffff 0%,
+					#f8fafc 100%
+				);
+				padding: 2.5rem;
+				border-radius: 24px;
+				margin-bottom: 3rem;
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05),
+					0 10px 40px rgba(99, 102, 241, 0.08);
+				position: relative;
+				border: 1px solid rgba(99, 102, 241, 0.08);
+				overflow: hidden;
 			}
 
-			nav ul {
-				grid-template-columns: 1fr;
+			nav::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 4px;
+				background: linear-gradient(
+					90deg,
+					var(--primary-blue) 0%,
+					var(--warm-coral) 50%,
+					var(--primary-blue) 100%
+				);
+				background-size: 200% 100%;
+				animation: gradientShift 4s ease infinite;
 			}
 
-			section {
-				padding: 1.75rem;
+			@keyframes gradientShift {
+				0%,
+				100% {
+					background-position: 0% 0%;
+				}
+				50% {
+					background-position: 100% 0%;
+				}
 			}
 
-			section h2 {
-				font-size: 1.65rem;
+			.nav-header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 2rem;
+				gap: 1rem;
+				flex-wrap: wrap;
 			}
 
-			.step {
+			.nav-title-group {
+				display: flex;
+				align-items: center;
 				gap: 1rem;
 			}
 
-			.step-number {
-				min-width: 36px;
-				height: 36px;
-				font-size: 0.95rem;
+			.nav-icon-badge {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 48px;
+				height: 48px;
+				background: linear-gradient(
+					135deg,
+					var(--primary-blue),
+					var(--secondary-blue)
+				);
+				border-radius: 14px;
+				box-shadow: 0 4px 16px
+						rgba(99, 102, 241, 0.3),
+					0 0 0 4px rgba(99, 102, 241, 0.1);
+			}
+
+			.nav-icon-badge svg {
+				color: white;
+			}
+
+			nav h3 {
+				color: var(--text-dark);
+				margin: 0;
+				font-size: 1.5rem;
+				font-weight: 800;
+				letter-spacing: -0.02em;
+				line-height: 1.2;
+			}
+
+			.nav-count {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				padding: 0.5rem 1rem;
+				background: rgba(99, 102, 241, 0.08);
+				border-radius: 100px;
+				font-size: 0.875rem;
+				font-weight: 600;
+				color: var(--primary-blue);
+			}
+
+			.nav-search-wrapper {
+				position: relative;
+				margin-bottom: 1.5rem;
+			}
+
+			.nav-search-box {
+				width: 100%;
+				padding: 1rem 1.25rem 1rem 3.25rem;
+				border: 2px solid rgba(99, 102, 241, 0.1);
+				border-radius: 16px;
+				font-size: 1rem;
+				font-family: inherit;
+				background: white;
+				transition: all 0.3s ease;
+				outline: none;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+			}
+
+			.nav-search-box:focus {
+				border-color: var(--primary-blue);
+				box-shadow: 0 0 0 4px
+						rgba(99, 102, 241, 0.1),
+					0 4px 16px rgba(0, 0, 0, 0.08);
+			}
+
+			.nav-search-box::placeholder {
+				color: var(--text-muted);
+			}
+
+			.search-icon {
+				position: absolute;
+				left: 1.25rem;
+				top: 50%;
+				transform: translateY(-50%);
+				color: var(--text-muted);
+				pointer-events: none;
+				transition: color 0.3s ease;
+			}
+
+			.nav-search-box:focus ~ .search-icon {
+				color: var(--primary-blue);
+			}
+
+			.nav-filters {
+				display: flex;
+				gap: 0.75rem;
+				margin-bottom: 2rem;
+				flex-wrap: wrap;
+			}
+
+			.filter-btn {
+				padding: 0.625rem 1.25rem;
+				border: 2px solid rgba(99, 102, 241, 0.15);
+				background: white;
+				border-radius: 100px;
+				font-size: 0.875rem;
+				font-weight: 600;
+				color: var(--text-light);
+				cursor: pointer;
+				transition: all 0.3s
+					cubic-bezier(0.4, 0, 0.2, 1);
+				outline: none;
+				white-space: nowrap;
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			.filter-btn:hover {
+				border-color: var(--primary-blue);
+				color: var(--primary-blue);
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px
+					rgba(99, 102, 241, 0.15);
+			}
+
+			.filter-btn.active {
+				background: linear-gradient(
+					135deg,
+					var(--primary-blue),
+					var(--secondary-blue)
+				);
+				border-color: var(--primary-blue);
+				color: white;
+				box-shadow: 0 4px 16px
+					rgba(99, 102, 241, 0.35);
+			}
+
+			.filter-count {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-width: 20px;
+				height: 20px;
+				padding: 0 0.375rem;
+				background: rgba(255, 255, 255, 0.25);
+				border-radius: 10px;
+				font-size: 0.75rem;
+				font-weight: 700;
+			}
+
+			.filter-btn:not(.active) .filter-count {
+				background: rgba(99, 102, 241, 0.1);
+				color: var(--primary-blue);
+			}
+
+			nav ul {
+				list-style: none;
+				display: grid;
+				grid-template-columns: repeat(
+					auto-fill,
+					minmax(280px, 1fr)
+				);
+				gap: 1rem;
+				margin: 0;
+				padding: 0;
+			}
+
+			nav li {
+				opacity: 0;
+				animation: fadeInUp 0.5s ease forwards;
+			}
+
+			nav li:nth-child(1) {
+				animation-delay: 0.05s;
+			}
+			nav li:nth-child(2) {
+				animation-delay: 0.1s;
+			}
+			nav li:nth-child(3) {
+				animation-delay: 0.15s;
+			}
+			nav li:nth-child(4) {
+				animation-delay: 0.2s;
+			}
+			nav li:nth-child(5) {
+				animation-delay: 0.25s;
+			}
+			nav li:nth-child(6) {
+				animation-delay: 0.3s;
+			}
+			nav li:nth-child(7) {
+				animation-delay: 0.35s;
+			}
+			nav li:nth-child(8) {
+				animation-delay: 0.4s;
+			}
+			nav li:nth-child(9) {
+				animation-delay: 0.45s;
+			}
+			nav li:nth-child(10) {
+				animation-delay: 0.5s;
+			}
+			nav li:nth-child(11) {
+				animation-delay: 0.55s;
+			}
+			nav li:nth-child(12) {
+				animation-delay: 0.6s;
+			}
+
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			nav li.hidden {
+				display: none;
+			}
+
+			nav a {
+				display: flex;
+				align-items: flex-start;
+				gap: 1rem;
+				padding: 1.25rem;
+				background: white;
+				border: 2px solid rgba(99, 102, 241, 0.08);
+				border-radius: 16px;
+				text-decoration: none;
+				transition: all 0.3s
+					cubic-bezier(0.4, 0, 0.2, 1);
+				position: relative;
+				overflow: hidden;
+				height: 100%;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+			}
+
+			nav a::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 4px;
+				height: 100%;
+				background: linear-gradient(
+					180deg,
+					var(--primary-blue),
+					var(--warm-coral)
+				);
+				transform: scaleY(0);
+				transition: transform 0.3s ease;
+			}
+
+			nav a:hover::before {
+				transform: scaleY(1);
+			}
+
+			nav a:hover {
+				background: linear-gradient(
+					135deg,
+					rgba(99, 102, 241, 0.03) 0%,
+					rgba(16, 185, 129, 0.02) 100%
+				);
+				border-color: var(--primary-blue);
+				transform: translateY(-4px);
+				box-shadow: 0 8px 24px
+						rgba(99, 102, 241, 0.15),
+					0 4px 8px rgba(0, 0, 0, 0.05);
+			}
+
+			.nav-item-icon {
+				font-size: 2rem;
+				line-height: 1;
+				flex-shrink: 0;
+				width: 56px;
+				height: 56px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: linear-gradient(
+					135deg,
+					rgba(99, 102, 241, 0.08),
+					rgba(16, 185, 129, 0.05)
+				);
+				border-radius: 14px;
+				transition: all 0.3s ease;
+			}
+
+			nav a:hover .nav-item-icon {
+				transform: scale(1.1) rotate(-5deg);
+				background: linear-gradient(
+					135deg,
+					rgba(99, 102, 241, 0.15),
+					rgba(16, 185, 129, 0.1)
+				);
+			}
+
+			.nav-item-content {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				gap: 0.375rem;
+				min-width: 0;
+			}
+
+			.nav-item-title {
+				font-size: 1rem;
+				font-weight: 700;
+				color: var(--text-dark);
+				line-height: 1.3;
+				margin: 0;
+				transition: color 0.3s ease;
+			}
+
+			nav a:hover .nav-item-title {
+				color: var(--primary-blue);
+			}
+
+			.nav-item-desc {
+				font-size: 0.875rem;
+				color: var(--text-light);
+				line-height: 1.5;
+				margin: 0;
+			}
+
+			.nav-item-arrow {
+				position: absolute;
+				top: 1.25rem;
+				right: 1.25rem;
+				color: var(--text-muted);
+				opacity: 0;
+				transform: translateX(-8px);
+				transition: all 0.3s ease;
+			}
+
+			nav a:hover .nav-item-arrow {
+				opacity: 1;
+				transform: translateX(0);
+				color: var(--primary-blue);
+			}
+			section {
+				background: var(--white);
+				padding: 3rem;
+				margin-bottom: 2.5rem;
+				border-radius: 16px;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+				border-left: 5px solid var(--primary-blue);
+			}
+
+			section h2 {
+				color: var(--primary-blue);
+				font-size: 2rem;
+				margin-bottom: 1.75rem;
+				padding-bottom: 1rem;
+				border-bottom: 2px solid var(--light-blue);
+				font-weight: 800;
+			}
+
+			section h3 {
+				color: var(--secondary-blue);
+				font-size: 1.35rem;
+				margin-top: 2rem;
+				margin-bottom: 1rem;
+				font-weight: 700;
+			}
+
+			section h4 {
+				color: var(--text-dark);
+				font-size: 1.05rem;
+				margin-top: 1.5rem;
+				margin-bottom: 0.75rem;
+				font-weight: 600;
+			}
+
+			p,
+			li {
+				color: var(--text-light);
+				margin-bottom: 1rem;
+				line-height: 1.8;
+			}
+
+			code {
+				background: #f1f5f9;
+				color: #e11d48;
+				padding: 0.25rem 0.6rem;
+				border-radius: 6px;
+				font-family: "Monaco", "Courier New",
+					monospace;
+				font-size: 0.875em;
+				font-weight: 500;
+			}
+
+			pre {
+				background: #1e293b;
+				color: #cbd5e1;
+				padding: 1.75rem;
+				border-radius: 12px;
+				overflow-x: auto;
+				margin-bottom: 1.75rem;
+				line-height: 1.6;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+			}
+
+			pre code {
+				background: none;
+				color: inherit;
+				padding: 0;
+				border-radius: 0;
+			}
+
+			.code-label {
+				display: inline-block;
+				background: var(--primary-blue);
+				color: var(--white);
+				padding: 0.35rem 0.85rem;
+				border-radius: 20px;
+				font-size: 0.75rem;
+				font-weight: 700;
+				margin-bottom: 0.75rem;
+				text-transform: uppercase;
+				letter-spacing: 0.75px;
+			}
+
+			ul {
+				margin-left: 2rem;
+				margin-bottom: 1.5rem;
+			}
+
+			li {
+				margin-bottom: 0.75rem;
+			}
+
+			.tip {
+				background: linear-gradient(
+					135deg,
+					rgba(99, 102, 241, 0.05) 0%,
+					rgba(99, 102, 241, 0.02) 100%
+				);
+				border-left: 4px solid var(--primary-blue);
+				padding: 1.25rem 1.75rem;
+				border-radius: 8px;
+				margin: 1.75rem 0;
+			}
+
+			.tip strong {
+				color: var(--primary-blue);
+			}
+
+			.warning {
+				background: linear-gradient(
+					135deg,
+					rgba(239, 68, 68, 0.05) 0%,
+					rgba(239, 68, 68, 0.02) 100%
+				);
+				border-left: 4px solid #ef4444;
+				padding: 1.25rem 1.75rem;
+				border-radius: 8px;
+				margin: 1.75rem 0;
+			}
+
+			.warning strong {
+				color: #ef4444;
+			}
+
+			.success {
+				background: linear-gradient(
+					135deg,
+					rgba(16, 185, 129, 0.05) 0%,
+					rgba(16, 185, 129, 0.02) 100%
+				);
+				border-left: 4px solid var(--warm-coral);
+				padding: 1.25rem 1.75rem;
+				border-radius: 8px;
+				margin: 1.75rem 0;
+			}
+
+			.success strong {
+				color: var(--warm-coral);
+			}
+
+			.color-swatch {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.85rem;
+				padding: 0.65rem 1.15rem;
+				background: var(--white);
+				border: 1px solid #e2e8f0;
+				border-radius: 8px;
+				margin-right: 1rem;
+				margin-bottom: 0.85rem;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+			}
+
+			.color-box {
+				width: 44px;
+				height: 44px;
+				border-radius: 8px;
+				border: 2px solid #e2e8f0;
+				box-shadow: inset 0 2px 4px
+					rgba(0, 0, 0, 0.06);
 			}
 
 			table {
+				width: 100%;
+				border-collapse: collapse;
+				margin-bottom: 1.75rem;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+				border-radius: 8px;
+				overflow: hidden;
+			}
+
+			th {
+				background: var(--light-blue);
+				color: var(--secondary-blue);
+				padding: 0.95rem 1.15rem;
+				text-align: left;
+				font-weight: 700;
+				font-size: 0.95rem;
+			}
+
+			td {
+				padding: 0.95rem 1.15rem;
+				border-bottom: 1px solid #e2e8f0;
+			}
+
+			tr:hover {
+				background: #fafafa;
+			}
+
+			tr:last-child td {
+				border-bottom: none;
+			}
+
+			.file-path {
+				display: inline-block;
+				background: #f1f5f9;
+				padding: 0.85rem 1.25rem;
+				border-radius: 8px;
+				font-family: "Monaco", monospace;
 				font-size: 0.875rem;
+				margin: 0.75rem 0;
+				border-left: 3px solid var(--primary-blue);
+				font-weight: 600;
+				color: var(--text-dark);
 			}
 
-			th, td {
-				padding: 0.75rem;
+			.step {
+				display: flex;
+				gap: 1.25rem;
+				margin-bottom: 1.75rem;
+				align-items: flex-start;
 			}
-		}
-	</style>
-</head>
-<body>
-	<div class="container">
-		<!-- Header -->
-		<header>
-			<h1>💰 Budgy Landing Page</h1>
-			<p>Complete Customization Guide for Your Financial App Landing Page</p>
-		</header>
 
-		<!-- Navigation -->
-		<nav>
-			<h3>Quick Navigation</h3>
-			<ul>
-				<li><a href="#overview">📋 Overview</a></li>
-				<li><a href="#content">✏️ Content Changes</a></li>
-				<li><a href="#colors">🎨 Colors & Styling</a></li>
-				<li><a href="#typography">🔤 Typography</a></li>
-				<li><a href="#hero">🚀 Hero Section</a></li>
-				<li><a href="#trust">🛡️ Trust Section</a></li>
-				<li><a href="#features">⭐ Features Section</a></li>
-				<li><a href="#video">🎬 Video Section</a></li>
-				<li><a href="#testimonials">💬 Testimonials</a></li>
-				<li><a href="#contact">📧 Contact Form</a></li>
-				<li><a href="#animations">✨ Animations</a></li>
-				<li><a href="#responsive">📱 Responsive Design</a></li>
-			</ul>
-		</nav>
+			.step-number {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-width: 40px;
+				height: 40px;
+				background: linear-gradient(
+					135deg,
+					var(--primary-blue) 0%,
+					var(--secondary-blue) 100%
+				);
+				color: var(--white);
+				border-radius: 50%;
+				font-weight: 800;
+				flex-shrink: 0;
+				font-size: 1.05rem;
+				box-shadow: 0 4px 8px
+					rgba(99, 102, 241, 0.25);
+			}
 
-		<!-- Overview Section -->
-		<section id="overview">
-			<h2>📋 Overview</h2>
+			.step-content h4 {
+				margin-top: 0;
+			}
 
-			<p>This guide covers every aspect of customizing your Budgy landing page. The page is built with:</p>
-			<ul>
-				<li><strong>HTML5</strong> - Semantic structure (~1200 lines)</li>
-				<li><strong>CSS3</strong> - Modern styling with variables (~3230 lines)</li>
-				<li><strong>Vanilla JavaScript</strong> - Interactive features (~900 lines)</li>
-				<li><strong>No frameworks</strong> - Pure code, easy to customize</li>
-			</ul>
+			footer {
+				text-align: center;
+				padding: 2.5rem;
+				color: var(--text-light);
+				border-top: 2px solid #e2e8f0;
+				margin-top: 4rem;
+			}
 
-			<h3>File Structure</h3>
-			<pre><code>budgy-landing/
+			footer a {
+				color: var(--primary-blue);
+				text-decoration: none;
+				font-weight: 600;
+			}
+
+			footer a:hover {
+				text-decoration: underline;
+			}
+
+			@media (max-width: 768px) {
+				.container {
+					padding: 1rem;
+				}
+
+				header {
+					padding: 2.5rem 1.5rem;
+				}
+
+				header h1 {
+					font-size: 2rem;
+				}
+
+				nav {
+					padding: 1.5rem;
+					margin-bottom: 2rem;
+				}
+
+				.nav-header {
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 1rem;
+				}
+
+				nav h3 {
+					font-size: 1.25rem;
+				}
+
+				.nav-icon-badge {
+					width: 40px;
+					height: 40px;
+				}
+
+				.nav-filters {
+					overflow-x: auto;
+					scrollbar-width: thin;
+				}
+
+				nav ul {
+					grid-template-columns: 1fr;
+				}
+				section {
+					padding: 1.75rem;
+				}
+
+				section h2 {
+					font-size: 1.65rem;
+				}
+
+				.step {
+					gap: 1rem;
+				}
+
+				.step-number {
+					min-width: 36px;
+					height: 36px;
+					font-size: 0.95rem;
+				}
+
+				table {
+					font-size: 0.875rem;
+				}
+
+				th,
+				td {
+					padding: 0.75rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Header -->
+			<header>
+				<h1>💰 Budgy Landing Page</h1>
+				<p>
+					Complete Customization Guide for Your
+					Financial App Landing Page
+				</p>
+			</header>
+
+			<!-- Navigation -->
+			<nav>
+				<div class="nav-header">
+					<div class="nav-title-group">
+						<div class="nav-icon-badge">
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<line
+									x1="3"
+									y1="12"
+									x2="21"
+									y2="12"
+								></line>
+								<line
+									x1="3"
+									y1="6"
+									x2="21"
+									y2="6"
+								></line>
+								<line
+									x1="3"
+									y1="18"
+									x2="21"
+									y2="18"
+								></line>
+							</svg>
+						</div>
+						<h3>Quick Navigation</h3>
+					</div>
+					<div class="nav-count">
+						<svg
+							width="16"
+							height="16"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path
+								d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+							></path>
+							<circle
+								cx="12"
+								cy="7"
+								r="4"
+							></circle>
+						</svg>
+						12 Sections
+					</div>
+				</div>
+
+				<div class="nav-search-wrapper">
+					<input
+						type="text"
+						class="nav-search-box"
+						id="navSearch"
+						placeholder="Search sections, topics, or features..."
+						aria-label="Search navigation sections"
+					/>
+					<svg
+						class="search-icon"
+						width="20"
+						height="20"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<circle
+							cx="11"
+							cy="11"
+							r="8"
+						></circle>
+						<path d="m21 21-4.35-4.35"></path>
+					</svg>
+				</div>
+
+				<div class="nav-filters">
+					<button
+						class="filter-btn active"
+						data-filter="all"
+					>
+						All Sections
+						<span class="filter-count">12</span>
+					</button>
+					<button
+						class="filter-btn"
+						data-filter="basics"
+					>
+						Basics
+						<span class="filter-count">4</span>
+					</button>
+					<button
+						class="filter-btn"
+						data-filter="sections"
+					>
+						Page Sections
+						<span class="filter-count">6</span>
+					</button>
+					<button
+						class="filter-btn"
+						data-filter="advanced"
+					>
+						Advanced
+						<span class="filter-count">2</span>
+					</button>
+				</div>
+
+				<ul>
+					<li
+						data-category="basics"
+						data-keywords="overview structure files sections"
+					>
+						<a href="#overview">
+							<div class="nav-item-icon">📋</div>
+							<div class="nav-item-content">
+								<div class="nav-item-title">
+									Overview
+								</div>
+								<div class="nav-item-desc">
+									Project structure, files & key
+									sections
+								</div>
+							</div>
+							<svg
+								class="nav-item-arrow"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<polyline
+									points="9 18 15 12 9 6"
+								></polyline>
+							</svg>
+						</a>
+					</li>
+					<li
+						data-category="basics"
+						data-keywords="content text headlines copy editing"
+					>
+						<a href="#content">
+							<div class="nav-item-icon">✏️</div>
+							<div class="nav-item-content">
+								<div class="nav-item-title">
+									Content Changes
+								</div>
+								<div class="nav-item-desc">
+									Edit text, headlines & marketing
+									copy
+								</div>
+							</div>
+							<svg
+								class="nav-item-arrow"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<polyline
+									points="9 18 15 12 9 6"
+								></polyline>
+							</svg>
+						</a>
+					</li>
+					<li
+						data-category="basics"
+						data-keywords="colors theme styling css variables palette"
+					>
+						<a href="#colors">
+							<div class="nav-item-icon">🎨</div>
+							<div class="nav-item-content">
+								<div class="nav-item-title">
+									Colors & Styling
+								</div>
+								<div class="nav-item-desc">
+									Theme colors, CSS variables &
+									palette
+								</div>
+							</div>
+							<svg
+								class="nav-item-arrow"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<polyline
+									points="9 18 15 12 9 6"
+								></polyline>
+							</svg>
+						</a>
+					</li>
+					<li
+						data-category="basics"
+						data-keywords="typography fonts sizes hierarchy text"
+					>
+						<a href="#typography">
+							<div class="nav-item-icon">🔤</div>
+							<div class="nav-item-content">
+								<div class="nav-item-title">
+									Typography
+								</div>
+								<div class="nav-item-desc">
+									Font families, sizes & text
+									hierarchy
+								</div>
+							</div>
+							<svg
+								class="nav-item-arrow"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<polyline
+									points="9 18 15 12 9 6"
+								></polyline>
+							</svg>
+						</a>
+					</li>
+					<li
+						data-category="sections"
+						data-keywords="hero landing headline cta buttons"
+					>
+						<a href="#hero">
+							<div class="nav-item-icon">🚀</div>
+							<div class="nav-item-content">
+								<div class="nav-item-title">
+									Hero Section
+								</div>
+								<div class="nav-item-desc">
+									Landing headline, CTAs & main
+									visual
+								</div>
+							</div>
+							<svg
+								class="nav-item-arrow"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<polyline
+									points="9 18 15 12 9 6"
+								></polyline>
+							</svg>
+						</a>
+					</li>
+					<li
+						data-category="sections"
+						data-keywords="trust security logos features"
+					>
+						<a href="#trust">
+							<div class="nav-item-icon">🛡️</div>
+							<div class="nav-item-content">
+								<div class="nav-item-title">
+									Trust Section
+								</div>
+								<div class="nav-item-desc">
+									Security features, badges &
+									partner logos
+								</div>
+							</div>
+							<svg
+								class="nav-item-arrow"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<polyline
+									points="9 18 15 12 9 6"
+								></polyline>
+							</svg>
+						</a>
+					</li>
+					<li
+						data-category="sections"
+						data-keywords="features bento grid cards benefits"
+					>
+						<a href="#features">
+							<div class="nav-item-icon">⭐</div>
+							<div class="nav-item-content">
+								<div class="nav-item-title">
+									Features Section
+								</div>
+								<div class="nav-item-desc">
+									Bento grid layout & feature
+									cards
+								</div>
+							</div>
+							<svg
+								class="nav-item-arrow"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<polyline
+									points="9 18 15 12 9 6"
+								></polyline>
+							</svg>
+						</a>
+					</li>
+					<li
+						data-category="sections"
+						data-keywords="video player playlist youtube modal"
+					>
+						<a href="#video">
+							<div class="nav-item-icon">🎬</div>
+							<div class="nav-item-content">
+								<div class="nav-item-title">
+									Video Section
+								</div>
+								<div class="nav-item-desc">
+									Video player, playlist & modal
+									setup
+								</div>
+							</div>
+							<svg
+								class="nav-item-arrow"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<polyline
+									points="9 18 15 12 9 6"
+								></polyline>
+							</svg>
+						</a>
+					</li>
+					<li
+						data-category="sections"
+						data-keywords="testimonials reviews ratings social proof"
+					>
+						<a href="#testimonials">
+							<div class="nav-item-icon">💬</div>
+							<div class="nav-item-content">
+								<div class="nav-item-title">
+									Testimonials
+								</div>
+								<div class="nav-item-desc">
+									User reviews, ratings & social
+									proof
+								</div>
+							</div>
+							<svg
+								class="nav-item-arrow"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<polyline
+									points="9 18 15 12 9 6"
+								></polyline>
+							</svg>
+						</a>
+					</li>
+					<li
+						data-category="sections"
+						data-keywords="contact form email validation fields"
+					>
+						<a href="#contact">
+							<div class="nav-item-icon">📧</div>
+							<div class="nav-item-content">
+								<div class="nav-item-title">
+									Contact Form
+								</div>
+								<div class="nav-item-desc">
+									Form fields, validation &
+									submissions
+								</div>
+							</div>
+							<svg
+								class="nav-item-arrow"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<polyline
+									points="9 18 15 12 9 6"
+								></polyline>
+							</svg>
+						</a>
+					</li>
+					<li
+						data-category="advanced"
+						data-keywords="animations transitions effects keyframes"
+					>
+						<a href="#animations">
+							<div class="nav-item-icon">✨</div>
+							<div class="nav-item-content">
+								<div class="nav-item-title">
+									Animations
+								</div>
+								<div class="nav-item-desc">
+									Transitions, effects & keyframes
+								</div>
+							</div>
+							<svg
+								class="nav-item-arrow"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<polyline
+									points="9 18 15 12 9 6"
+								></polyline>
+							</svg>
+						</a>
+					</li>
+					<li
+						data-category="advanced"
+						data-keywords="responsive mobile tablet breakpoints media queries"
+					>
+						<a href="#responsive">
+							<div class="nav-item-icon">📱</div>
+							<div class="nav-item-content">
+								<div class="nav-item-title">
+									Responsive Design
+								</div>
+								<div class="nav-item-desc">
+									Mobile, tablet & breakpoint
+									layouts
+								</div>
+							</div>
+							<svg
+								class="nav-item-arrow"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<polyline
+									points="9 18 15 12 9 6"
+								></polyline>
+							</svg>
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+			<!-- Overview Section -->
+			<section id="overview">
+				<h2>📋 Overview</h2>
+
+				<p>
+					This guide covers every aspect of
+					customizing your Budgy landing page. The
+					page is built with:
+				</p>
+				<ul>
+					<li>
+						<strong>HTML5</strong> - Semantic
+						structure (~1200 lines)
+					</li>
+					<li>
+						<strong>CSS3</strong> - Modern styling
+						with variables (~3230 lines)
+					</li>
+					<li>
+						<strong>Vanilla JavaScript</strong> -
+						Interactive features (~900 lines)
+					</li>
+					<li>
+						<strong>No frameworks</strong> - Pure
+						code, easy to customize
+					</li>
+				</ul>
+
+				<h3>File Structure</h3>
+				<pre><code>budgy-landing/
 ├── index.html          # Main HTML structure
 ├── styles.css          # All styling (CSS variables, animations)
 ├── script.js           # JavaScript functionality
 ├── favicon.svg         # Site icon
 └── README.md           # Documentation</code></pre>
 
-			<h3>Key Sections on the Page</h3>
-			<ol style="margin-left: 2rem;">
-				<li><strong>Navigation</strong> - Fixed header with glassmorphism</li>
-				<li><strong>Hero Section</strong> - Headline, CTAs, visual with floating cards</li>
-				<li><strong>Trust Section</strong> - Logo strip, security features</li>
-				<li><strong>Features Section</strong> - Bento grid with 5 features</li>
-				<li><strong>Video Section</strong> - Featured video with playlist</li>
-				<li><strong>Testimonials</strong> - 3 user testimonials</li>
-				<li><strong>Emotional Connection</strong> - Quote and statistic</li>
-				<li><strong>Resources</strong> - 3 blog article cards</li>
-				<li><strong>Final CTA</strong> - Last conversion opportunity</li>
-				<li><strong>Contact</strong> - Form with multiple contact methods</li>
-				<li><strong>Footer</strong> - Links and copyright</li>
-			</ol>
+				<h3>Key Sections on the Page</h3>
+				<ol style="margin-left: 2rem">
+					<li>
+						<strong>Navigation</strong> - Fixed
+						header with glassmorphism
+					</li>
+					<li>
+						<strong>Hero Section</strong> -
+						Headline, CTAs, visual with floating
+						cards
+					</li>
+					<li>
+						<strong>Trust Section</strong> - Logo
+						strip, security features
+					</li>
+					<li>
+						<strong>Features Section</strong> -
+						Bento grid with 5 features
+					</li>
+					<li>
+						<strong>Video Section</strong> -
+						Featured video with playlist
+					</li>
+					<li>
+						<strong>Testimonials</strong> - 3 user
+						testimonials
+					</li>
+					<li>
+						<strong>Emotional Connection</strong>
+						- Quote and statistic
+					</li>
+					<li>
+						<strong>Resources</strong> - 3 blog
+						article cards
+					</li>
+					<li>
+						<strong>Final CTA</strong> - Last
+						conversion opportunity
+					</li>
+					<li>
+						<strong>Contact</strong> - Form with
+						multiple contact methods
+					</li>
+					<li>
+						<strong>Footer</strong> - Links and
+						copyright
+					</li>
+				</ol>
 
-			<div class="tip">
-				<strong>💡 Pro Tip:</strong> Before making changes, duplicate the original files as backups. This allows you to revert if needed.
-			</div>
-		</section>
+				<div class="tip">
+					<strong>💡 Pro Tip:</strong> Before
+					making changes, duplicate the original
+					files as backups. This allows you to
+					revert if needed.
+				</div>
+			</section>
 
-		<!-- Content Changes -->
-		<section id="content">
-			<h2>✏️ Content Changes</h2>
+			<!-- Content Changes -->
+			<section id="content">
+				<h2>✏️ Content Changes</h2>
 
-			<h3>Changing Headlines</h3>
-			<p>The main headline appears in the hero section:</p>
-			<div class="file-path">index.html - Line ~163</div>
-			<pre><code>&lt;h1 class="hero-headline"&gt;
+				<h3>Changing Headlines</h3>
+				<p>
+					The main headline appears in the hero
+					section:
+				</p>
+				<div class="file-path">
+					index.html - Line ~163
+				</div>
+				<pre><code>&lt;h1 class="hero-headline"&gt;
   Master Your Money with
   &lt;span class="hero-headline-gradient"&gt;Intelligent Insights&lt;/span&gt;
 &lt;/h1&gt;</code></pre>
-			<p>Keep the <code>&lt;span class="hero-headline-gradient"&gt;</code> for the gradient text effect.</p>
+				<p>
+					Keep the
+					<code
+						>&lt;span
+						class="hero-headline-gradient"&gt;</code
+					>
+					for the gradient text effect.
+				</p>
 
-			<h3>Updating Subheadline</h3>
-			<div class="file-path">index.html - Line ~169</div>
-			<pre><code>&lt;p class="hero-subheadline"&gt;
+				<h3>Updating Subheadline</h3>
+				<div class="file-path">
+					index.html - Line ~169
+				</div>
+				<pre><code>&lt;p class="hero-subheadline"&gt;
   Stop guessing where your money goes. Budgy connects all your
   accounts, tracks spending automatically, and helps you reach your
   financial goals faster.
 &lt;/p&gt;</code></pre>
 
-			<h3>Modifying Button Text</h3>
-			<p>Hero CTAs:</p>
-			<pre><code>&lt;button class="cta-button primary large"&gt;
+				<h3>Modifying Button Text</h3>
+				<p>Hero CTAs:</p>
+				<pre><code>&lt;button class="cta-button primary large"&gt;
   Start Your Free Trial
   &lt;svg class="cta-arrow"&gt;...&lt;/svg&gt;
 &lt;/button&gt;
@@ -487,22 +1457,28 @@
   See How It Works
 &lt;/button&gt;</code></pre>
 
-			<h3>Trust Badge</h3>
-			<p>Update the hero badge text:</p>
-			<div class="file-path">index.html - Line ~157</div>
-			<pre><code>&lt;div class="hero-badge"&gt;
+				<h3>Trust Badge</h3>
+				<p>Update the hero badge text:</p>
+				<div class="file-path">
+					index.html - Line ~157
+				</div>
+				<pre><code>&lt;div class="hero-badge"&gt;
   &lt;span class="badge-icon"&gt;✨&lt;/span&gt;
   &lt;span&gt;#1 Personal Finance App of 2025&lt;/span&gt;
 &lt;/div&gt;</code></pre>
 
-			<h3>Social Proof Stats</h3>
-			<p>Update user count and rating:</p>
-			<div class="file-path">index.html - Line ~199</div>
-			<pre><code>&lt;div class="trust-label"&gt;Loved by 50,000+ users&lt;/div&gt;</code></pre>
+				<h3>Social Proof Stats</h3>
+				<p>Update user count and rating:</p>
+				<div class="file-path">
+					index.html - Line ~199
+				</div>
+				<pre><code>&lt;div class="trust-label"&gt;Loved by 50,000+ users&lt;/div&gt;</code></pre>
 
-			<h3>Floating Card Values</h3>
-			<p>Update the statistics on floating cards:</p>
-			<pre><code>&lt;!-- Savings Card --&gt;
+				<h3>Floating Card Values</h3>
+				<p>
+					Update the statistics on floating cards:
+				</p>
+				<pre><code>&lt;!-- Savings Card --&gt;
 &lt;span class="card-label"&gt;Total Savings&lt;/span&gt;
 &lt;span class="card-value"&gt;$12,450&lt;/span&gt;
 
@@ -510,107 +1486,191 @@
 &lt;span class="card-label"&gt;Monthly Growth&lt;/span&gt;
 &lt;span class="card-value"&gt;+24.5%&lt;/span&gt;</code></pre>
 
-			<div class="success">
-				<strong>✓ Quick Tip:</strong> Use realistic, achievable numbers that reflect actual user outcomes to build trust.
-			</div>
-		</section>
-
-		<!-- Colors & Styling -->
-		<section id="colors">
-			<h2>🎨 Colors & Styling</h2>
-
-			<h3>Color System</h3>
-			<p>All colors are defined as CSS variables at the top of <code>styles.css</code>:</p>
-			<div class="file-path">styles.css - Lines 8-18</div>
-
-			<h3>Current Color Palette</h3>
-			<table>
-				<thead>
-					<tr>
-						<th>Variable</th>
-						<th>Color</th>
-						<th>Usage</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>--primary-blue</code></td>
-						<td><div class="color-swatch"><div class="color-box" style="background: #6366f1;"></div> #6366f1</div></td>
-						<td>Primary buttons, links, accents</td>
-					</tr>
-					<tr>
-						<td><code>--secondary-blue</code></td>
-						<td><div class="color-swatch"><div class="color-box" style="background: #4f46e5;"></div> #4f46e5</div></td>
-						<td>Hover states, darker accents</td>
-					</tr>
-					<tr>
-						<td><code>--light-blue</code></td>
-						<td><div class="color-swatch"><div class="color-box" style="background: #e0e7ff;"></div> #e0e7ff</div></td>
-						<td>Light backgrounds, badges</td>
-					</tr>
-					<tr>
-						<td><code>--warm-coral</code></td>
-						<td><div class="color-swatch"><div class="color-box" style="background: #10b981;"></div> #10b981</div></td>
-						<td>Success states, secondary CTAs</td>
-					</tr>
-					<tr>
-						<td><code>--cream</code></td>
-						<td><div class="color-swatch"><div class="color-box" style="background: #f8fafc;"></div> #f8fafc</div></td>
-						<td>Page background</td>
-					</tr>
-					<tr>
-						<td><code>--text-dark</code></td>
-						<td><div class="color-swatch"><div class="color-box" style="background: #0f172a;"></div> #0f172a</div></td>
-						<td>Headings, main text</td>
-					</tr>
-					<tr>
-						<td><code>--text-light</code></td>
-						<td><div class="color-swatch"><div class="color-box" style="background: #64748b;"></div> #64748b</div></td>
-						<td>Descriptions, body text</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<h3>How to Change Colors</h3>
-			<div class="step">
-				<div class="step-number">1</div>
-				<div class="step-content">
-					<h4>Open <code>styles.css</code></h4>
-					<p>Navigate to the <code>:root</code> section at the top of the file.</p>
+				<div class="success">
+					<strong>✓ Quick Tip:</strong> Use
+					realistic, achievable numbers that
+					reflect actual user outcomes to build
+					trust.
 				</div>
-			</div>
+			</section>
 
-			<div class="step">
-				<div class="step-number">2</div>
-				<div class="step-content">
-					<h4>Find the color variable</h4>
-					<pre><code>:root {
+			<!-- Colors & Styling -->
+			<section id="colors">
+				<h2>🎨 Colors & Styling</h2>
+
+				<h3>Color System</h3>
+				<p>
+					All colors are defined as CSS variables
+					at the top of <code>styles.css</code>:
+				</p>
+				<div class="file-path">
+					styles.css - Lines 8-18
+				</div>
+
+				<h3>Current Color Palette</h3>
+				<table>
+					<thead>
+						<tr>
+							<th>Variable</th>
+							<th>Color</th>
+							<th>Usage</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>--primary-blue</code></td>
+							<td>
+								<div class="color-swatch">
+									<div
+										class="color-box"
+										style="background: #6366f1"
+									></div>
+									#6366f1
+								</div>
+							</td>
+							<td>
+								Primary buttons, links, accents
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<code>--secondary-blue</code>
+							</td>
+							<td>
+								<div class="color-swatch">
+									<div
+										class="color-box"
+										style="background: #4f46e5"
+									></div>
+									#4f46e5
+								</div>
+							</td>
+							<td>
+								Hover states, darker accents
+							</td>
+						</tr>
+						<tr>
+							<td><code>--light-blue</code></td>
+							<td>
+								<div class="color-swatch">
+									<div
+										class="color-box"
+										style="background: #e0e7ff"
+									></div>
+									#e0e7ff
+								</div>
+							</td>
+							<td>Light backgrounds, badges</td>
+						</tr>
+						<tr>
+							<td><code>--warm-coral</code></td>
+							<td>
+								<div class="color-swatch">
+									<div
+										class="color-box"
+										style="background: #10b981"
+									></div>
+									#10b981
+								</div>
+							</td>
+							<td>
+								Success states, secondary CTAs
+							</td>
+						</tr>
+						<tr>
+							<td><code>--cream</code></td>
+							<td>
+								<div class="color-swatch">
+									<div
+										class="color-box"
+										style="background: #f8fafc"
+									></div>
+									#f8fafc
+								</div>
+							</td>
+							<td>Page background</td>
+						</tr>
+						<tr>
+							<td><code>--text-dark</code></td>
+							<td>
+								<div class="color-swatch">
+									<div
+										class="color-box"
+										style="background: #0f172a"
+									></div>
+									#0f172a
+								</div>
+							</td>
+							<td>Headings, main text</td>
+						</tr>
+						<tr>
+							<td><code>--text-light</code></td>
+							<td>
+								<div class="color-swatch">
+									<div
+										class="color-box"
+										style="background: #64748b"
+									></div>
+									#64748b
+								</div>
+							</td>
+							<td>Descriptions, body text</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3>How to Change Colors</h3>
+				<div class="step">
+					<div class="step-number">1</div>
+					<div class="step-content">
+						<h4>Open <code>styles.css</code></h4>
+						<p>
+							Navigate to the
+							<code>:root</code> section at the
+							top of the file.
+						</p>
+					</div>
+				</div>
+
+				<div class="step">
+					<div class="step-number">2</div>
+					<div class="step-content">
+						<h4>Find the color variable</h4>
+						<pre><code>:root {
   --primary-blue: #6366f1;
   --secondary-blue: #4f46e5;
   /* ... */
 }</code></pre>
+					</div>
 				</div>
-			</div>
 
-			<div class="step">
-				<div class="step-number">3</div>
-				<div class="step-content">
-					<h4>Replace with your hex code</h4>
-					<pre><code>--primary-blue: #YOUR_COLOR_HERE;</code></pre>
+				<div class="step">
+					<div class="step-number">3</div>
+					<div class="step-content">
+						<h4>Replace with your hex code</h4>
+						<pre><code>--primary-blue: #YOUR_COLOR_HERE;</code></pre>
+					</div>
 				</div>
-			</div>
 
-			<div class="step">
-				<div class="step-number">4</div>
-				<div class="step-content">
-					<h4>Save and refresh</h4>
-					<p>All elements using that variable will update automatically.</p>
+				<div class="step">
+					<div class="step-number">4</div>
+					<div class="step-content">
+						<h4>Save and refresh</h4>
+						<p>
+							All elements using that variable
+							will update automatically.
+						</p>
+					</div>
 				</div>
-			</div>
 
-			<h3>Gradient Customization</h3>
-			<p>Many elements use gradient backgrounds. Search for <code>linear-gradient</code> in <code>styles.css</code>:</p>
-			<pre><code>/* Primary button gradient */
+				<h3>Gradient Customization</h3>
+				<p>
+					Many elements use gradient backgrounds.
+					Search for
+					<code>linear-gradient</code> in
+					<code>styles.css</code>:
+				</p>
+				<pre><code>/* Primary button gradient */
 background: linear-gradient(
   135deg,
   var(--primary-blue) 0%,
@@ -622,74 +1682,110 @@ background: linear-gradient(
    - Colors: Any hex or CSS variable
    - Stops: 0%, 50%, 100% positions */</code></pre>
 
-			<div class="tip">
-				<strong>💡 Color Tool:</strong> Use <a href="https://coolors.co/" target="_blank">Coolors.co</a> to generate harmonious color palettes, or <a href="https://uigradients.com/" target="_blank">UI Gradients</a> for gradient inspiration.
-			</div>
-		</section>
-
-		<!-- Typography -->
-		<section id="typography">
-			<h2>🔤 Typography</h2>
-
-			<h3>Font Families</h3>
-			<p>The page uses two Google Fonts:</p>
-			<table>
-				<thead>
-					<tr>
-						<th>Font</th>
-						<th>Usage</th>
-						<th>Variable</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><strong>Inter</strong></td>
-						<td>Body text, UI elements</td>
-						<td><code>--font-body</code></td>
-					</tr>
-					<tr>
-						<td><strong>Caveat</strong></td>
-						<td>Decorative elements, quotes</td>
-						<td><code>--font-handwriting</code></td>
-					</tr>
-				</tbody>
-			</table>
-
-			<h3>Changing Fonts</h3>
-			<div class="step">
-				<div class="step-number">1</div>
-				<div class="step-content">
-					<h4>Find font import in HTML</h4>
-					<div class="file-path">index.html - Line ~9</div>
-					<pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"&gt;</code></pre>
+				<div class="tip">
+					<strong>💡 Color Tool:</strong> Use
+					<a
+						href="https://coolors.co/"
+						target="_blank"
+						>Coolors.co</a
+					>
+					to generate harmonious color palettes,
+					or
+					<a
+						href="https://uigradients.com/"
+						target="_blank"
+						>UI Gradients</a
+					>
+					for gradient inspiration.
 				</div>
-			</div>
+			</section>
 
-			<div class="step">
-				<div class="step-number">2</div>
-				<div class="step-content">
-					<h4>Replace with new font from <a href="https://fonts.google.com" target="_blank">Google Fonts</a></h4>
-					<p>Popular alternatives:</p>
-					<ul>
-						<li><strong>Body:</strong> Open Sans, Roboto, Lato, Poppins</li>
-						<li><strong>Headings:</strong> Playfair Display, Montserrat, Raleway</li>
-					</ul>
+			<!-- Typography -->
+			<section id="typography">
+				<h2>🔤 Typography</h2>
+
+				<h3>Font Families</h3>
+				<p>The page uses two Google Fonts:</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Font</th>
+							<th>Usage</th>
+							<th>Variable</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>Inter</strong></td>
+							<td>Body text, UI elements</td>
+							<td><code>--font-body</code></td>
+						</tr>
+						<tr>
+							<td><strong>Caveat</strong></td>
+							<td>Decorative elements, quotes</td>
+							<td>
+								<code>--font-handwriting</code>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3>Changing Fonts</h3>
+				<div class="step">
+					<div class="step-number">1</div>
+					<div class="step-content">
+						<h4>Find font import in HTML</h4>
+						<div class="file-path">
+							index.html - Line ~9
+						</div>
+						<pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"&gt;</code></pre>
+					</div>
 				</div>
-			</div>
 
-			<div class="step">
-				<div class="step-number">3</div>
-				<div class="step-content">
-					<h4>Update CSS variable</h4>
-					<div class="file-path">styles.css - Lines 16-17</div>
-					<pre><code>--font-handwriting: "Your New Font", cursive;
+				<div class="step">
+					<div class="step-number">2</div>
+					<div class="step-content">
+						<h4>
+							Replace with new font from
+							<a
+								href="https://fonts.google.com"
+								target="_blank"
+								>Google Fonts</a
+							>
+						</h4>
+						<p>Popular alternatives:</p>
+						<ul>
+							<li>
+								<strong>Body:</strong> Open Sans,
+								Roboto, Lato, Poppins
+							</li>
+							<li>
+								<strong>Headings:</strong>
+								Playfair Display, Montserrat,
+								Raleway
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="step">
+					<div class="step-number">3</div>
+					<div class="step-content">
+						<h4>Update CSS variable</h4>
+						<div class="file-path">
+							styles.css - Lines 16-17
+						</div>
+						<pre><code>--font-handwriting: "Your New Font", cursive;
 --font-body: "Your New Font", sans-serif;</code></pre>
+					</div>
 				</div>
-			</div>
 
-			<h3>Font Sizes</h3>
-			<p>Key typography sizes throughout the page:</p>
-			<pre><code>/* Hero headline */
+				<h3>Font Sizes</h3>
+				<p>
+					Key typography sizes throughout the
+					page:
+				</p>
+				<pre><code>/* Hero headline */
 .hero-headline {
   font-size: 4rem;      /* Desktop */
 }
@@ -704,9 +1800,12 @@ body {
   font-size: 1rem;      /* 16px base */
 }</code></pre>
 
-			<h3>Responsive Typography</h3>
-			<p>Font sizes adapt at different breakpoints:</p>
-			<pre><code>@media (max-width: 1024px) {
+				<h3>Responsive Typography</h3>
+				<p>
+					Font sizes adapt at different
+					breakpoints:
+				</p>
+				<pre><code>@media (max-width: 1024px) {
   .hero-headline {
     font-size: 3rem;
   }
@@ -718,37 +1817,59 @@ body {
   }
 }</code></pre>
 
-			<div class="warning">
-				<strong>⚠️ Accessibility:</strong> Never set body text below 14px (0.875rem) on mobile devices for readability compliance.
-			</div>
-		</section>
+				<div class="warning">
+					<strong>⚠️ Accessibility:</strong> Never
+					set body text below 14px (0.875rem) on
+					mobile devices for readability
+					compliance.
+				</div>
+			</section>
 
-		<!-- Hero Section -->
-		<section id="hero">
-			<h2>🚀 Hero Section</h2>
+			<!-- Hero Section -->
+			<section id="hero">
+				<h2>🚀 Hero Section</h2>
 
-			<p>The hero section is your first impression. It includes:</p>
-			<ul>
-				<li>Badge with achievement/award</li>
-				<li>Main headline with gradient text</li>
-				<li>Subheadline description</li>
-				<li>Two CTA buttons</li>
-				<li>Trust indicators (avatars + ratings)</li>
-				<li>Visual with floating statistic cards</li>
-			</ul>
+				<p>
+					The hero section is your first
+					impression. It includes:
+				</p>
+				<ul>
+					<li>Badge with achievement/award</li>
+					<li>
+						Main headline with gradient text
+					</li>
+					<li>Subheadline description</li>
+					<li>Two CTA buttons</li>
+					<li>
+						Trust indicators (avatars + ratings)
+					</li>
+					<li>
+						Visual with floating statistic cards
+					</li>
+				</ul>
 
-			<h3>Hero Badge</h3>
-			<div class="file-path">index.html - Lines 157-160</div>
-			<pre><code>&lt;div class="hero-badge"&gt;
+				<h3>Hero Badge</h3>
+				<div class="file-path">
+					index.html - Lines 157-160
+				</div>
+				<pre><code>&lt;div class="hero-badge"&gt;
   &lt;span class="badge-icon"&gt;✨&lt;/span&gt;
   &lt;span&gt;#1 Personal Finance App of 2025&lt;/span&gt;
 &lt;/div&gt;</code></pre>
-			<p>Customize the emoji and text to highlight your key achievement.</p>
+				<p>
+					Customize the emoji and text to
+					highlight your key achievement.
+				</p>
 
-			<h3>Floating Statistics Cards</h3>
-			<p>Two cards overlay the hero image showing key metrics:</p>
-			<div class="file-path">index.html - Lines 225-252</div>
-			<pre><code>&lt;!-- Card 1: Savings --&gt;
+				<h3>Floating Statistics Cards</h3>
+				<p>
+					Two cards overlay the hero image showing
+					key metrics:
+				</p>
+				<div class="file-path">
+					index.html - Lines 225-252
+				</div>
+				<pre><code>&lt;!-- Card 1: Savings --&gt;
 &lt;div class="floating-card card-savings"&gt;
   &lt;div class="card-icon-box savings"&gt;
     &lt;svg&gt;...&lt;/svg&gt;
@@ -770,9 +1891,11 @@ body {
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-			<h3>Customizing Card Positions</h3>
-			<div class="file-path">styles.css - Lines ~880-895</div>
-			<pre><code>.card-savings {
+				<h3>Customizing Card Positions</h3>
+				<div class="file-path">
+					styles.css - Lines ~880-895
+				</div>
+				<pre><code>.card-savings {
   top: 10%;      /* Adjust vertical position */
   left: -10%;    /* Adjust horizontal position */
 }
@@ -782,51 +1905,85 @@ body {
   right: -5%;    /* From right */
 }</code></pre>
 
-			<h3>Hero Image</h3>
-			<p>Replace the hero image:</p>
-			<div class="file-path">index.html - Line ~217</div>
-			<pre><code>&lt;img
+				<h3>Hero Image</h3>
+				<p>Replace the hero image:</p>
+				<div class="file-path">
+					index.html - Line ~217
+				</div>
+				<pre><code>&lt;img
   src="YOUR_IMAGE_URL_HERE"
   alt="Budgy Dashboard on Tablet"
   class="hero-main-image"
 /&gt;</code></pre>
 
-			<div class="tip">
-				<strong>💡 Image Tips:</strong>
-				<ul>
-					<li>Recommended size: 1200x800px or larger</li>
-					<li>Use high-quality screenshots or mockups</li>
-					<li>Compress images with TinyPNG before uploading</li>
-					<li>Consider using WebP format for better performance</li>
-				</ul>
-			</div>
-		</section>
+				<div class="tip">
+					<strong>💡 Image Tips:</strong>
+					<ul>
+						<li>
+							Recommended size: 1200x800px or
+							larger
+						</li>
+						<li>
+							Use high-quality screenshots or
+							mockups
+						</li>
+						<li>
+							Compress images with TinyPNG before
+							uploading
+						</li>
+						<li>
+							Consider using WebP format for
+							better performance
+						</li>
+					</ul>
+				</div>
+			</section>
 
-		<!-- Trust Section -->
-		<section id="trust">
-			<h2>🛡️ Trust Section</h2>
+			<!-- Trust Section -->
+			<section id="trust">
+				<h2>🛡️ Trust Section</h2>
 
-			<h3>Logo Strip</h3>
-			<p>Shows partner/trusted company logos:</p>
-			<div class="file-path">index.html - Lines 267-325</div>
-			<p>The section includes 5 company logos. To modify:</p>
-			<pre><code>&lt;div class="company-logo" title="Company Name"&gt;
+				<h3>Logo Strip</h3>
+				<p>
+					Shows partner/trusted company logos:
+				</p>
+				<div class="file-path">
+					index.html - Lines 267-325
+				</div>
+				<p>
+					The section includes 5 company logos. To
+					modify:
+				</p>
+				<pre><code>&lt;div class="company-logo" title="Company Name"&gt;
   &lt;svg class="logo-svg" viewBox="0 0 120 30" fill="currentColor"&gt;
     &lt;!-- Your SVG logo here --&gt;
     &lt;text x="35" y="21"&gt;COMPANY&lt;/text&gt;
   &lt;/svg&gt;
 &lt;/div&gt;</code></pre>
 
-			<h3>Security Features</h3>
-			<p>Three key trust indicators:</p>
-			<ul>
-				<li><strong>SOC2 Certified Security</strong> - Bank-level encryption</li>
-				<li><strong>Private AI Models</strong> - Data privacy</li>
-				<li><strong>No Hidden Fees</strong> - Transparency</li>
-			</ul>
+				<h3>Security Features</h3>
+				<p>Three key trust indicators:</p>
+				<ul>
+					<li>
+						<strong
+							>SOC2 Certified Security</strong
+						>
+						- Bank-level encryption
+					</li>
+					<li>
+						<strong>Private AI Models</strong> -
+						Data privacy
+					</li>
+					<li>
+						<strong>No Hidden Fees</strong> -
+						Transparency
+					</li>
+				</ul>
 
-			<div class="file-path">index.html - Lines 348-395</div>
-			<pre><code>&lt;div class="trust-feature-item"&gt;
+				<div class="file-path">
+					index.html - Lines 348-395
+				</div>
+				<pre><code>&lt;div class="trust-feature-item"&gt;
   &lt;div class="feature-icon-box"&gt;
     &lt;svg&gt;...&lt;/svg&gt;
   &lt;/div&gt;
@@ -836,36 +1993,64 @@ body {
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-			<h3>Floating Badges</h3>
-			<p>Two animated badges overlay the trust image:</p>
-			<div class="file-path">index.html - Lines 410-426</div>
-			<pre><code>&lt;div class="floating-badge badge-1"&gt;
+				<h3>Floating Badges</h3>
+				<p>
+					Two animated badges overlay the trust
+					image:
+				</p>
+				<div class="file-path">
+					index.html - Lines 410-426
+				</div>
+				<pre><code>&lt;div class="floating-badge badge-1"&gt;
   &lt;div class="badge-icon"&gt;🛡️&lt;/div&gt;
   &lt;div class="badge-text"&gt;
     &lt;span class="badge-title"&gt;100% Secure&lt;/span&gt;
     &lt;span class="badge-subtitle"&gt;Audited daily&lt;/span&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-		</section>
+			</section>
 
-		<!-- Features Section -->
-		<section id="features">
-			<h2>⭐ Features Section</h2>
+			<!-- Features Section -->
+			<section id="features">
+				<h2>⭐ Features Section</h2>
 
-			<p>The features use a modern <strong>Bento Grid</strong> layout with 5 cards:</p>
+				<p>
+					The features use a modern
+					<strong>Bento Grid</strong> layout with
+					5 cards:
+				</p>
 
-			<h3>Feature Cards</h3>
-			<ol style="margin-left: 2rem;">
-				<li><strong>Smart Budgeting</strong> - Large card with image</li>
-				<li><strong>Real-time Analytics</strong> - Tall card with image overlay</li>
-				<li><strong>Goal Tracking</strong> - Full image card</li>
-				<li><strong>Debt Payoff</strong> - Full image card</li>
-				<li><strong>Bank-Level Security</strong> - Full image card</li>
-			</ol>
+				<h3>Feature Cards</h3>
+				<ol style="margin-left: 2rem">
+					<li>
+						<strong>Smart Budgeting</strong> -
+						Large card with image
+					</li>
+					<li>
+						<strong>Real-time Analytics</strong> -
+						Tall card with image overlay
+					</li>
+					<li>
+						<strong>Goal Tracking</strong> - Full
+						image card
+					</li>
+					<li>
+						<strong>Debt Payoff</strong> - Full
+						image card
+					</li>
+					<li>
+						<strong>Bank-Level Security</strong> -
+						Full image card
+					</li>
+				</ol>
 
-			<h3>Large Feature Card (Smart Budgeting)</h3>
-			<div class="file-path">index.html - Lines 461-489</div>
-			<pre><code>&lt;div class="bento-card feature-large"&gt;
+				<h3>
+					Large Feature Card (Smart Budgeting)
+				</h3>
+				<div class="file-path">
+					index.html - Lines 461-489
+				</div>
+				<pre><code>&lt;div class="bento-card feature-large"&gt;
   &lt;div class="bento-content"&gt;
     &lt;div class="feature-icon-box"&gt;
       &lt;svg&gt;...&lt;/svg&gt;
@@ -882,9 +2067,12 @@ body {
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-			<h3>Image Overlay Cards</h3>
-			<p>Features with image backgrounds and text overlays:</p>
-			<pre><code>&lt;div class="bento-card feature-full-img"&gt;
+				<h3>Image Overlay Cards</h3>
+				<p>
+					Features with image backgrounds and text
+					overlays:
+				</p>
+				<pre><code>&lt;div class="bento-card feature-full-img"&gt;
   &lt;div class="bento-image-full"&gt;
     &lt;img src="IMAGE_URL" alt="Goal Tracking"&gt;
     &lt;div class="bento-overlay"&gt;
@@ -897,45 +2085,63 @@ body {
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-			<h3>Adding a New Feature Card</h3>
-			<div class="step">
-				<div class="step-number">1</div>
-				<div class="step-content">
-					<h4>Copy an existing card</h4>
-					<p>Duplicate one of the <code>.bento-card</code> divs</p>
+				<h3>Adding a New Feature Card</h3>
+				<div class="step">
+					<div class="step-number">1</div>
+					<div class="step-content">
+						<h4>Copy an existing card</h4>
+						<p>
+							Duplicate one of the
+							<code>.bento-card</code> divs
+						</p>
+					</div>
 				</div>
-			</div>
 
-			<div class="step">
-				<div class="step-number">2</div>
-				<div class="step-content">
-					<h4>Update content</h4>
-					<p>Change icon, title, description, and image</p>
+				<div class="step">
+					<div class="step-number">2</div>
+					<div class="step-content">
+						<h4>Update content</h4>
+						<p>
+							Change icon, title, description, and
+							image
+						</p>
+					</div>
 				</div>
-			</div>
 
-			<div class="step">
-				<div class="step-number">3</div>
-				<div class="step-content">
-					<h4>Adjust grid layout if needed</h4>
-					<p>Modify <code>.bento-grid</code> in CSS for different arrangements</p>
+				<div class="step">
+					<div class="step-number">3</div>
+					<div class="step-content">
+						<h4>Adjust grid layout if needed</h4>
+						<p>
+							Modify <code>.bento-grid</code> in
+							CSS for different arrangements
+						</p>
+					</div>
 				</div>
-			</div>
 
-			<div class="tip">
-				<strong>💡 Grid Tip:</strong> The Bento grid uses CSS Grid with <code>grid-column: span X</code>. Adjust the span value to make cards wider (span 8, 4, etc.).
-			</div>
-		</section>
+				<div class="tip">
+					<strong>💡 Grid Tip:</strong> The Bento
+					grid uses CSS Grid with
+					<code>grid-column: span X</code>. Adjust
+					the span value to make cards wider (span
+					8, 4, etc.).
+				</div>
+			</section>
 
-		<!-- Video Section -->
-		<section id="video">
-			<h2>🎬 Video Section</h2>
+			<!-- Video Section -->
+			<section id="video">
+				<h2>🎬 Video Section</h2>
 
-			<p>Features a main video player with a playlist sidebar.</p>
+				<p>
+					Features a main video player with a
+					playlist sidebar.
+				</p>
 
-			<h3>Main Featured Video</h3>
-			<div class="file-path">index.html - Lines 673-698</div>
-			<pre><code>&lt;div class="video-main"&gt;
+				<h3>Main Featured Video</h3>
+				<div class="file-path">
+					index.html - Lines 673-698
+				</div>
+				<pre><code>&lt;div class="video-main"&gt;
   &lt;div class="video-player-wrapper"&gt;
     &lt;img
       src="THUMBNAIL_IMAGE_URL"
@@ -953,39 +2159,58 @@ body {
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-			<h3>Changing the Video</h3>
-			<p>The video modal opens when clicking the play button. To change the video URL:</p>
-			<div class="file-path">script.js - Line ~284</div>
-			<pre><code>src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&rel=0"</code></pre>
-
-			<div class="step">
-				<div class="step-number">1</div>
-				<div class="step-content">
-					<h4>Get YouTube video ID</h4>
-					<p>From URL: <code>youtube.com/watch?v=<strong>LXb3EKWsInQ</strong></code></p>
+				<h3>Changing the Video</h3>
+				<p>
+					The video modal opens when clicking the
+					play button. To change the video URL:
+				</p>
+				<div class="file-path">
+					script.js - Line ~284
 				</div>
-			</div>
+				<pre><code>src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&rel=0"</code></pre>
 
-			<div class="step">
-				<div class="step-number">2</div>
-				<div class="step-content">
-					<h4>Replace in script.js</h4>
-					<p>Update the iframe src with your video ID</p>
+				<div class="step">
+					<div class="step-number">1</div>
+					<div class="step-content">
+						<h4>Get YouTube video ID</h4>
+						<p>
+							From URL:
+							<code
+								>youtube.com/watch?v=<strong
+									>LXb3EKWsInQ</strong
+								></code
+							>
+						</p>
+					</div>
 				</div>
-			</div>
 
-			<div class="step">
-				<div class="step-number">3</div>
-				<div class="step-content">
-					<h4>Update thumbnail</h4>
-					<p>Replace the thumbnail image in HTML</p>
+				<div class="step">
+					<div class="step-number">2</div>
+					<div class="step-content">
+						<h4>Replace in script.js</h4>
+						<p>
+							Update the iframe src with your
+							video ID
+						</p>
+					</div>
 				</div>
-			</div>
 
-			<h3>Playlist Items</h3>
-			<p>Three sidebar videos:</p>
-			<div class="file-path">index.html - Lines 713-798</div>
-			<pre><code>&lt;div class="playlist-item"&gt;
+				<div class="step">
+					<div class="step-number">3</div>
+					<div class="step-content">
+						<h4>Update thumbnail</h4>
+						<p>
+							Replace the thumbnail image in HTML
+						</p>
+					</div>
+				</div>
+
+				<h3>Playlist Items</h3>
+				<p>Three sidebar videos:</p>
+				<div class="file-path">
+					index.html - Lines 713-798
+				</div>
+				<pre><code>&lt;div class="playlist-item"&gt;
   &lt;div class="playlist-thumb"&gt;
     &lt;img src="THUMBNAIL_URL" alt="Thumbnail"&gt;
     &lt;span class="duration-small"&gt;2:15&lt;/span&gt;
@@ -996,27 +2221,32 @@ body {
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-			<div class="success">
-				<strong>✓ Video Modal Features:</strong>
-				<ul>
-					<li>Full-screen responsive modal</li>
-					<li>YouTube embed with autoplay</li>
-					<li>Click outside or ESC to close</li>
-					<li>Smooth animations</li>
-					<li>Mobile-optimized</li>
-				</ul>
-			</div>
-		</section>
+				<div class="success">
+					<strong>✓ Video Modal Features:</strong>
+					<ul>
+						<li>Full-screen responsive modal</li>
+						<li>YouTube embed with autoplay</li>
+						<li>Click outside or ESC to close</li>
+						<li>Smooth animations</li>
+						<li>Mobile-optimized</li>
+					</ul>
+				</div>
+			</section>
 
-		<!-- Testimonials -->
-		<section id="testimonials">
-			<h2>💬 Testimonials</h2>
+			<!-- Testimonials -->
+			<section id="testimonials">
+				<h2>💬 Testimonials</h2>
 
-			<p>Three testimonial cards with user quotes, photos, and ratings.</p>
+				<p>
+					Three testimonial cards with user
+					quotes, photos, and ratings.
+				</p>
 
-			<h3>Testimonial Structure</h3>
-			<div class="file-path">index.html - Lines 823-925</div>
-			<pre><code>&lt;div class="testimonial-card-modern"&gt;
+				<h3>Testimonial Structure</h3>
+				<div class="file-path">
+					index.html - Lines 823-925
+				</div>
+				<pre><code>&lt;div class="testimonial-card-modern"&gt;
   &lt;div class="card-header"&gt;
     &lt;img src="USER_PHOTO_URL" alt="User Avatar" class="user-avatar"&gt;
     &lt;div class="user-info"&gt;
@@ -1033,9 +2263,12 @@ body {
   &lt;/p&gt;
 &lt;/div&gt;</code></pre>
 
-			<h3>Featured Testimonial</h3>
-			<p>The middle card has a special "featured" class for emphasis:</p>
-			<pre><code>&lt;div class="testimonial-card-modern featured"&gt;
+				<h3>Featured Testimonial</h3>
+				<p>
+					The middle card has a special "featured"
+					class for emphasis:
+				</p>
+				<pre><code>&lt;div class="testimonial-card-modern featured"&gt;
   &lt;!-- Same structure as above --&gt;
   &lt;div class="verified-badge"&gt;
     &lt;svg&gt;...&lt;/svg&gt;
@@ -1043,50 +2276,73 @@ body {
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-			<h3>Adding More Testimonials</h3>
-			<div class="step">
-				<div class="step-number">1</div>
-				<div class="step-content">
-					<h4>Duplicate a testimonial card</h4>
-					<p>Copy the entire <code>.testimonial-card-modern</code> div</p>
+				<h3>Adding More Testimonials</h3>
+				<div class="step">
+					<div class="step-number">1</div>
+					<div class="step-content">
+						<h4>Duplicate a testimonial card</h4>
+						<p>
+							Copy the entire
+							<code
+								>.testimonial-card-modern</code
+							>
+							div
+						</p>
+					</div>
 				</div>
-			</div>
 
-			<div class="step">
-				<div class="step-number">2</div>
-				<div class="step-content">
-					<h4>Update user information</h4>
-					<ul>
-						<li>Photo (use Unsplash for placeholders)</li>
-						<li>Name and title</li>
-						<li>Quote text</li>
-						<li>Star rating (★ symbols)</li>
-					</ul>
+				<div class="step">
+					<div class="step-number">2</div>
+					<div class="step-content">
+						<h4>Update user information</h4>
+						<ul>
+							<li>
+								Photo (use Unsplash for
+								placeholders)
+							</li>
+							<li>Name and title</li>
+							<li>Quote text</li>
+							<li>Star rating (★ symbols)</li>
+						</ul>
+					</div>
 				</div>
-			</div>
 
-			<div class="step">
-				<div class="step-number">3</div>
-				<div class="step-content">
-					<h4>Adjust grid if needed</h4>
-					<p>Modify <code>.testimonials-grid-modern</code> in CSS for more columns</p>
+				<div class="step">
+					<div class="step-number">3</div>
+					<div class="step-content">
+						<h4>Adjust grid if needed</h4>
+						<p>
+							Modify
+							<code
+								>.testimonials-grid-modern</code
+							>
+							in CSS for more columns
+						</p>
+					</div>
 				</div>
-			</div>
 
-			<div class="tip">
-				<strong>💡 Authenticity:</strong> Use real customer testimonials with photos (with permission). Real stories build more trust than stock photos.
-			</div>
-		</section>
+				<div class="tip">
+					<strong>💡 Authenticity:</strong> Use
+					real customer testimonials with photos
+					(with permission). Real stories build
+					more trust than stock photos.
+				</div>
+			</section>
 
-		<!-- Contact Form -->
-		<section id="contact">
-			<h2>📧 Contact Form</h2>
+			<!-- Contact Form -->
+			<section id="contact">
+				<h2>📧 Contact Form</h2>
 
-			<p>The contact section includes multiple contact methods and a form.</p>
+				<p>
+					The contact section includes multiple
+					contact methods and a form.
+				</p>
 
-			<h3>Contact Methods</h3>
-			<div class="file-path">index.html - Lines 1068-1146</div>
-			<pre><code>&lt;div class="contact-item-modern"&gt;
+				<h3>Contact Methods</h3>
+				<div class="file-path">
+					index.html - Lines 1068-1146
+				</div>
+				<pre><code>&lt;div class="contact-item-modern"&gt;
   &lt;div class="contact-icon-wrapper"&gt;
     &lt;svg&gt;...&lt;/svg&gt;
   &lt;/div&gt;
@@ -1097,9 +2353,11 @@ body {
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-			<h3>Contact Form</h3>
-			<div class="file-path">index.html - Lines 1150-1182</div>
-			<pre><code>&lt;form class="contact-form-modern"&gt;
+				<h3>Contact Form</h3>
+				<div class="file-path">
+					index.html - Lines 1150-1182
+				</div>
+				<pre><code>&lt;form class="contact-form-modern"&gt;
   &lt;div class="form-row"&gt;
     &lt;div class="form-group-modern"&gt;
       &lt;label for="first-name"&gt;First name&lt;/label&gt;
@@ -1123,86 +2381,123 @@ body {
   &lt;/button&gt;
 &lt;/form&gt;</code></pre>
 
-			<h3>Form Submission</h3>
-			<p>To connect the form to your backend:</p>
-			<pre><code>&lt;form action="https://your-api.com/contact" method="POST"&gt;</code></pre>
+				<h3>Form Submission</h3>
+				<p>
+					To connect the form to your backend:
+				</p>
+				<pre><code>&lt;form action="https://your-api.com/contact" method="POST"&gt;</code></pre>
 
-			<p>Or use a service like:</p>
-			<ul>
-				<li><strong>Formspree</strong> - Simple form backend</li>
-				<li><strong>Netlify Forms</strong> - If hosted on Netlify</li>
-				<li><strong>Google Forms</strong> - Free alternative</li>
-			</ul>
+				<p>Or use a service like:</p>
+				<ul>
+					<li>
+						<strong>Formspree</strong> - Simple
+						form backend
+					</li>
+					<li>
+						<strong>Netlify Forms</strong> - If
+						hosted on Netlify
+					</li>
+					<li>
+						<strong>Google Forms</strong> - Free
+						alternative
+					</li>
+				</ul>
 
-			<h3>Email Validation</h3>
-			<p>Basic validation is included in <code>script.js</code>:</p>
-			<div class="file-path">script.js - Lines 742-755</div>
-			<pre><code>function validateEmail(email) {
+				<h3>Email Validation</h3>
+				<p>
+					Basic validation is included in
+					<code>script.js</code>:
+				</p>
+				<div class="file-path">
+					script.js - Lines 742-755
+				</div>
+				<pre><code>function validateEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }</code></pre>
 
-			<div class="warning">
-				<strong>⚠️ Security:</strong> Always validate and sanitize form data on the server-side, not just client-side, to prevent attacks.
-			</div>
-		</section>
+				<div class="warning">
+					<strong>⚠️ Security:</strong> Always
+					validate and sanitize form data on the
+					server-side, not just client-side, to
+					prevent attacks.
+				</div>
+			</section>
 
-		<!-- Animations -->
-		<section id="animations">
-			<h2>✨ Animations</h2>
+			<!-- Animations -->
+			<section id="animations">
+				<h2>✨ Animations</h2>
 
-			<p>The page features sophisticated CSS animations for a polished experience.</p>
+				<p>
+					The page features sophisticated CSS
+					animations for a polished experience.
+				</p>
 
-			<h3>Key Animations</h3>
-			<table>
-				<thead>
-					<tr>
-						<th>Animation</th>
-						<th>Duration</th>
-						<th>Applied To</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>fadeInUp</code></td>
-						<td>0.6s</td>
-						<td>Cards, sections on scroll</td>
-					</tr>
-					<tr>
-						<td><code>float</code></td>
-						<td>3-20s</td>
-						<td>Floating cards, orbs</td>
-					</tr>
-					<tr>
-						<td><code>floatCard</code></td>
-						<td>6s</td>
-						<td>Statistic cards</td>
-					</tr>
-					<tr>
-						<td><code>modalSlideIn</code></td>
-						<td>0.5s</td>
-						<td>Video modal entrance</td>
-					</tr>
-				</tbody>
-			</table>
+				<h3>Key Animations</h3>
+				<table>
+					<thead>
+						<tr>
+							<th>Animation</th>
+							<th>Duration</th>
+							<th>Applied To</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>fadeInUp</code></td>
+							<td>0.6s</td>
+							<td>Cards, sections on scroll</td>
+						</tr>
+						<tr>
+							<td><code>float</code></td>
+							<td>3-20s</td>
+							<td>Floating cards, orbs</td>
+						</tr>
+						<tr>
+							<td><code>floatCard</code></td>
+							<td>6s</td>
+							<td>Statistic cards</td>
+						</tr>
+						<tr>
+							<td><code>modalSlideIn</code></td>
+							<td>0.5s</td>
+							<td>Video modal entrance</td>
+						</tr>
+					</tbody>
+				</table>
 
-			<h3>Modifying Animation Speed</h3>
-			<p>Find the animation in <code>styles.css</code>:</p>
-			<pre><code>.hero-badge {
+				<h3>Modifying Animation Speed</h3>
+				<p>
+					Find the animation in
+					<code>styles.css</code>:
+				</p>
+				<pre><code>.hero-badge {
   animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
   /*         ^name    ^dur  ^easing                            ^delay  ^mode */
 }</code></pre>
 
-			<h4>Speed Adjustments:</h4>
-			<ul>
-				<li><strong>Faster:</strong> Change 0.8s → 0.4s or 0.5s</li>
-				<li><strong>Slower:</strong> Change 0.8s → 1.2s or 1.5s</li>
-				<li><strong>Much slower:</strong> Change to 2s for dramatic effect</li>
-			</ul>
+				<h4>Speed Adjustments:</h4>
+				<ul>
+					<li>
+						<strong>Faster:</strong> Change 0.8s →
+						0.4s or 0.5s
+					</li>
+					<li>
+						<strong>Slower:</strong> Change 0.8s →
+						1.2s or 1.5s
+					</li>
+					<li>
+						<strong>Much slower:</strong> Change
+						to 2s for dramatic effect
+					</li>
+				</ul>
 
-			<h3>Disabling Animations</h3>
-			<p>To disable all animations (good for accessibility):</p>
-			<pre><code>/* Add to styles.css */
+				<h3>Disabling Animations</h3>
+				<p>
+					To disable all animations (good for
+					accessibility):
+				</p>
+				<pre><code>/* Add to styles.css */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
@@ -1210,12 +2505,12 @@ body {
   }
 }</code></pre>
 
-			<h3>Creating Custom Animations</h3>
-			<div class="step">
-				<div class="step-number">1</div>
-				<div class="step-content">
-					<h4>Define keyframes</h4>
-					<pre><code>@keyframes slideInLeft {
+				<h3>Creating Custom Animations</h3>
+				<div class="step">
+					<div class="step-number">1</div>
+					<div class="step-content">
+						<h4>Define keyframes</h4>
+						<pre><code>@keyframes slideInLeft {
   from {
     opacity: 0;
     transform: translateX(-50px);
@@ -1225,23 +2520,27 @@ body {
     transform: translateX(0);
   }
 }</code></pre>
+					</div>
 				</div>
-			</div>
 
-			<div class="step">
-				<div class="step-number">2</div>
-				<div class="step-content">
-					<h4>Apply to element</h4>
-					<pre><code>.my-element {
+				<div class="step">
+					<div class="step-number">2</div>
+					<div class="step-content">
+						<h4>Apply to element</h4>
+						<pre><code>.my-element {
   animation: slideInLeft 0.8s ease-out forwards;
 }</code></pre>
+					</div>
 				</div>
-			</div>
 
-			<h3>Intersection Observer</h3>
-			<p>Cards animate when scrolled into view:</p>
-			<div class="file-path">script.js - Lines 194-219</div>
-			<pre><code>const observer = new IntersectionObserver(function (entries) {
+				<h3>Intersection Observer</h3>
+				<p>
+					Cards animate when scrolled into view:
+				</p>
+				<div class="file-path">
+					script.js - Lines 194-219
+				</div>
+				<pre><code>const observer = new IntersectionObserver(function (entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.style.animation = "fadeInUp 0.6s ease forwards";
@@ -1250,58 +2549,69 @@ body {
   });
 }, observerOptions);</code></pre>
 
-			<div class="tip">
-				<strong>💡 Performance:</strong> Use <code>transform</code> and <code>opacity</code> for animations. They're GPU-accelerated and won't cause reflows.
-			</div>
-		</section>
+				<div class="tip">
+					<strong>💡 Performance:</strong> Use
+					<code>transform</code> and
+					<code>opacity</code> for animations.
+					They're GPU-accelerated and won't cause
+					reflows.
+				</div>
+			</section>
 
-		<!-- Responsive Design -->
-		<section id="responsive">
-			<h2>📱 Responsive Design</h2>
+			<!-- Responsive Design -->
+			<section id="responsive">
+				<h2>📱 Responsive Design</h2>
 
-			<p>The page features a comprehensive <strong>9-breakpoint system</strong> for all devices.</p>
+				<p>
+					The page features a comprehensive
+					<strong>9-breakpoint system</strong> for
+					all devices.
+				</p>
 
-			<h3>Breakpoints</h3>
-			<table>
-				<thead>
-					<tr>
-						<th>Breakpoint</th>
-						<th>Width</th>
-						<th>Devices</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Large Desktop</td>
-						<td>1280px+</td>
-						<td>Widescreen monitors</td>
-					</tr>
-					<tr>
-						<td>Desktop</td>
-						<td>1024px-1280px</td>
-						<td>Standard laptops</td>
-					</tr>
-					<tr>
-						<td>Tablets</td>
-						<td>768px-1024px</td>
-						<td>iPads, tablets</td>
-					</tr>
-					<tr>
-						<td>Mobile</td>
-						<td>480px-768px</td>
-						<td>Smartphones</td>
-					</tr>
-					<tr>
-						<td>Small Mobile</td>
-						<td>320px-480px</td>
-						<td>Compact phones</td>
-					</tr>
-				</tbody>
-			</table>
+				<h3>Breakpoints</h3>
+				<table>
+					<thead>
+						<tr>
+							<th>Breakpoint</th>
+							<th>Width</th>
+							<th>Devices</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Large Desktop</td>
+							<td>1280px+</td>
+							<td>Widescreen monitors</td>
+						</tr>
+						<tr>
+							<td>Desktop</td>
+							<td>1024px-1280px</td>
+							<td>Standard laptops</td>
+						</tr>
+						<tr>
+							<td>Tablets</td>
+							<td>768px-1024px</td>
+							<td>iPads, tablets</td>
+						</tr>
+						<tr>
+							<td>Mobile</td>
+							<td>480px-768px</td>
+							<td>Smartphones</td>
+						</tr>
+						<tr>
+							<td>Small Mobile</td>
+							<td>320px-480px</td>
+							<td>Compact phones</td>
+						</tr>
+					</tbody>
+				</table>
 
-			<h3>Media Query Structure</h3>
-			<p>Responsive styles are organized by section in <code>styles.css</code>:</p>
-			<pre><code>/* Desktop default styles */
+				<h3>Media Query Structure</h3>
+				<p>
+					Responsive styles are organized by
+					section in <code>styles.css</code>:
+				</p>
+				<pre><code>/* Desktop default styles */
 .hero-headline {
   font-size: 4rem;
 }
@@ -1320,30 +2630,50 @@ body {
   }
 }</code></pre>
 
-			<h3>Mobile Menu</h3>
-			<p>At 768px, the navigation switches to a mobile drawer menu:</p>
-			<div class="file-path">script.js - initMobileMenu() function</div>
-			<ul>
-				<li>Hamburger toggle button</li>
-				<li>Slide-in drawer animation</li>
-				<li>Touch-optimized links</li>
-				<li>Close on link click or outside tap</li>
-			</ul>
-
-			<h3>Testing Responsive Design</h3>
-			<div class="tip">
-				<strong>💡 Testing Tools:</strong>
+				<h3>Mobile Menu</h3>
+				<p>
+					At 768px, the navigation switches to a
+					mobile drawer menu:
+				</p>
+				<div class="file-path">
+					script.js - initMobileMenu() function
+				</div>
 				<ul>
-					<li>Chrome DevTools (F12 → Device Toolbar)</li>
-					<li>Firefox Responsive Design Mode</li>
-					<li>Real devices for accurate testing</li>
-					<li>BrowserStack for cross-browser testing</li>
+					<li>Hamburger toggle button</li>
+					<li>Slide-in drawer animation</li>
+					<li>Touch-optimized links</li>
+					<li>
+						Close on link click or outside tap
+					</li>
 				</ul>
-			</div>
 
-			<h3>Touch Targets</h3>
-			<p>All interactive elements meet the 44px minimum on mobile:</p>
-			<pre><code>/* Mobile touch target */
+				<h3>Testing Responsive Design</h3>
+				<div class="tip">
+					<strong>💡 Testing Tools:</strong>
+					<ul>
+						<li>
+							Chrome DevTools (F12 → Device
+							Toolbar)
+						</li>
+						<li>
+							Firefox Responsive Design Mode
+						</li>
+						<li>
+							Real devices for accurate testing
+						</li>
+						<li>
+							BrowserStack for cross-browser
+							testing
+						</li>
+					</ul>
+				</div>
+
+				<h3>Touch Targets</h3>
+				<p>
+					All interactive elements meet the 44px
+					minimum on mobile:
+				</p>
+				<pre><code>/* Mobile touch target */
 @media (max-width: 768px) {
   .mobile-nav-link {
     min-height: 44px;
@@ -1351,23 +2681,152 @@ body {
   }
 }</code></pre>
 
-			<div class="warning">
-				<strong>⚠️ Mobile Testing:</strong> Always test on real devices. Emulators don't perfectly replicate touch interactions and scrolling behavior.
-			</div>
-		</section>
+				<div class="warning">
+					<strong>⚠️ Mobile Testing:</strong>
+					Always test on real devices. Emulators
+					don't perfectly replicate touch
+					interactions and scrolling behavior.
+				</div>
+			</section>
 
-		<!-- Footer -->
-		<footer>
-			<h3 style="color: var(--primary-blue); margin-bottom: 1rem;">🎉 You're All Set!</h3>
-			<p>This guide covers all major customization points. For more details:</p>
-			<p style="margin-top: 1rem;">
-				<a href="README.md">📚 Read the README</a> | 
-				<a href="https://github.com/CodeWithKarol/budgy-landing">🔗 View on GitHub</a>
-			</p>
-			<p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
-				Happy customizing! 🚀
-			</p>
-		</footer>
-	</div>
-</body>
+			<!-- Footer -->
+			<footer>
+				<h3
+					style="
+						color: var(--primary-blue);
+						margin-bottom: 1rem;
+					"
+				>
+					🎉 You're All Set!
+				</h3>
+				<p>
+					This guide covers all major
+					customization points.
+				</p>
+				<p
+					style="
+						margin-top: 2rem;
+						font-size: 0.9rem;
+						opacity: 0.8;
+					"
+				>
+					Happy customizing! 🚀
+				</p>
+			</footer>
+		</div>
+
+		<!-- JavaScript for Navigation Functionality -->
+		<script>
+			// Search functionality
+			const searchInput =
+				document.getElementById("navSearch");
+			const navItems =
+				document.querySelectorAll("nav ul li");
+
+			if (searchInput) {
+				searchInput.addEventListener(
+					"input",
+					function (e) {
+						const searchTerm =
+							e.target.value.toLowerCase();
+
+						navItems.forEach((item) => {
+							const title =
+								item
+									.querySelector(
+										".nav-item-title"
+									)
+									?.textContent.toLowerCase() ||
+								"";
+							const desc =
+								item
+									.querySelector(".nav-item-desc")
+									?.textContent.toLowerCase() ||
+								"";
+							const keywords =
+								item.dataset.keywords?.toLowerCase() ||
+								"";
+
+							if (
+								title.includes(searchTerm) ||
+								desc.includes(searchTerm) ||
+								keywords.includes(searchTerm)
+							) {
+								item.classList.remove("hidden");
+								item.style.animation =
+									"fadeInUp 0.3s ease forwards";
+							} else {
+								item.classList.add("hidden");
+							}
+						});
+					}
+				);
+			}
+
+			// Filter functionality
+			const filterButtons =
+				document.querySelectorAll(".filter-btn");
+
+			filterButtons.forEach((button) => {
+				button.addEventListener(
+					"click",
+					function () {
+						// Remove active class from all buttons
+						filterButtons.forEach((btn) =>
+							btn.classList.remove("active")
+						);
+						// Add active class to clicked button
+						this.classList.add("active");
+
+						const filterValue =
+							this.dataset.filter;
+
+						// Clear search
+						if (searchInput) {
+							searchInput.value = "";
+						}
+
+						// Filter items
+						navItems.forEach((item) => {
+							const category =
+								item.dataset.category;
+
+							if (
+								filterValue === "all" ||
+								category === filterValue
+							) {
+								item.classList.remove("hidden");
+								item.style.animation =
+									"fadeInUp 0.3s ease forwards";
+							} else {
+								item.classList.add("hidden");
+							}
+						});
+					}
+				);
+			});
+
+			// Smooth scroll enhancement
+			document
+				.querySelectorAll('nav a[href^="#"]')
+				.forEach((anchor) => {
+					anchor.addEventListener(
+						"click",
+						function (e) {
+							e.preventDefault();
+							const target =
+								document.querySelector(
+									this.getAttribute("href")
+								);
+							if (target) {
+								target.scrollIntoView({
+									behavior: "smooth",
+									block: "start",
+								});
+							}
+						}
+					);
+				});
+		</script>
+	</body>
 </html>
